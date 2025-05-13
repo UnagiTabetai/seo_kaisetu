@@ -1,0 +1,303 @@
+<!-- セクション④：コンテクストウィンドウ／API思考 -->
+
+<!-- タイトルスライド -->
+<section class="slide" id="section4-slide1">
+  <div class="slide-content lead gradient-blue">
+    <style>
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .icon-shadow {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+      }
+      .gradient-purple i, .gradient-purple h1, .gradient-purple h2, .gradient-purple h3, .gradient-purple p {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+    <h1 class="text-shadow">セクション④</h1>
+    <h2 class="text-shadow">コンテクストウィンドウ／API思考</h2>
+    <div class="animate__animated animate__fadeIn animate__delay-1s">
+      <p class="text-shadow">AIの記憶の仕組みと複雑タスクの分解方法</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド2 -->
+<section class="slide" id="section4-slide2">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-memory icon-yellow"></i> AIの記憶とタスク分解術</h1>
+    <h2>長い会話も複雑な仕事も上手に進めるコツ</h2>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>AIとの対話を始める</h4>
+        <p>明確な目標設定と基本情報の提供</p>
+      </div>
+      <div class="timeline-item">
+        <h4>コンテクストの管理</h4>
+        <p>重要情報の繰り返しと定期的な要約</p>
+      </div>
+      <div class="timeline-item">
+        <h4>タスクの分解</h4>
+        <p>複雑な作業を小さなステップに分割</p>
+      </div>
+      <div class="timeline-item">
+        <h4>結果の確認と修正</h4>
+        <p>各ステップの出力を検証し調整</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド3 -->
+<section class="slide" id="section4-slide3">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-brain icon-lightblue"></i> AIはどうやって会話を「覚えている」の？</h1>
+    
+    <div class="card">
+      <h3>コンテクストウィンドウの概念</h3>
+      <p>AIが直近のやり取りを一時的に保持する「作業机の広さ」のこと</p>
+    </div>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-ruler icon-teal"></i>
+        <h3>広さの限界</h3>
+        <p>トークン数に制限がある</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-history icon-orange"></i>
+        <h3>参照範囲</h3>
+        <p>この範囲内の過去のやり取りのみ参照可能</p>
+      </div>
+    </div>
+    
+    <div class="alert warning">
+      <h3>限界を超えるとどうなる？</h3>
+      <ul>
+        <li><i class="fa-solid fa-exclamation-triangle icon-orange"></i> 古い情報から順番に「忘れられて」いく</li>
+        <li><i class="fa-solid fa-question-circle icon-orange"></i> 「あれ、さっき言ったことと違う…？」の原因に</li>
+      </ul>
+    </div>
+    
+    <div class="term-definition">
+      <h4>例え話：日記のようなもの</h4>
+      <p>コンテクストウィンドウは「その日1日の出来事を書いた日記」。翌日には新しい日記になり、古い内容は参照されにくくなる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド4 -->
+<section class="slide" id="section4-slide4">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-tools icon-teal"></i> 「作業机」を上手に使うには？</h1>
+    
+    <div class="alert info">
+      <h3>なぜ意識する必要があるのか？</h3>
+      <ul>
+        <li><i class="fa-solid fa-info-circle icon-lightblue"></i> 長い会話や複雑な指示の場合、重要な前提条件が「忘れられる」</li>
+        <li><i class="fa-solid fa-exclamation-circle icon-lightblue"></i> 一貫性のない回答や、指示の誤解に繋がる</li>
+      </ul>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>① 定期的な要約・再確認</h4>
+        <p><i class="fa-solid fa-sync icon-green"></i> 「ここまでの話のポイントは〇〇ですよね？」とAIに確認</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4>② 重要な情報の繰り返し</h4>
+        <p><i class="fa-solid fa-redo icon-green"></i> 特に重要な前提や指示は、必要に応じて再度伝える</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4>③ スレッドの分割</h4>
+        <p><i class="fa-solid fa-code-branch icon-orange"></i> 長いタスクは、小さなタスクに分けて新しい「作業机」で始める</p>
+      </div>
+    </div>
+    
+    <div class="workshop">
+      <h3>実践ポイント</h3>
+      <p><i class="fa-solid fa-lightbulb icon-yellow"></i> 複雑な指示を出す前に、まずは全体像を伝え、その後で詳細を説明しましょう</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド5 -->
+<section class="slide" id="section4-slide5">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-puzzle-piece icon-orange"></i> 複雑な仕事は「分解」して頼む：API思考のすすめ</h1>
+    
+    <div class="card">
+      <h3>API思考とは？</h3>
+      <p>システム開発で使われる考え方で、大きな機能を独立した小さな機能（API）の組み合わせで実現する方法</p>
+    </div>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-code icon-lightblue"></i>
+        <h3>システム開発の概念</h3>
+        <p>モジュール化された機能</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-comments icon-green"></i>
+        <h3>AIとの対話への応用</h3>
+        <p>複雑な依頼を小さな指示に分解</p>
+      </div>
+    </div>
+    
+    <div class="term-definition">
+      <h4>なぜAPI思考が有効なのか？</h4>
+      <ul>
+        <li>各指示が短く明確になり、コンテクストウィンドウの制限を受けにくい</li>
+        <li>AIが各ステップに集中でき、精度が向上</li>
+        <li>途中で間違いがあっても、修正が容易（どの部品に問題があったか特定しやすい）</li>
+      </ul>
+    </div>
+    
+    <div class="workshop">
+      <h3>実践例</h3>
+      <p>「レポート作成」→「構成検討」→「各セクション執筆」→「校正・編集」</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド6 -->
+<section class="slide" id="section4-slide6">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-comments icon-green"></i> 実践！「スレッド設計」で会話を整理する</h1>
+    
+    <div class="card">
+      <h3>スレッドとは？</h3>
+      <p><i class="fa-solid fa-exchange-alt icon-teal"></i> ChatGPTなどのチャットAIにおける、一連の会話のまとまり</p>
+    </div>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="term-definition">
+          <h4>スレッドを分けるメリット</h4>
+          <ul>
+            <li><i class="fa-solid fa-check icon-green"></i> <strong>コンテクストの明確化</strong>：各スレッドが独立した「作業机」</li>
+            <li><i class="fa-solid fa-check icon-green"></i> <strong>AIの集中力維持</strong>：特定のタスクにAIの「意識」を向ける</li>
+            <li><i class="fa-solid fa-check icon-green"></i> <strong>過去の参照の容易さ</strong>：後から特定の話題を見返しやすい</li>
+            <li><i class="fa-solid fa-check icon-green"></i> <strong>エラーの局所化</strong>：あるスレッドでの混乱が他に影響しにくい</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="alert info">
+          <h3>どんな時に分ける？</h3>
+          <ul class="icon-list check">
+            <li><i class="fa-solid fa-arrow-right icon-lightblue"></i> 話題が大きく変わるとき</li>
+            <li><i class="fa-solid fa-arrow-right icon-lightblue"></i> API思考で分解した各タスクを実行するとき</li>
+            <li><i class="fa-solid fa-arrow-right icon-lightblue"></i> 異なる役割をAIに期待するとき（例：ブレスト→添削）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="workshop">
+      <h3>実践ワークショップ</h3>
+      <p><i class="fa-solid fa-users icon-pink"></i> あなたの業務で、どのようにスレッドを分けると効率的でしょうか？</p>
+    </div>
+  </div>
+</section>
+
+<!-- まとめスライド -->
+<!-- まとめタイトルスライド -->
+<section class="slide" id="section4-slide7">
+  <div class="slide-content lead gradient-mint">
+    <h1>まとめ：記憶とタスク分解</h1>
+  </div>
+</section>
+
+<!-- まとめ内容スライド -->
+<section class="slide" id="section4-slide8">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-check-double icon-yellow"></i> 記憶とタスク分解のポイント</h1>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-memory icon-yellow"></i>
+        <h3>AIの記憶の特性</h3>
+        <ul>
+          <li><i class="fa-solid fa-microchip icon-lightblue"></i> 短期記憶＝コンテクストウィンドウ</li>
+          <li><i class="fa-solid fa-desktop icon-lightblue"></i> 「作業机の広さ」の概念</li>
+          <li><i class="fa-solid fa-hourglass-half icon-orange"></i> 情報の忘却パターン</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-rocket icon-pink"></i>
+        <h3>効率化のテクニック</h3>
+        <ul>
+          <li><i class="fa-solid fa-puzzle-piece icon-orange"></i> API思考でタスクを小分解</li>
+          <li><i class="fa-solid fa-comments icon-green"></i> スレッド設計で会話を整理</li>
+          <li><i class="fa-solid fa-user-cog icon-teal"></i> 人間の仕事にも応用可能</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="card success">
+      <h3>実践のポイント</h3>
+      <p><i class="fa-solid fa-lightbulb icon-yellow"></i> 普段の業務をAIに頼むとしたら、どのように分解できそうですか？</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>学習</h4>
+        <p><i class="fa-solid fa-book-open icon-teal"></i> AIの特性を理解する</p>
+      </div>
+      <div class="timeline-item">
+        <h4>実践</h4>
+        <p><i class="fa-solid fa-laptop-code icon-lightblue"></i> タスク分解を試してみる</p>
+      </div>
+      <div class="timeline-item">
+        <h4>改善</h4>
+        <p><i class="fa-solid fa-chart-line icon-green"></i> 結果を分析し方法を洗練させる</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 専門用語解説スライド -->
+<section class="slide" id="section4-slide9">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-book icon-teal"></i> 専門用語の解説</h1>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-window-maximize icon-lightblue"></i>
+        <h3>コンテクストウィンドウ</h3>
+        <p>AIが会話中に参照できる「文脈の窓」。過去のやり取りをどれだけ覚えているかを決める要素。トークン数に制限があり、制限を超えると古い情報から忘れていく。</p>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-font icon-green"></i>
+        <h3>トークン</h3>
+        <p>AIが文章を処理する最小単位。英語では単語に近いが、日本語では文字や短い単語のまとまりになる。「こんにちは」は複数のトークンに分割される。</p>
+      </div>
+    </div>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-code-branch icon-orange"></i>
+        <h3>API思考</h3>
+        <p>複雑な問題を小さな独立した部品に分解して解決する考え方。AIとの対話では、大きなタスクを小さな指示に分けることで、理解度と出力精度を高める手法。</p>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-sitemap icon-pink"></i>
+        <h3>スレッド設計</h3>
+        <p>AIとの会話を目的別に整理する方法。各スレッドが独立した「作業机」となり、AIが特定のタスクに集中できる環境を作る。API思考の実装方法。</p>
+      </div>
+    </div>
+    
+    <div class="workshop">
+      <h3>用語の活用法</h3>
+      <p>これらの概念を理解することで、AIとのより効果的なコミュニケーションが可能になります</p>
+    </div>
+  </div>
+</section>

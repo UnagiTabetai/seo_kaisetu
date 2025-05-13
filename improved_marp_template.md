@@ -1,12 +1,45 @@
 ---
 marp: true
-theme: custom
+theme: improved-custom
 paginate: true
 header: "AI活用研修"
 footer: "© 2025 SoEasy社"
 size: 16:9
 style: |
-  /* 
+  /* スライドサイズのデバッグ表示 */
+  section::before {
+    content: "スライドサイズ: 16:9 (" attr(data-width) "x" attr(data-height) "px)";
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    z-index: 1000;
+  }
+  
+  /* コンテンツオーバーフロー検出 */
+  section {
+    position: relative;
+    overflow: visible !important; /* オーバーフローを見えるようにする */
+  }
+  
+  section.overflow-detected::after {
+    content: "⚠️ コンテンツオーバーフロー";
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(255,0,0,0.7);
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    z-index: 1000;
+  }
+  
+  /*
   ======================================
   改善されたMarpデザインテンプレート
   ======================================
@@ -26,6 +59,10 @@ style: |
   - 実例・ケーススタディの不足 → 事例表示用のレイアウト
   */
 
+  /*=============================================
+   * 1. 基本設定
+   *=============================================*/
+  
   /* 基本的なフォントとCDNのインポート */
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
@@ -56,6 +93,8 @@ style: |
     /* グラデーション用 */
     --gradient-blue: linear-gradient(135deg, #2563eb, #0891b2);
     --gradient-purple: linear-gradient(135deg, #7c3aed, #c026d3);
+    --gradient-sunset: linear-gradient(135deg, #f59e0b, #ef4444);
+    --gradient-mint: linear-gradient(135deg, #10b981, #0891b2);
     
     /* シャドウ */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -66,12 +105,17 @@ style: |
     --transition-fast: 0.2s;
     --transition-normal: 0.3s;
     --transition-slow: 0.5s;
+    
+    /* 角丸 */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
   }
 
   /* 基本スタイル */
   section {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     padding: 40px;
     background-color: var(--color-background-light);
     color: var(--color-text-dark);
@@ -103,22 +147,51 @@ style: |
     color: var(--color-text-light);
   }
   
+  section.gradient-sunset {
+    background: var(--gradient-sunset);
+    color: var(--color-text-light);
+  }
+  
+  section.gradient-mint {
+    background: var(--gradient-mint);
+    color: var(--color-text-light);
+  }
+  
   /* 見出しスタイル */
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     border-bottom: 3px solid var(--color-primary);
-/* リストスタイル */
+    padding-bottom: 0.2em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    margin-top: 0.2em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-tertiary);
+    margin-top: 0.6em;
+    margin-bottom: 0.4em;
+  }
+  /* リストスタイル */
   ul, ol {
-    padding-left: 1.2em;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
+    padding-left: 1em;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
   }
   
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     position: relative;
   }
   
@@ -159,7 +232,7 @@ style: |
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   }
@@ -192,12 +265,86 @@ style: |
     justify-content: center;
     margin: 1em 0;
   }
+
+  /* アイコンスタイル */
+  .fa-solid, .fa-regular, .fa-brands {
+    color: var(--color-primary);
+    margin-right: 0.2em;
+  }
+
+  /* 中央揃えのスライド */
+  section.lead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* 引用スタイル */
+  blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 1em;
+    margin-left: 0;
+    color: var(--color-text-muted);
+  }
   
-  /* カラムレイアウト */
+  /* コードブロック */
+  pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 1em;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  
+  code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+
+  /* ページ番号スタイル */
+  section::after {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+  }
+  
+  /* ヘッダーとフッターのスタイル */
+  header, footer {
+    font-size: 0.7em;
+    color: var(--color-text-muted);
+  }
+  
+  /* 印刷用スタイル - ページブレイク防止など */
+  @media print {
+    section {
+      page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+      page-break-after: avoid;
+    }
+    
+    .columns, .image-left, .image-right {
+      page-break-inside: avoid;
+    }
+  }
+
+  /*=============================================
+   * 2. レイアウトテンプレート
+   *=============================================*/
+  
+  /* 2カラムレイアウト */
   .columns {
     display: flex;
-    gap: 2rem;
-    margin: 1em 0;
+    gap: 1.5rem;
+    margin: 0.8em 0;
   }
   
   .column {
@@ -210,34 +357,218 @@ style: |
     flex: 1;
   }
   
-/* テキスト強調 */
-  .highlight {
-    color: var(--color-accent-warning);
-    font-weight: 700;
+  .columns.ratio-1-2 .column:last-child {
+    flex: 2;
   }
   
-  .highlight-success {
-    color: var(--color-accent-success);
-    font-weight: 700;
+  .columns.ratio-2-1 .column:first-child {
+    flex: 2;
   }
   
-  .highlight-danger {
-    color: var(--color-accent-danger);
-    font-weight: 700;
+  .columns.ratio-2-1 .column:last-child {
+    flex: 1;
+  }
+
+  /* 3カラムレイアウト（新規追加） */
+  .columns-3 {
+    display: flex;
+    gap: 1.2rem;
+    margin: 0.8em 0;
   }
   
-  /* 中央揃えのスライド */
-  section.lead {
+  .columns-3 .column {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* 不均等な3カラム（新規追加） */
+  .columns-3.ratio-1-2-1 .column:nth-child(1) {
+    flex: 1;
+  }
+  
+  .columns-3.ratio-1-2-1 .column:nth-child(2) {
+    flex: 2;
+  }
+  
+  .columns-3.ratio-1-2-1 .column:nth-child(3) {
+    flex: 1;
+  }
+  
+  .columns-3.ratio-2-1-1 .column:nth-child(1) {
+    flex: 2;
+  }
+  
+  .columns-3.ratio-2-1-1 .column:nth-child(2),
+  .columns-3.ratio-2-1-1 .column:nth-child(3) {
+    flex: 1;
+  }
+
+  /* 画像とテキストのグリッドレイアウト */
+  .image-right {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .image-left {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  /* 背景画像付きスライド */
+  .image-bg {
+    background-size: cover;
+    background-position: center;
+    color: var(--color-text-light);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  
+  /* 背景画像の上に半透明のオーバーレイを追加 */
+  .image-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4); /* 暗めのオーバーレイ */
+    z-index: -1;
+  }
+  
+  .image-bg h1, .image-bg h2, .image-bg h3 {
+    color: var(--color-text-light);
+    border-color: var(--color-text-light);
+  }
+
+  /* カード式レイアウト（新規追加） */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.2em 0;
+  }
+  
+  .card-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .card-grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  /* ヒーローセクションレイアウト（新規追加） */
+  .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 80%;
     text-align: center;
+    padding: 2em;
   }
+  
+  .hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.3em;
+    border: none;
+  }
+  
+  .hero-section p {
+    font-size: 1.3rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /* 特徴紹介レイアウト（新規追加） */
+  .feature-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1em 0;
+  }
+  
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.8em;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .feature-item i {
+    font-size: 2rem;
+    margin-bottom: 0.3em;
+  }
+  
+  .feature-item h3 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+  
+  .feature-item p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  /* ジグザグレイアウト（新規追加） */
+  .zigzag-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1em 0;
+  }
+  
+  .zigzag-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .zigzag-item:nth-child(even) {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+  }
+  
+  .zigzag-item:nth-child(even) .zigzag-content {
+    direction: ltr;
+  }
+  
+  .zigzag-content {
+    padding: 0.5em;
+  }
+  
+  .zigzag-image img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  /*=============================================
+   * 3. コンポーネント
+   *=============================================*/
   
   /* カード要素 */
   .card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 1.5em;
     margin: 1em 0;
     box-shadow: var(--shadow-md);
@@ -261,29 +592,11 @@ style: |
   .card.danger {
     border-left-color: var(--color-accent-danger);
   }
-  
-  /* 引用スタイル */
-  blockquote {
-    font-style: italic;
-    border-left: 4px solid var(--color-secondary);
-    padding-left: 1em;
-    margin-left: 0;
-    color: var(--color-text-muted);
-  }
-  
-  /* コードブロック */
-  pre {
-    background-color: #282c34;
-    color: #abb2bf;
-    padding: 1em;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 0.9em;
-/* 専門用語解説スタイル */
+
+  /* 専門用語解説スタイル */
   .term-definition {
     background-color: var(--color-background-alt);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 1em 1.5em;
     margin: 1em 0;
     border-left: 4px solid var(--color-tertiary);
@@ -298,7 +611,7 @@ style: |
     background-color: var(--color-tertiary);
     color: white;
     padding: 0.2em 0.8em;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-size: 0.8em;
     font-weight: bold;
   }
@@ -312,7 +625,7 @@ style: |
   /* ワークショップセクション用スタイル */
   .workshop {
     background-color: var(--color-background-alt);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     padding: 1.5em;
     margin: 1.5em 0;
     border: 2px dashed var(--color-primary);
@@ -327,7 +640,7 @@ style: |
     background-color: var(--color-primary);
     color: white;
     padding: 0.3em 1em;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-weight: bold;
   }
   
@@ -350,7 +663,19 @@ style: |
   }
   
   .workshop-steps li::before {
-/* タイムライン */
+    content: 'STEP ' counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.2em 0.6em;
+    border-radius: var(--radius-sm);
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  /* タイムライン */
   .timeline {
     position: relative;
     padding-left: 2em;
@@ -370,28 +695,49 @@ style: |
   .timeline-item {
     position: relative;
     margin-bottom: 2em;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1em;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
   }
   
   .timeline-item::before {
     content: '';
     position: absolute;
     left: -2em;
-    top: 0.5em;
+    top: 1.2em;
     width: 1em;
     height: 1em;
     border-radius: 50%;
     background-color: var(--color-primary);
+    z-index: 1;
   }
   
   .timeline-item h4 {
     margin: 0 0 0.5em 0;
     color: var(--color-primary);
+    font-weight: 600;
   }
   
+  /* ダークモードでのタイムライン */
+  .dark .timeline-item {
+    background-color: rgba(30, 41, 59, 0.9);
+  }
+  
+  /* 背景画像スライド用のタイムライン調整 */
+  .image-bg .timeline-item {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-dark);
+  }
+  
+  .image-bg .timeline-item h4 {
+    color: var(--color-primary);
+  }
+
   /* 実例・ケーススタディ用スタイル */
   .case-study {
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 1.5em;
     margin: 1.5em 0;
     box-shadow: var(--shadow-md);
@@ -407,7 +753,7 @@ style: |
     background-color: var(--color-secondary);
     color: white;
     padding: 0.2em 0.8em;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-size: 0.8em;
     font-weight: bold;
   }
@@ -421,7 +767,7 @@ style: |
   .alert {
     padding: 1em 1.5em;
     margin: 1em 0;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     position: relative;
     padding-left: 3em;
   }
@@ -440,7 +786,181 @@ style: |
   }
   
   .alert.info::before {
-/* アニメーション要素 */
+    content: '\f05a'; /* 情報アイコン */
+    color: var(--color-primary);
+  }
+  
+  .alert.warning {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-left: 4px solid var(--color-accent-warning);
+  }
+  
+  .alert.warning::before {
+    content: '\f071'; /* 警告アイコン */
+    color: var(--color-accent-warning);
+  }
+  
+  .alert.success {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid var(--color-accent-success);
+  }
+  
+  .alert.success::before {
+    content: '\f058'; /* 成功アイコン */
+    color: var(--color-accent-success);
+  }
+
+  /* 比較表 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+  }
+  
+  th, td {
+    padding: 0.75em 1em;
+    border: 1px solid #e2e8f0;
+  }
+  
+  th {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 500;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+  }
+  
+  /* フッターノート */
+  .footnote {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  /* プライスカード（新規追加） */
+  .price-card {
+    background-color: white;
+    border-radius: var(--radius-md);
+    padding: 1.5em;
+    margin: 1em 0;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border-top: 4px solid var(--color-primary);
+  }
+  
+  .price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .price-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0.5em 0;
+  }
+  
+  .price-card .period {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1em;
+  }
+  
+  .price-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+    text-align: left;
+  }
+  
+  .price-card .features li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .price-card .features li:last-child {
+    border-bottom: none;
+  }
+  
+  /* テスティモニアルカード（新規追加） */
+  .testimonial {
+    background-color: white;
+    border-radius: var(--radius-md);
+    padding: 1.5em;
+    margin: 1em 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .testimonial::before {
+    content: '\f10d'; /* 引用符アイコン */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -0.5em;
+    left: 0.5em;
+    font-size: 2em;
+    color: rgba(0,0,0,0.05);
+  }
+  
+  .testimonial .quote {
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+  
+  .testimonial .author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .testimonial .author img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin-right: 1em;
+  }
+  
+  .testimonial .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial .author-name {
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  .testimonial .author-title {
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+  }
+
+  /*=============================================
+   * 4. ユーティリティ
+   *=============================================*/
+  
+  /* テキスト強調 */
+  .highlight {
+    color: var(--color-accent-warning);
+    font-weight: 700;
+  }
+  
+  .highlight-success {
+    color: var(--color-accent-success);
+    font-weight: 700;
+  }
+  
+  .highlight-danger {
+    color: var(--color-accent-danger);
+    font-weight: 700;
+  }
+  
+  /* アニメーション要素 */
   .animate {
     animation-duration: 1s;
     animation-fill-mode: both;
@@ -484,67 +1004,9 @@ style: |
   .interactive:hover::after {
     opacity: 1;
   }
-  
-  /* 比較表 */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5em 0;
-  }
-  
-  th, td {
-    padding: 0.75em 1em;
-    border: 1px solid #e2e8f0;
-  }
-  
-  th {
-    background-color: var(--color-primary);
-    color: white;
-    font-weight: 500;
-  }
-  
-  tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.02);
-  }
-  
-  /* フッターノート */
-  .footnote {
-    font-size: 0.8em;
-    color: var(--color-text-muted);
-    margin-top: 2em;
-    padding-top: 0.5em;
-    border-top: 1px solid #e2e8f0;
-  }
-  
-  /* ページ番号スタイル */
-  section::after {
-    font-size: 0.8em;
-    color: var(--color-text-muted);
-  }
-  
-  /* ヘッダーとフッターのスタイル */
-  header, footer {
-    font-size: 0.7em;
-    color: var(--color-text-muted);
-  }
-  
-  /* 印刷用スタイル - ページブレイク防止など */
-  @media print {
-    section {
-      page-break-inside: avoid;
-    }
-    
-    h1, h2, h3 {
-      page-break-after: avoid;
-    }
-    
-    .columns, .image-left, .image-right {
-      page-break-inside: avoid;
-    }
-  }
 ---
 
-<!-- 
+<!--
 ==============================================
 テンプレートの使用方法
 ==============================================
@@ -560,6 +1022,7 @@ style: |
    - 背景画像: <!-- _class: image-bg -->
    - ダークモード: <!-- _class: dark -->
    - グラデーション背景: <!-- _class: gradient-blue --> または <!-- _class: gradient-purple -->
+   - 新規追加: <!-- _class: gradient-sunset --> または <!-- _class: gradient-mint -->
 
 2. 背景画像の設定
    ![bg brightness:0.6](画像URL)
@@ -649,128 +1112,88 @@ style: |
 13. インタラクティブ要素
     <div class="interactive">クリックできる要素</div>
 
+14. 新規追加: 3カラムレイアウト
+    <div class="columns-3">
+      <div class="column">カラム1の内容</div>
+      <div class="column">カラム2の内容</div>
+      <div class="column">カラム3の内容</div>
+    </div>
+
+15. 新規追加: カード式グリッドレイアウト
+    <div class="card-grid">
+      <div class="card">カード1</div>
+      <div class="card">カード2</div>
+      <div class="card">カード3</div>
+      <div class="card">カード4</div>
+    </div>
+
+16. 新規追加: ヒーローセクション
+    <div class="hero-section">
+      <h1>大きな見出し</h1>
+      <p>説明テキスト</p>
+    </div>
+
+17. 新規追加: 特徴紹介レイアウト
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>特徴1</h3>
+        <p>特徴1の説明</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-gear"></i>
+        <h3>特徴2</h3>
+        <p>特徴2の説明</p>
+      </div>
+    </div>
+
+18. 新規追加: ジグザグレイアウト
+    <div class="zigzag-section">
+      <div class="zigzag-item">
+        <div class="zigzag-content">
+          <h3>セクション1</h3>
+          <p>セクション1の説明</p>
+        </div>
+        <div class="zigzag-image">
+          <img src="画像URL" alt="画像の説明">
+        </div>
+      </div>
+      <div class="zigzag-item">
+        <div class="zigzag-content">
+          <h3>セクション2</h3>
+          <p>セクション2の説明</p>
+        </div>
+        <div class="zigzag-image">
+          <img src="画像URL" alt="画像の説明">
+        </div>
+      </div>
+    </div>
+
+19. 新規追加: プライスカード
+    <div class="price-card">
+      <h3>スタンダードプラン</h3>
+      <div class="price">¥5,000</div>
+      <div class="period">月額</div>
+      <ul class="features">
+        <li>機能1</li>
+        <li>機能2</li>
+        <li>機能3</li>
+      </ul>
+    </div>
+
+20. 新規追加: テスティモニアル
+    <div class="testimonial">
+      <div class="quote">素晴らしいサービスでした。</div>
+      <div class="author">
+        <img src="画像URL" alt="ユーザーアイコン">
+        <div class="author-info">
+          <div class="author-name">山田太郎</div>
+          <div class="author-title">株式会社〇〇 CEO</div>
+        </div>
+      </div>
+    </div>
 -->
-    content: '\f05a'; /* 情報アイコン */
-    color: var(--color-primary);
-  }
-  
-  .alert.warning {
-    background-color: rgba(245, 158, 11, 0.1);
-    border-left: 4px solid var(--color-accent-warning);
-  }
-  
-  .alert.warning::before {
-    content: '\f071'; /* 警告アイコン */
-    color: var(--color-accent-warning);
-  }
-  
-  .alert.success {
-    background-color: rgba(16, 185, 129, 0.1);
-    border-left: 4px solid var(--color-accent-success);
-  }
-  
-  .alert.success::before {
-    content: '\f058'; /* 成功アイコン */
-    color: var(--color-accent-success);
-  }
-    content: 'STEP ' counter(step);
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: var(--color-primary);
-    color: white;
-    padding: 0.2em 0.6em;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-  }
-    line-height: 1.4;
-  }
-  
-  code {
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    background-color: rgba(0,0,0,0.05);
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
-  }
-  .columns.ratio-1-2 .column:last-child {
-    flex: 2;
-  }
-  
-  .columns.ratio-2-1 .column:first-child {
-    flex: 2;
-  }
-  
-  .columns.ratio-2-1 .column:last-child {
-    flex: 1;
-  }
-  
-  /* アイコンスタイル */
-  .fa-solid, .fa-regular, .fa-brands {
-    color: var(--color-primary);
-    margin-right: 0.2em;
-  }
-  
-  /* 画像とテキストのグリッドレイアウト */
-  .image-right {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .image-left {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  /* 背景画像付きスライド */
-  .image-bg {
-    background-size: cover;
-    background-position: center;
-    color: var(--color-text-light);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    position: relative;
-  }
-  
-  /* 背景画像の上に半透明のオーバーレイを追加 */
-  .image-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4); /* 暗めのオーバーレイ */
-    z-index: -1;
-  }
-  
-  .image-bg h1, .image-bg h2, .image-bg h3 {
-    color: var(--color-text-light);
-    border-color: var(--color-text-light);
-  }
-    padding-bottom: 0.2em;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--color-secondary);
-    margin-top: 0.2em;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color-tertiary);
-    margin-top: 0.8em;
-    margin-bottom: 0.5em;
-  }
+
 <!-- テンプレート1: 表紙スライド -->
 <!-- _class: lead image-bg -->
 ![bg brightness:0.4](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
@@ -790,247 +1213,208 @@ style: |
 
 ---
 
-<!-- テンプレート2: 見出し1（グラデーション背景） -->
-<!-- _class: lead gradient-blue -->
-
-<div class="animate fadeIn">
-  # <i class="fa-solid fa-rocket"></i> セクション1
-  ## AIとはどんな"人"か？
-</div>
-
-<div class="animate fadeIn delay-1">
-  <p>AIの知識の深さと人間とは異なる「クセ」を理解する</p>
-</div>
-
----
-
-<!-- テンプレート3: 見出し2（ダークモード） -->
-<!-- _class: lead dark -->
-
-<div class="animate slideInLeft">
-  # <i class="fa-solid fa-comment-dots"></i> セクション2
-  ## プロンプト設計＝マネジメント
-</div>
-
-<div class="animate fadeIn delay-1">
-  <p>AIへの指示出しは「新人マネジメント」と同じ構造</p>
-</div>
-
----
-
-<!-- テンプレート4: 見出し3（画像背景） -->
-<!-- _class: lead image-bg -->
-![bg brightness:0.3](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
-
-<div class="animate zoomIn">
-  # <i class="fa-solid fa-memory"></i> セクション3
-  ## コンテクストウィンドウ／API思考
-</div>
-
-<div class="animate fadeIn delay-1">
-  <p>AIの記憶の仕組みと複雑タスクの分解方法を理解する</p>
-</div>
-
----
-
-<!-- テンプレート5: 比較スライド -->
+<!-- テンプレート2: 3カラムレイアウト（新規追加） -->
 <!-- _class: -->
 
-# <i class="fa-solid fa-scale-balanced"></i> AIと人間の比較
+# <i class="fa-solid fa-layer-group"></i> AIの3つの活用レベル
 
-<table>
-  <thead>
-    <tr>
-      <th>特性</th>
-      <th>AI</th>
-      <th>人間</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>知識量</td>
-      <td>膨大（インターネット上の情報）</td>
-      <td>限定的（個人の経験に基づく）</td>
-    </tr>
-    <tr>
-      <td>処理速度</td>
-      <td>非常に高速</td>
-      <td>比較的遅い</td>
-    </tr>
-    <tr>
-      <td>記憶の持続性</td>
-      <td>セッション内のみ（短期的）</td>
-      <td>長期的（ただし忘却あり）</td>
-    </tr>
-    <tr>
-      <td>創造性</td>
-      <td>既存データの組み合わせ</td>
-      <td>真の創造性と直感</td>
-    </tr>
-    <tr>
-      <td>文脈理解</td>
-      <td>限定的（明示的な情報のみ）</td>
-      <td>暗黙的な理解も可能</td>
-    </tr>
-  </tbody>
-</table>
+<div class="columns-3">
+  <div class="column">
+    <div class="card">
+      <h3><i class="fa-solid fa-baby"></i> 初級レベル</h3>
+      <p>単純な質問応答や情報検索</p>
+      <ul>
+        <li>質問に対する回答を得る</li>
+        <li>簡単な文章の作成</li>
+        <li>アイデアのブレインストーミング</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3><i class="fa-solid fa-user"></i> 中級レベル</h3>
+      <p>特定の業務タスクの効率化</p>
+      <ul>
+        <li>データ分析と要約</li>
+        <li>コンテンツ作成の補助</li>
+        <li>プロセスの自動化</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3><i class="fa-solid fa-crown"></i> 上級レベル</h3>
+      <p>戦略的な意思決定支援</p>
+      <ul>
+        <li>複雑な問題解決</li>
+        <li>業務フロー全体の最適化</li>
+        <li>創造的なコラボレーション</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="footnote">
-  ※ AIの特性は使用するモデルやバージョンによって異なります
+  ※ 各レベルは段階的に習得することをお勧めします
 </div>
 
 ---
 
-<!-- テンプレート6: コンテンツスライド（画像右） -->
-<!-- _class: image-right -->
-
-# <i class="fa-solid fa-graduation-cap"></i> AIは"超高学歴の天才"
-
-<div>
-
-## 圧倒的な知識量
-- インターネット上の膨大な文章を読破
-  - 書籍・論文・ブログ・マニュアル等
-- 世界トップレベルの頭脳集団による開発・学習
-- あらゆる知識を瞬時に引き出せる能力
-  - 古典から最新技術まで幅広くカバー
-
-<div class="alert info">
-  <p>AIの知識は学習データの時点で止まっています。最新情報は人間が補完する必要があります。</p>
-</div>
-
-</div>
-
-<div class="img-center">
-  <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" class="large" alt="積み上げられた大量の本">
-</div>
-
----
-
-<!-- テンプレート7: コンテンツスライド（画像左） -->
-<!-- _class: image-left -->
-
-# <i class="fa-solid fa-exclamation-triangle"></i> AIの「大きなクセ」
-
-<div>
-
-## AIの3つの特徴的なクセ
-- <span class="highlight">記憶がない</span>：
-  「あれ、さっきの話なんだっけ？」
-  （チャットが終わると忘却）
-- <span class="highlight">空気は読まない</span>：
-  「え、そういう意味じゃない？」
-  （行間・顔色・雰囲気はスルー）
-- <span class="highlight">曖昧さに弱い</span>：
-  「具体的に言ってくれないと…」
-  （文面が全て）
-
-</div>
-
-<div class="img-center">
-  <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" class="large" alt="困った表情のロボット">
-</div>
-
----
-
-<!-- テンプレート8: 専門用語解説スライド -->
+<!-- テンプレート3: カード式グリッドレイアウト（新規追加） -->
 <!-- _class: -->
 
-# <i class="fa-solid fa-book"></i> 専門用語の解説
+# <i class="fa-solid fa-puzzle-piece"></i> AIとの効果的な協業パターン
+
+<div class="card-grid grid-4">
+  <div class="card">
+    <h3><i class="fa-solid fa-comments"></i> 対話型</h3>
+    <p>AIとの会話を通じてアイデアを発展させる</p>
+  </div>
+  
+  <div class="card">
+    <h3><i class="fa-solid fa-pen"></i> 編集型</h3>
+    <p>AIが生成した内容を人間が編集・改善する</p>
+  </div>
+  
+  <div class="card">
+    <h3><i class="fa-solid fa-code-branch"></i> 分岐型</h3>
+    <p>複数の選択肢をAIに生成させて比較検討する</p>
+  </div>
+  
+  <div class="card">
+    <h3><i class="fa-solid fa-rotate"></i> 反復型</h3>
+    <p>AIの出力を繰り返し改善していく</p>
+  </div>
+</div>
+
+<div class="alert info">
+  <p>これらのパターンを状況に応じて組み合わせることで、より効果的な結果が得られます。</p>
+</div>
+
+---
+
+<!-- テンプレート4: ヒーローセクション（新規追加） -->
+<!-- _class: gradient-sunset -->
+
+<div class="hero-section">
+  <h1><i class="fa-solid fa-lightbulb"></i> AIの可能性を解き放つ</h1>
+  <p>テクノロジーと人間の創造性が融合する未来へ</p>
+</div>
+
+---
+
+<!-- テンプレート5: 特徴紹介レイアウト（新規追加） -->
+<!-- _class: -->
+
+# <i class="fa-solid fa-star"></i> AIがもたらす4つのビジネスメリット
+
+<div class="feature-section">
+  <div class="feature-item">
+    <i class="fa-solid fa-gauge-high"></i>
+    <h3>生産性向上</h3>
+    <p>ルーティンタスクの自動化で高価値業務に集中</p>
+  </div>
+  
+  <div class="feature-item">
+    <i class="fa-solid fa-lightbulb"></i>
+    <h3>創造性の拡張</h3>
+    <p>新しいアイデアと視点でイノベーションを促進</p>
+  </div>
+  
+  <div class="feature-item">
+    <i class="fa-solid fa-chart-line"></i>
+    <h3>意思決定の質向上</h3>
+    <p>データ分析と洞察で情報に基づく判断を実現</p>
+  </div>
+  
+  <div class="feature-item">
+    <i class="fa-solid fa-users"></i>
+    <h3>顧客体験の向上</h3>
+    <p>パーソナライズと迅速対応で満足度アップ</p>
+  </div>
+</div>
+
+---
+
+<!-- テンプレート6: ジグザグレイアウト（新規追加） -->
+<!-- _class: -->
+
+# <i class="fa-solid fa-road"></i> AI導入のロードマップ
+
+<div class="zigzag-section">
+  <div class="zigzag-item">
+    <div class="zigzag-content">
+      <h3><i class="fa-solid fa-1"></i> ニーズの特定</h3>
+      <p>組織内の課題を洗い出し、AIの適用可能性を評価します。</p>
+    </div>
+    <div class="zigzag-image">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="ニーズの特定">
+    </div>
+  </div>
+  
+  <div class="zigzag-item">
+    <div class="zigzag-content">
+      <h3><i class="fa-solid fa-2"></i> パイロットプロジェクト</h3>
+      <p>小規模な取り組みからスタートし、効果を検証します。</p>
+    </div>
+    <div class="zigzag-image">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="パイロットプロジェクト">
+    </div>
+  </div>
+  
+  <div class="zigzag-item">
+    <div class="zigzag-content">
+      <h3><i class="fa-solid fa-3"></i> 全社展開</h3>
+      <p>AIリテラシーを高め、継続的な改善サイクルを確立します。</p>
+    </div>
+    <div class="zigzag-image">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="全社展開">
+    </div>
+  </div>
+</div>
+
+---
+
+<!-- テンプレート7: プライスカードとテスティモニアル（新規追加） -->
+<!-- _class: -->
+
+# <i class="fa-solid fa-hand-holding-dollar"></i> AI活用支援プログラム
 
 <div class="columns">
   <div class="column">
-    <div class="term-definition">
-      <h4>コンテクストウィンドウ</h4>
-      <p>AIが会話中に参照できる「文脈の窓」のこと。過去のやり取りをどれだけ覚えているかを決める要素。トークン数（単語や記号の数）に制限があり、制限を超えると古い情報から忘れていく。</p>
-    </div>
-    
-    <div class="term-definition">
-      <h4>トークン</h4>
-      <p>AIが文章を処理する際の最小単位。英語では単語に近いが、日本語では文字や短い単語のまとまりになる。「こんにちは」は複数のトークンに分割される。</p>
+    <div class="price-card">
+      <h3>スタンダードプラン</h3>
+      <div class="price">¥50,000</div>
+      <div class="period">月額</div>
+      <ul class="features">
+        <li>基本的なAIツール導入支援</li>
+        <li>月1回のコンサルティング</li>
+        <li>オンライントレーニング（5名まで）</li>
+        <li>メールサポート</li>
+      </ul>
     </div>
   </div>
   
   <div class="column">
-    <div class="term-definition">
-      <h4>プロンプトエンジニアリング</h4>
-      <p>AIに最適な指示を出すための技術や方法論。効果的な指示の書き方、構造化、テンプレート化などを含む。AIの能力を最大限に引き出すための重要なスキル。</p>
-    </div>
-    
-    <div class="term-definition">
-      <h4>ハルシネーション</h4>
-      <p>AIが実際には存在しない情報を「事実」として提示してしまう現象。自信を持って間違った情報を述べることがあるため、重要な情報は必ず検証が必要。</p>
+    <div class="testimonial">
+      <div class="quote">AI活用支援プログラムを導入してから、社内のルーティン業務が大幅に効率化され、創造的な業務に時間を割けるようになりました。特にマーケティング部門では、コンテンツ制作の時間が半減しました。</div>
+      <div class="author">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="ユーザーアイコン">
+        <div class="author-info">
+          <div class="author-name">佐藤美咲</div>
+          <div class="author-title">株式会社クリエイト CMO</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 ---
 
-<!-- テンプレート9: ワークショップスライド -->
-<!-- _class: -->
-
-# <i class="fa-solid fa-hands-helping"></i> ワークショップ：プロンプトをブラッシュアップしよう
-
-<div class="workshop">
-  <h3>効果的なプロンプト作成演習</h3>
-  <p>以下の曖昧なプロンプトを、より具体的で効果的なものに改善してください。</p>
-  
-  <div class="card">
-    <h4>改善前のプロンプト</h4>
-    <p>「マーケティング資料を作って」</p>
-  </div>
-  
-  <ol class="workshop-steps">
-    <li>目的を明確にする（誰に向けた、何のための資料か）</li>
-    <li>必要な要素を列挙する（含めるべき情報、データ、主張など）</li>
-    <li>形式や長さを指定する（スライド、文書、文字数など）</li>
-    <li>トーンや表現スタイルを決める（フォーマル、カジュアル、専門的など）</li>
-    <li>改善したプロンプトを書き出す</li>
-  </ol>
-  
-  <p>グループで話し合い、最も効果的だと思うプロンプトを選んでください。</p>
-</div>
-
-<div class="alert warning">
-  <p>時間は10分です。終了5分前にアナウンスします。</p>
-</div>
-
----
-
-<!-- テンプレート10: ケーススタディスライド -->
-<!-- _class: -->
-
-# <i class="fa-solid fa-microscope"></i> ケーススタディ：AI活用成功事例
-
-<div class="case-study">
-  <h3>マーケティング部門でのAI活用事例</h3>
-  
-  <div class="timeline">
-    <div class="timeline-item">
-      <h4>課題の特定</h4>
-      <p>ターゲット顧客ごとにパーソナライズされたメールマーケティングの文面作成に多大な時間がかかっていた。</p>
-    </div>
-    
-    <div class="timeline-item">
-      <h4>AI活用アプローチ</h4>
-      <p>顧客データと過去の成功事例をAIに学習させ、顧客セグメントごとのテンプレートを生成。人間がレビューと微調整を行う体制を構築。</p>
-    </div>
-    
-    <div class="timeline-item">
-      <h4>結果</h4>
-      <p>文面作成時間が80%削減。オープン率が15%向上。クリック率が23%向上。マーケターは戦略立案により多くの時間を割けるようになった。</p>
-    </div>
-  </div>
-  
-  <div class="alert success">
-    <p>成功の鍵：AIと人間の役割分担を明確にし、AIの出力を常に人間がレビューする体制を整えたこと。</p>
-  </div>
-</div>
-
----
-
-<!-- テンプレート11: まとめスライド -->
-<!-- _class: lead gradient-purple -->
+<!-- テンプレート8: まとめスライド -->
+<!-- _class: lead gradient-mint -->
 
 # <i class="fa-solid fa-check-double"></i> 本日のまとめ
 
@@ -1050,7 +1434,7 @@ style: |
 
 ---
 
-<!-- テンプレート12: Q&Aスライド -->
+<!-- テンプレート9: Q&Aスライド -->
 <!-- _class: lead -->
 
 # <i class="fa-solid fa-question-circle"></i> ご質問・ディスカッション

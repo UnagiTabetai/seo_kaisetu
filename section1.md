@@ -1,164 +1,415 @@
-はい、承知いたしました。セクション①「AIとはどんな“人”か？」のスライド案を、提供された情報とカリキュラムの意図を踏まえて作成します。
+---
+marp: true
+theme: improved-custom
+paginate: true
+header: "AI活用研修"
+footer: "© 2025 SoEasy社"
+size: 16:9
+style: |
+  /* スライドサイズのデバッグ表示 */
+  section::before {
+    content: "スライドサイズ: 16:9 (" attr(data-width) "x" attr(data-height) "px)";
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    z-index: 1000;
+  }
+  
+  /* コンテンツオーバーフロー検出 */
+  section {
+    position: relative;
+    overflow: visible !important; /* オーバーフローを見えるようにする */
+  }
+  
+  section.overflow-detected::after {
+    content: "⚠️ コンテンツオーバーフロー";
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(255,0,0,0.7);
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    z-index: 1000;
+  }
+  
+  /* 基本的なフォントとCDNのインポート */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+---
+
+<!-- _class: lead gradient-blue -->
+
+# <i class="fa-solid fa-rocket"></i> セクション①
+## AIとはどんな"人"か？
+
+<div class="animate fadeIn delay-1">
+  <p>AIの知識の深さと人間とは異なる「クセ」を理解する</p>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-question-circle"></i> そもそもAIってどんな"人"？
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-robot"></i> AIをチームメンバーとして考えると...
+
+<div class="card">
+  <h3>新しい仲間として見てみよう</h3>
+  <p>AIを「特殊な能力と特徴を持つ新人社員」と考えると理解しやすい</p>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-id-card"></i> AIの基本的な特徴
+
+<div class="card warning">
+  <ul class="icon-list star">
+    <li>膨大な知識量</li>
+    <li>高速な情報処理能力</li>
+    <li>文脈理解の限界</li>
+    <li>記憶の制約</li>
+  </ul>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-graduation-cap"></i> AIは"超高学歴の天才"
+
+<div class="term-definition">
+  <h4>圧倒的な知識量</h4>
+  <ul class="icon-list star">
+    <li>インターネット上の膨大な文章を読破</li>
+    <li>世界トップレベルの頭脳集団による開発・学習</li>
+    <li>あらゆる知識を瞬時に引き出せる能力</li>
+  </ul>
+</div>
 
-セクション①：AIとはどんな“人”か？ (10分)
-目的： AIの知識の深さ・高学歴ぶりと、一方で人間とは異なる「クセ」があることを理解させ、「めちゃ頭いいけど、クセ強いな」「使いこなせたら強そう」という印象を持ってもらう。
+---
 
-スライド案 (全6枚構成を想定)
+<!-- _class: center -->
 
-スライド1/6：タイトルスライド
+# <i class="fa-solid fa-book"></i> AIの学習範囲は？
 
-タイトル： セクション①：AIって、どんな“人”？
+<div class="card success">
+  <ul class="icon-list check">
+    <li>学術論文・研究資料</li>
+    <li>書籍・文学作品</li>
+    <li>ウェブサイト・ブログ</li>
+    <li>技術マニュアル・ドキュメント</li>
+  </ul>
+</div>
 
-サブタイトル： ～その驚くべき能力と、ちょっと変わった個性～
+---
 
-画像/イラスト： 疑問符を持った親しみやすいロボットのイラストや、脳と回路が融合したようなイメージ画像など。
+<!-- _class: center -->
 
-スクリプト概要：
+# <i class="fa-solid fa-graduation-cap"></i> 「例えるなら…東大主席＆MITダブル修了の新人」
 
-「このセクションでは、私たちがこれからチームメンバーとして付き合っていくAIが、一体どんな“人物”なのか、その能力と個性について見ていきましょう。」
+<p>AIの能力を人間に例えると？</p>
 
-「例えるなら、とてつもなく優秀だけど、ちょっと変わった新人さんが入ってきたようなイメージです。」
+---
 
-スライド2/6：驚異的な知識力 (スライドAの内容をベースに)
+<!-- _class: center -->
 
-タイトル： AIは“超高学歴の天才”
+# <i class="fa-solid fa-award"></i> AIの実証された能力①：学術・試験
 
-キーメッセージ： インターネット上のほぼ全てを学び、世界トップの頭脳が集結して育成
+<div class="card success">
+  <ul class="icon-list check">
+    <li>🎓 東大入試問題（英・倫・数）→ 正答率◎</li>
+    <li>🩺 医師国家試験 → GPT-4で8割前後（2023年）</li>
+  </ul>
+</div>
 
-内容：
+---
 
-箇条書き：
+<!-- _class: center -->
 
-インターネット上の膨大な文章（書籍・論文・ブログ・マニュアル等）を読破
+# <i class="fa-solid fa-briefcase"></i> AIの実証された能力②：実務応用
 
-開発・学習は世界トップレベルの頭脳集団が担当
+<div class="card success">
+  <ul class="icon-list check">
+    <li>⚖️ 法務文書の要約・作成 → 弁護士業務の一部をカバー</li>
+    <li>💻 プログラム生成 → フルスタックでアプリ開発可能</li>
+  </ul>
+  <p><span class="highlight-success">使いこなせば、強力な戦力に</span></p>
+</div>
 
-君主論からGoogleの設計思想まで、あらゆる知識を瞬時に引き出せる
+---
 
-画像/イラスト： 積み上げられた大量の本と、それを吸収しているAIのイメージ。
+<!-- _class: center -->
 
-スクリプト概要：
+# <i class="fa-solid fa-laptop-code"></i> AIの実用例
 
-「まず、AIのすごいところから。彼らは、私たちが一生かかっても読みきれないほどの情報を学習しています。」
+<div class="card info">
+  <ul class="icon-list arrow">
+    <li>医療診断支援</li>
+    <li>法律文書作成・分析</li>
+    <li>プログラミング支援</li>
+    <li>教育コンテンツ作成</li>
+  </ul>
+</div>
 
-「しかも、その教育係は世界でもトップクラスの専門家たちです。」
+---
 
-「まさに、知識の塊。どんな分野のことでも知っている、スーパー頭脳の持ち主です。」
+<!-- _class: center -->
 
-スライド3/6：実証された実力 (スライドBの内容をベースに)
+# <i class="fa-solid fa-exclamation-triangle"></i> でも…この新人、ちょっと「大きなクセ」があります
 
-タイトル： 「例えるなら…東大主席＆MITダブル修了の新人」
+---
 
-キーメッセージ： 難関試験もクリア、専門業務もこなす実力
+<!-- _class: center -->
 
-内容：
+# <i class="fa-solid fa-fingerprint"></i> AIの3つの特徴的なクセ
 
-箇条書き（アイコン付きで視覚的に）：
+<div class="timeline">
+  <div class="timeline-item">
+    <h4>記憶がない</h4>
+    <p>「あれ、さっきの話なんだっけ？」</p>
+  </div>
+  <div class="timeline-item">
+    <h4>空気は読まない</h4>
+    <p>「え、そういう意味じゃない？」</p>
+  </div>
+  <div class="timeline-item">
+    <h4>曖昧さに弱い</h4>
+    <p>「具体的に言ってくれないと…」</p>
+  </div>
+</div>
 
-🎓 東大入試問題（英・倫・数） → 正答率◎
+---
 
-🩺 医師国家試験 → GPT-4で8割前後（2023年）
+<!-- _class: center -->
 
-⚖️ 法務文書の要約・作成 → 弁護士業務の一部をカバー
+# <i class="fa-solid fa-memory"></i> クセ①：記憶がない
 
-💻 プログラム生成 → フルスタックでアプリ開発可能
+<div class="card warning">
+  <p>「あれ、さっきの話なんだっけ？」</p>
+  <p>（チャットが終わると忘却）</p>
+</div>
 
-スクリプト概要：
+---
 
-「その実力は、例えるなら『東大を主席で卒業して、さらにMITも修了しちゃったスーパー新人』のようなものです。」
+<!-- _class: center -->
 
-「実際、こんなに難しい試験や専門的な業務もこなせるんです。」
+# <i class="fa-solid fa-comment-slash"></i> クセ②：空気は読まない
 
-「この新人、使いこなせたらとんでもない戦力になりそうだと思いませんか？」
+<div class="card warning">
+  <p>「え、そういう意味じゃない？」</p>
+  <p>（行間・顔色・雰囲気はスルー）</p>
+</div>
 
-スライド4/6：しかし…人間とは違う「大きなクセ」 (スライドCの内容をベースに)
+---
 
-タイトル： でも…この新人、ちょっと「大きなクセ」があります
+<!-- _class: center -->
 
-キーメッセージ： 優秀だけど、私たちとは“感覚”が違う
+# <i class="fa-solid fa-question"></i> クセ③：曖昧さに弱い
 
-内容：
+<div class="card warning">
+  <p>「具体的に言ってくれないと…」</p>
+  <p>（文面が全て）</p>
+</div>
 
-吹き出し形式などで3つのクセを提示：
+---
 
-記憶がない：「あれ、さっきの話なんだっけ？（チャットが終わると忘却）」
+<!-- _class: center -->
 
-空気は読まない：「え、そういう意味じゃない？（行間・顔色・雰囲気はスルー）」
+# <i class="fa-solid fa-tools"></i> AIのクセへの対応策
 
-曖昧さに弱い：「具体的に言ってくれないと…（文面が全て）」
+<div class="card info">
+  <ul class="icon-list check">
+    <li>重要な情報は繰り返し伝える</li>
+    <li>明確で具体的な指示を出す</li>
+    <li>文脈を丁寧に説明する</li>
+  </ul>
+</div>
 
-画像/イラスト： 困った顔の優秀そうな新入社員のキャラクターと、その周りに「？」が飛んでいるイメージ。
+---
 
-スクリプト概要：
+<!-- _class: center -->
 
-「ただ、このスーパー新人、実は大きなクセがあるんです。ここが人間と大きく違うところ。」
+# <i class="fa-solid fa-exclamation-triangle"></i> AIの技術的限界
 
-「まず、びっくりするくらい忘れっぽい。さっき話したことも、チャットが終わればケロッと忘れてしまいます。」
+<div class="card warning">
+  <ul class="icon-list arrow">
+    <li>学習データの期限（カットオフ）</li>
+    <li>専門分野の深さに限界</li>
+    <li>実体験の欠如</li>
+  </ul>
+</div>
 
-「そして、空気を読むのは大の苦手。私たちの表情や職場の雰囲気なんて、お構いなしです。」
+---
 
-「指示も、具体的じゃないと『何をすればいいの？』となってしまうんですね。」
+<!-- _class: center -->
 
-スライド5/6：クセ①：致命的な「記憶喪失」 (散文情報から補足)
+# <i class="fa-solid fa-bug"></i> AIの限界がもたらす問題
 
-タイトル： 特に注意！クセ①：「昨日のことは覚えていません」
+<div class="card danger">
+  <ul class="icon-list arrow">
+    <li>最新情報の欠如</li>
+    <li>事実の誤認（ハルシネーション）</li>
+    <li>文化的ニュアンスの理解不足</li>
+    <li>実世界の経験がない</li>
+  </ul>
+</div>
 
-キーメッセージ： AIにとって、毎日が「はじめまして」
+---
 
-内容：
+<!-- _class: center -->
 
-「チャットのセッションが終わると、それまでのやり取りは基本的にリセット」
+# <i class="fa-solid fa-memory"></i> 特に注意！クセ①：「昨日のことは覚えていません」
 
-「AIは、私たちが昨日依頼したことを覚えていない」
+---
 
-例え話：
+<!-- _class: center -->
 
-「記憶が1日でリセットされるドラマの登場人物と毎日会話するイメージ」
+# <i class="fa-solid fa-brain"></i> AIの記憶の特性
 
-「AI自身が日記（ログ）を書いても、翌日にはその日記の内容を忘れている（都度読み込ませる必要あり）」
+<div class="case-study">
+  <ul class="icon-list arrow">
+    <li>チャットセッションが終わると、それまでのやり取りは基本的にリセット</li>
+    <li>昨日依頼したことを今日は覚えていない</li>
+  </ul>
+</div>
 
-画像/イラスト： 日めくりカレンダーが毎日「1日」に戻っているイメージや、頭の上にリセットボタンがあるAIのイラスト。
+---
 
-スクリプト概要：
+<!-- _class: center -->
 
-「このクセの中でも特に注意が必要なのが『記憶がない』こと。AIにとっては、基本的に毎日が皆さんとの『はじめまして』なんです。」
+# <i class="fa-solid fa-film"></i> わかりやすい例え話
 
-「昨日どんなに素晴らしい仕事をしてくれても、今日のAIはそれを覚えていません。」
+<div class="case-study">
+  <ul class="icon-list arrow">
+    <li>記憶が1日でリセットされるドラマの登場人物と毎日会話するイメージ</li>
+    <li>AI自身が日記（ログ）を書いても、翌日にはその内容を忘れている</li>
+  </ul>
+</div>
 
-「例えるなら、毎日記憶がリセットされてしまう人とコミュニケーションを取るようなもの。その都度、背景から説明する必要があります。」
+---
 
-「これは、AIと上手く付き合っていく上で非常に重要なポイントです。」
+<!-- _class: center -->
 
-スライド6/6：セクション①まとめ
+# <i class="fa-solid fa-shield-alt"></i> 記憶の制約への対策
 
-タイトル： まとめ：AIは「超優秀だけど、現場感ゼロの新人」
+<div class="card warning">
+  <ul class="icon-list check">
+    <li>重要な情報は毎回提供する</li>
+    <li>過去の会話ログを参照させる</li>
+    <li>長期的な作業は分割する</li>
+  </ul>
+</div>
 
-キーメッセージ： 能力はピカイチ！でも、うまく導くのが私たちの役目
+---
 
-内容：
+<!-- _class: center -->
 
-AIのイメージ：
+# <i class="fa-solid fa-database"></i> AIの記憶モデルを理解する
 
-得意なこと： 膨大な知識、複雑な問題解決、高速処理
+---
 
-苦手なこと： 記憶の維持、空気を読む、曖昧な指示の理解
+<!-- _class: center -->
 
-問いかけ：「この“新人”、どう育てていけば最高のチームメンバーになるでしょう？」
+# <i class="fa-solid fa-layer-group"></i> AIの記憶の種類
 
-画像/イラスト： 天才的なひらめきをしているAIと、それを優しくガイドする人間の手。
+<div class="card info">
+  <ul class="icon-list arrow">
+    <li>会話内の一時的な記憶</li>
+    <li>事前学習された知識</li>
+    <li>外部保存された情報</li>
+  </ul>
+</div>
 
-スクリプト概要：
+---
 
-「ということで、セクション①のまとめです。AIはまさに『超優秀だけど、現場感ゼロの新人』。」
+<!-- _class: center -->
 
-「ものすごい能力を持っている一方で、人間とは全く違うクセも持っています。」
+# <i class="fa-solid fa-memory"></i> AIの記憶モデルの詳細
 
-「では、この個性的な新人とどうすれば上手くチームを組めるのか？次のセクションでは、そのための『指示の出し方』について考えていきましょう。」
+<div class="timeline">
+  <div class="timeline-item">
+    <h4>短期記憶</h4>
+    <p>現在の会話コンテキスト内のみ</p>
+  </div>
+  <div class="timeline-item">
+    <h4>長期記憶</h4>
+    <p>事前学習データのみ（更新不可）</p>
+  </div>
+  <div class="timeline-item">
+    <h4>外部記憶</h4>
+    <p>ファイル保存など（明示的に必要）</p>
+  </div>
+</div>
 
-補足：
+---
 
-各スライドの文言は、話し言葉でより親しみやすく調整してください。
+<!-- _class: lead gradient-mint -->
 
-イラストや画像は、内容を補足し、視覚的な理解を助けるものを選んでください。
+# <i class="fa-solid fa-check-circle"></i> まとめ：AIの特性
 
-10分という時間なので、1スライドあたり1分半～2分弱で話すイメージです。スクリプトはポイントを絞り、詳細は口頭で補足するのが良いでしょう。
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-thumbs-up"></i> AIの得意なこと
+
+<div class="feature-item animate fadeIn">
+  <ul>
+    <li>膨大な知識</li>
+    <li>複雑な問題解決</li>
+    <li>高速処理</li>
+  </ul>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-thumbs-down"></i> AIの苦手なこと
+
+<div class="feature-item animate fadeIn">
+  <ul>
+    <li>記憶の維持</li>
+    <li>空気を読む</li>
+    <li>曖昧な指示の理解</li>
+  </ul>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-lightbulb"></i> 考えてみよう
+
+<div class="workshop animate fadeIn">
+  <p>「超優秀だけど、現場感ゼロの新人」をどう育てれば最高のチームメンバーになるでしょうか？</p>
+</div>
+
+---
+
+<!-- _class: center -->
+
+# <i class="fa-solid fa-handshake"></i> AIとの効果的な協業のポイント
+
+<div class="card info">
+  <ul class="icon-list check">
+    <li>明確な指示を与える</li>
+    <li>フィードバックを繰り返す</li>
+    <li>専門知識で補完する</li>
+  </ul>
+</div>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>セクション0</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- メインスタイルシート -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- オープニング・講師自己紹介 -->
+<!-- スライド1：タイトルスライド（ウェルカム） -->
+<section class="slide" id="section0-slide1">
+  <div class="slide-content lead gradient-blue">
+    <!-- ローディングプログレスバー -->
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    
+    <!-- ローディングスピナー -->
+    <div class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+    
+    <h1 class="main-title">AIをチームメンバーにする方法</h1>
+    
+    <!-- AIアイコン -->
+    <div class="ai-icons">
+      <i class="fa-solid fa-robot pulse-icon"></i>
+      <i class="fa-solid fa-microchip pulse-icon animation-delay-1"></i>
+      <i class="fa-solid fa-brain pulse-icon animation-delay-2"></i>
+    </div>
+    
+    <h3 class="subtitle">マネジメント×プロンプト設計の基本</h3>
+    
+    <div class="workshop-info">
+      <p class="highlight">2時間のワークショップ</p>
+    </div>
+    
+    <!-- ローディングドット -->
+    <div class="loading-indicator">
+      <div class="dot flash-dot"></div>
+      <div class="dot flash-dot animation-delay-1"></div>
+      <div class="dot flash-dot animation-delay-2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- スタイルシート追加 -->
+<style>
+  /* メインタイトルスタイル */
+  .main-title {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    text-align: center;
+    white-space: nowrap; /* 改行しないようにする */
+    animation: pulse-title 2s infinite;
+  }
+  
+  /* サブタイトルスタイル */
+  .subtitle {
+    animation: pulse-subtitle 3s infinite;
+  }
+  
+  /* ワークショップ情報 */
+  .workshop-info {
+    animation: pulse-info 4s infinite;
+  }
+  
+  /* ローディングインジケーター */
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .flash-dot {
+    animation: flash-animation 1.5s infinite;
+  }
+  
+  /* アイコンパルスアニメーション */
+  .pulse-icon {
+    animation: pulse-animation 2s infinite;
+  }
+  
+  /* アニメーション遅延クラス */
+  .animation-delay-1 {
+    animation-delay: 0.5s;
+  }
+  
+  .animation-delay-2 {
+    animation-delay: 1s;
+  }
+  
+  /* プログレスバー */
+  .progress-container {
+    width: 80%;
+    margin: 10px auto 20px auto;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transform-origin: left;
+    border-radius: 4px;
+    animation: progress-animation 2s ease-in-out infinite;
+  }
+  
+  /* スピナー */
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  /* AIアイコン */
+  .ai-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto 15px auto;
+  }
+  
+  .ai-icons i {
+    font-size: 24px;
+  }
+  
+  /* アニメーションキーフレーム */
+  @keyframes progress-animation {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse-title {
+    0% { opacity: 0.9; transform: scale(0.98); text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { opacity: 1; transform: scale(1.02); text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+    100% { opacity: 0.9; transform: scale(0.98); text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  }
+  
+  @keyframes pulse-subtitle {
+    0% { opacity: 0.8; transform: scale(0.99); }
+    50% { opacity: 1; transform: scale(1.01); }
+    100% { opacity: 0.8; transform: scale(0.99); }
+  }
+  
+  @keyframes pulse-info {
+    0% { opacity: 0.85; }
+    50% { opacity: 1; }
+    100% { opacity: 0.85; }
+  }
+  
+  @keyframes pulse-animation {
+    0% { opacity: 0.7; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(0.95); }
+  }
+  
+  @keyframes flash-animation {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+  }
+</style>
+
+<!-- スライド2-1：今日のゴール -->
+<section class="slide" id="section0-slide2-1">
+  <div class="slide-content center">
+    <h1>今日のゴール</h1>
+    
+    <h3><i class="fa-solid fa-bullseye"></i> 今日のゴール</h3>
+    <p>AIの特性を理解し、自分なりのAIの使い方の方針を持ち、明日から試したくなる状態になる！</p>
+  </div>
+</section>
+
+<!-- スライド2-2：進め方 -->
+<section class="slide" id="section0-slide2-2">
+  <div class="slide-content center">
+    <h1>進め方</h1>
+    
+    <div class="card success">
+      <h3><i class="fa-solid fa-route"></i> アジェンダの概要</h3>
+      <ul class="icon-list check">
+        <li>① AIってどんな"人"？ （AIの能力とクセ）</li>
+        <li>② AIへの指示＝マネジメント （プロンプトのコツ）</li>
+        <li>③ AIの記憶とタスク分解 （賢い付き合い方）</li>
+        <li>④ AIに「あなたらしさ」をプラス （自分だけの活用法）</li>
+      </ul>
+      <p>途中、皆で試すワークや休憩も挟みます！</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド2-3：雰囲気 -->
+<section class="slide" id="section0-slide2-3">
+  <div class="slide-content center">
+    <h1>ワークショップの雰囲気</h1>
+    
+    <div class="card info">
+      <h3><i class="fa-solid fa-comment"></i> 雰囲気</h3>
+      <p>「講義」より「一緒に使い方を考える場」</p>
+      <p>質問や『こう思うんだけど』という意見、大歓迎です！リラックスしてご参加ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド3：講師自己紹介①：私は誰？ -->
+<section class="slide" id="section0-slide3">
+  <div class="slide-content center">
+    <h1>ご挨拶：本日のナビゲーター</h1>
+    
+    <!-- 講師の写真 - 中央に配置 -->
+    <div style="display: flex; justify-content: center; margin: 20px 0;">
+      <img src="../profile.webp" alt="講師の写真" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 3px solid #3b82f6; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="card info" style="text-align: left;">
+          <h3><i class="fa-solid fa-id-card"></i> プロフィール</h3>
+          <ul class="icon-list arrow">
+            <li><strong>氏名：</strong> [講師氏名]</li>
+            <li><strong>本業：</strong> EVeM Knowledge所属 / AIデザイナー</li>
+            <li><strong>担当：</strong> EVeMのマネジメントノウハウのコアナレッジ開発、AIツール開発</li>
+            <li><strong>副業：</strong> Prj.Noveland 取締役</li>
+            <li><strong>副業内容：</strong> AI小説エディタ＆プラットフォーム開発</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card success" style="text-align: left;">
+          <h3><i class="fa-solid fa-comment-dots"></i> 一言</h3>
+          <p style="font-weight: bold;">「AIは、実はそんなに難しくない！使いこなすコツを一緒に見つけましょう！」</p>
+          <p>普段はEVeMという会社で、マネジメントに関する知識体系の構築や、それをAIでどうサポートできるか、といったAIツールの開発に取り組んでいます。</p>
+          <p>また、副業ではAIを使って小説を作るためのプラットフォーム開発も手がけています。つまり、公私ともにどっぷりAI漬けの毎日です（笑）。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド4：講師自己紹介②：なぜ私がお話しするのか (Why me) -->
+<section class="slide" id="section0-slide4">
+  <div class="slide-content center">
+    <h1>Why me? なぜ私が「AI×マネジメント」を語るのか</h1>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="card info">
+          <h3><i class="fa-solid fa-history"></i> キャリアの変遷</h3>
+          <ul class="icon-list arrow">
+            <li>マーケティング～プロダクト企画・ディレクション（BtoB組織/マネジメント領域中心）</li>
+            <li>メルカリ子会社でメディアディレクション（SEOで大幅グロース経験、機械学習プロジェクトにも少し関与）</li>
+            <li>フリーランスSEOスペシャリスト、識学（デジタルマーケ）、そしてEVeMへ</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card success">
+          <h3><i class="fa-solid fa-robot"></i> AIとの関わり</h3>
+          <ul class="icon-list star">
+            <li>GPT-3.5登場以来、「AI×マネジメント」の領域でプロダクト開発に特化して2年以上</li>
+            <li>「あーでもない、こーでもない」と試行錯誤の連続でした</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card warning">
+      <h3><i class="fa-solid fa-lightbulb"></i> お伝えしたいこと</h3>
+      <ul class="icon-list check">
+        <li>LLMアプリ開発は技術的には平易。でも「普段の業務に活かしきれない」と感じる方が多いのでは？</li>
+        <li>ドメイン特化のプロンプト開発に一貫して取り組んできた経験から、その「活かし方」のヒントをお伝えします</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+
+<!-- スライド5：ワークショップへの期待と、始めの一歩 -->
+<section class="slide" id="section0-slide5">
+  <div class="slide-content center">
+    <h1>AIは、あなたの「新しい相棒」になる</h1>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="card success">
+          <h3><i class="fa-solid fa-gift"></i> 今日持ち帰ってほしいこと</h3>
+          <ul class="icon-list check">
+            <li>「AIって意外と頼れるかも！」という手応え</li>
+            <li>「自分の仕事のココで使えそう！」という具体的なアイデアの種</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card info">
+          <h3><i class="fa-solid fa-shoe-prints"></i> 最初の一歩</h3>
+          <p>「完璧じゃなくてOK。まずはAIと『会話』してみることから始めましょう。」</p>
+          <p>「このワークショップが、そのきっかけになれば嬉しいです。」</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card warning">
+      <h3><i class="fa-solid fa-bullseye"></i> 改めて：ワークショップの目的と構成</h3>
+      <ul class="icon-list arrow">
+        <li><strong>目的：</strong>ChatGPT/GeminiをはじめとするAIを業務で使いこなす第一歩を踏み出す</li>
+        <li><strong>手法：</strong>「AIをチームメンバーとしてマネジメントする」というメタファー</li>
+        <li><strong>目標：</strong>自分なりのAIの使い方の方針を持ち、明日から試したくなる状態</li>
+      </ul>
+    </div>
+  </div>
+</section>

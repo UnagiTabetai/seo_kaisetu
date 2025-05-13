@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スライド13プレビュー</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- メインスタイルシート -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+    
+    .slide {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      height: 720px;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .instructions {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: 'Noto Sans JP', sans-serif;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <!-- スライド13（統合版） -->
+  <section class="slide" id="section1-slide13">
+    <div class="slide-content center">
+      <h1><i class="fa-solid fa-fingerprint"></i> AIの3つの特徴的なクセ</h1>
+      
+      <div class="columns">
+        <div class="column">
+          <div class="card warning animate__animated animate__fadeIn" data-animate-order="1">
+            <h3><i class="fa-solid fa-memory"></i> クセ①：記憶がない</h3>
+            <p>「あれ、さっきの話なんだっけ？」</p>
+            <p>（チャットが終わると忘却）</p>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card warning animate__animated animate__fadeIn" data-animate-order="2">
+            <h3><i class="fa-solid fa-comment-slash"></i> クセ②：空気は読まない</h3>
+            <p>「え、そういう意味じゃない？」</p>
+            <p>（行間・顔色・雰囲気はスルー）</p>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card warning animate__animated animate__fadeIn" data-animate-order="3">
+            <h3><i class="fa-solid fa-question"></i> クセ③：曖昧さに弱い</h3>
+            <p>「具体的に言ってくれないと…」</p>
+            <p>（文面が全て）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="instructions">
+    クリックするとアニメーションが進みます
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slide = document.querySelector('.slide');
+      const clickAnimateElements = slide.querySelectorAll('[data-animate-order]');
+      
+      // 最初のアニメーション以外を非表示
+      clickAnimateElements.forEach(element => {
+        const order = parseInt(element.dataset.animateOrder);
+        if (order > 1) {
+          element.style.opacity = '0';
+          element.style.visibility = 'hidden';
+        }
+      });
+      
+      // クリックイベントを追加
+      let currentOrder = 1;
+      const maxOrder = Math.max(...Array.from(clickAnimateElements).map(el => parseInt(el.dataset.animateOrder)));
+      
+      slide.addEventListener('click', function() {
+        if (currentOrder < maxOrder) {
+          currentOrder++;
+          const nextElements = slide.querySelectorAll(`[data-animate-order="${currentOrder}"]`);
+          
+          nextElements.forEach(element => {
+            element.style.opacity = '1';
+            element.style.visibility = 'visible';
+            element.style.animation = 'none';
+            element.offsetHeight; // リフロー
+            element.style.animation = null;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

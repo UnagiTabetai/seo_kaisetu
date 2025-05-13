@@ -1,0 +1,527 @@
+<!-- セクション③：プロンプト設計＝マネジメント -->
+
+
+<!-- タイトルスライド -->
+<section class="slide" id="section3-slide1">
+  <div class="slide-content lead gradient-blue">
+    <h1>セクション③</h1>
+    <h2>AIメンバーのマネジメント</h2>
+    <div class="animate__animated animate__fadeIn animate__delay-1s">
+      <p>AIを効果的に指示するための原則と方法を学ぶ</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド2：イントロダクション -->
+<section class="slide" id="section3-slide2">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-comment-dots"></i> AIへの指示は「マネジメント」</h1>
+    <h2>優秀な新人を活かす「伝え方」の技術</h2>
+    
+    <div class="card">
+      <h3>AIへの指示出しの本質</h3>
+      <p>AIは「高学歴だが現場経験のない新人」と同じ。適切な指示と環境設定が成果を左右します。</p>
+    </div>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-bullseye"></i>
+        <h3>明確な目標設定</h3>
+        <p>何を達成したいかを具体的に</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-route"></i>
+        <h3>適切なガイダンス</h3>
+        <p>必要な情報と方向性の提供</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド3：タイミーさんの例え（概念説明） -->
+<section class="slide" id="section3-slide3">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-user-tie"></i> もし「今日初めて来たアルバイトさん」に仕事を頼むなら？</h1>
+    
+    <div class="card">
+      <h3><i class="fa-solid fa-briefcase"></i> タイミーさんの例え</h3>
+      <p>問いかけ：「皆さんの職場に、今日初めてタイミーでアルバイトさんが来たとします。その人に重要な仕事をいきなり丸投げしますか？」</p>
+      
+      <ul class="icon-list check">
+        <li>業務の流れもわからない</li>
+        <li>どこに何があるかもわからない</li>
+        <li>その中で仕事をしてもらうには？</li>
+      </ul>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>環境説明</h4>
+        <p>基本情報と背景の提供</p>
+      </div>
+      <div class="timeline-item">
+        <h4>明確な指示</h4>
+        <p>具体的なタスクの説明</p>
+      </div>
+      <div class="timeline-item">
+        <h4>必要な道具</h4>
+        <p>作業に必要なリソースの提供</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド4：タイミーさんの例え（続き - 大事なこと） -->
+<section class="slide" id="section3-slide4">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-lightbulb"></i> アルバイトさんに仕事を頼む際の大事なこと</h1>
+    
+    <div class="card success">
+      <h3><i class="fa-solid fa-check-double"></i> 効果的な指示のポイント</h3>
+      
+      <div class="feature-section">
+        <div class="feature-item" style="background-color: rgba(16, 185, 129, 0.2); color: var(--color-text-dark);">
+          <i class="fa-solid fa-clipboard-list" style="color: var(--color-accent-success);"></i>
+          <h3 style="color: var(--color-accent-success);">情報を整理</h3>
+          <p>必要な情報を整理して伝える</p>
+        </div>
+        
+        <div class="feature-item" style="background-color: rgba(16, 185, 129, 0.2); color: var(--color-text-dark);">
+          <i class="fa-solid fa-toolbox" style="color: var(--color-accent-success);"></i>
+          <h3 style="color: var(--color-accent-success);">道具を整理</h3>
+          <p>必要なツールを準備しておく</p>
+        </div>
+        
+        <div class="feature-item" style="background-color: rgba(16, 185, 129, 0.2); color: var(--color-text-dark);">
+          <i class="fa-solid fa-chalkboard-teacher" style="color: var(--color-accent-success);"></i>
+          <h3 style="color: var(--color-accent-success);">丁寧に教える</h3>
+          <p>何をすべきか明確に伝える</p>
+        </div>
+      </div>
+      
+      <p class="highlight-success" style="text-align: center; margin-top: 1em;">AIも同じ。彼らは「高学歴なタイミーさん」</p>
+    </div>
+    
+    <div class="alert info">
+      <h3>AIへの応用</h3>
+      <ul>
+        <li>AIは膨大な知識を持つが、あなたの具体的な状況は知らない</li>
+        <li>必要な文脈情報を提供することで、より適切な回答を得られる</li>
+        <li>明確な指示と期待する出力形式を伝えることが重要</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- スライド5：AIへの指示出し - 基本原則 -->
+<section class="slide" id="section3-slide5">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-ruler"></i> AIへの指示出し - 基本原則</h1>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="term-definition">
+          <h3><i class="fa-solid fa-bullseye"></i> 原則①：「厳密さ」</h3>
+          <p>曖昧さを嫌うAIには、具体的で明確な指示が不可欠です。</p>
+          
+          <div class="card" style="margin-top: 0.5em;">
+            <h4><i class="fa-solid fa-check-circle"></i> 良い例</h4>
+            <p>「2023年の日本のGDPについて、前年比の成長率と主要因を3つ、200字以内で説明してください。」</p>
+          </div>
+          
+          <div class="card" style="margin-top: 0.5em; border-left-color: var(--color-accent-danger);">
+            <h4><i class="fa-solid fa-times-circle" style="color: var(--color-accent-danger);"></i> 悪い例</h4>
+            <p>「日本の経済について教えて」</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="term-definition">
+          <h3><i class="fa-solid fa-compress"></i> 原則②：「簡潔さ」</h3>
+          <p>必要な情報はしっかり含めつつ、余計な情報は混乱のもとになります。</p>
+          
+          <div class="card" style="margin-top: 0.5em;">
+            <h4><i class="fa-solid fa-balance-scale"></i> バランスが重要</h4>
+            <ul class="icon-list check" style="font-size: 0.9em;">
+              <li>必要な情報は漏れなく</li>
+              <li>不要な情報は省略</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="term-definition" style="margin-top: 1em;">
+      <h3><i class="fa-solid fa-anchor"></i> 原則③：「アンカリング」</h3>
+      <p>AIとの認識合わせが重要。共通の認識基盤を作るプロセスです。</p>
+      
+      <div class="card">
+        <h4><i class="fa-solid fa-compass"></i> アンカリングの目的</h4>
+        <ul class="icon-list star" style="font-size: 0.9em;">
+          <li>AIに「どの範囲の話か」を明確に伝える</li>
+          <li>AIに「どう考えてほしいか」の枠組みを与える</li>
+          <li>AIに「何を出力してほしいか」を明示する</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="feature-section" style="margin-top: 1em;">
+      <div class="feature-item">
+        <i class="fa-solid fa-list-ol"></i>
+        <h3>具体的な条件</h3>
+        <p>数値や制約を明示する</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-cut"></i>
+        <h3>簡潔さと完全さ</h3>
+        <p>必要十分な情報提供</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-map-marked-alt"></i>
+        <h3>文脈設定</h3>
+        <p>共通の理解基盤を作る</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド6：AIへの指示出し - 原則② -->
+<section class="slide" id="section3-slide6">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-arrows-spin"></i> AIへの指示出し - 原則②</h1>
+    
+    <div class="term-definition">
+      <h3><i class="fa-solid fa-sync"></i> 1回で完璧を目指さない。「ブラッシュアップ」が前提</h3>
+      <p>人間同士でも一発で伝わらないことはあります。対話しながら改善していく姿勢が大切です。</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-1"></i> 最初の指示</h4>
+        <p>基本的な要件を伝える</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-2"></i> 結果の確認</h4>
+        <p>AIの出力を確認し、改善点を特定</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-3"></i> フィードバック</h4>
+        <p>具体的な改善点を伝える</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-4"></i> 繰り返し</h4>
+        <p>満足のいく結果が得られるまで対話を続ける</p>
+      </div>
+    </div>
+    
+    <div class="workshop">
+      <h3>実践のコツ</h3>
+      <p>「これは良いけど、もう少し〇〇の観点を追加して」のように具体的なフィードバックを心がける</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド7：AIへの指示出し - ブラッシュアップの重要性 -->
+<section class="slide" id="section3-slide7">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-arrows-spin"></i> AIへの指示出し - ブラッシュアップの重要性</h1>
+    
+    <div class="term-definition">
+      <h3><i class="fa-solid fa-sync"></i> 1回で完璧を目指さない。「ブラッシュアップ」が前提</h3>
+      <p>人間同士でも一発で伝わらないことはあります。対話しながら改善していく姿勢が大切です。</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-1"></i> 最初の指示</h4>
+        <p>基本的な要件を伝える</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-2"></i> 結果の確認</h4>
+        <p>AIの出力を確認し、改善点を特定</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-3"></i> フィードバック</h4>
+        <p>具体的な改善点を伝える</p>
+      </div>
+      
+      <div class="timeline-item">
+        <h4><i class="fa-solid fa-4"></i> 繰り返し</h4>
+        <p>満足のいく結果が得られるまで対話を続ける</p>
+      </div>
+    </div>
+    
+    <div class="workshop">
+      <h3>実践のコツ</h3>
+      <p>「これは良いけど、もう少し〇〇の観点を追加して」のように具体的なフィードバックを心がける</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド8：アンカリングの具体的な方法 -->
+<section class="slide" id="section3-slide8">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-anchor"></i> アンカリングの具体的な方法</h1>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-map"></i>
+        <h3>参照範囲の定義</h3>
+        <ul>
+          <li>AIに「どの範囲の話か」を教える</li>
+          <li>前提条件、具体例、役割、概要など</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-brain"></i>
+        <h3>思考プロセスの付与</h3>
+        <ul>
+          <li>AIに「どう考えてほしいか」を伝える</li>
+          <li>CoT（ステップバイステップ思考）</li>
+          <li>ゴールシーク（目標から逆算）</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3><i class="fa-solid fa-file-export"></i> アウトプットの指定</h3>
+      <ul class="icon-list arrow">
+        <li>AIに「何を出してほしいか」を明確にする</li>
+        <li>出力形式、例文、文字数、スタイルなど</li>
+      </ul>
+    </div>
+    
+    <div class="alert info">
+      <h4><i class="fa-solid fa-lightbulb"></i> 実践例</h4>
+      <p>「あなたは経験豊富なマーケティングコンサルタントです。新規事業のターゲット顧客分析を行ってください。分析は、デモグラフィック、行動特性、ニーズの3つの観点から行い、最後に優先すべきターゲットセグメントを1つ提案してください。回答は箇条書きで、500字以内でお願いします。」</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド9：良い指示の構造① - アンカリング（具体例） -->
+<section class="slide" id="section3-slide9">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-anchor"></i> アンカリングの具体的な方法</h1>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-map"></i>
+        <h3>参照範囲の定義</h3>
+        <ul>
+          <li>AIに「どの範囲の話か」を教える</li>
+          <li>前提条件、具体例、役割、概要など</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-brain"></i>
+        <h3>思考プロセスの付与</h3>
+        <ul>
+          <li>AIに「どう考えてほしいか」を伝える</li>
+          <li>CoT（ステップバイステップ思考）</li>
+          <li>ゴールシーク（目標から逆算）</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3><i class="fa-solid fa-file-export"></i> アウトプットの指定</h3>
+      <ul class="icon-list arrow">
+        <li>AIに「何を出してほしいか」を明確にする</li>
+        <li>出力形式、例文、文字数、スタイルなど</li>
+      </ul>
+    </div>
+    
+    <div class="alert info">
+      <h4><i class="fa-solid fa-lightbulb"></i> 実践例</h4>
+      <p>「あなたは経験豊富なマーケティングコンサルタントです。新規事業のターゲット顧客分析を行ってください。分析は、デモグラフィック、行動特性、ニーズの3つの観点から行い、最後に優先すべきターゲットセグメントを1つ提案してください。回答は箇条書きで、500字以内でお願いします。」</p>
+    </div>
+  </div>
+</section>
+
+<!-- スライド10：良い指示の構造② - コンテクストマネジメント（概念） -->
+<section class="slide" id="section3-slide10">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-sitemap"></i> 良い指示の構造②：「コンテクストマネジメント」</h1>
+    
+    <div class="alert warning">
+      <h3><i class="fa-solid fa-exclamation-triangle"></i> 誤解を防ぐための情報整理</h3>
+      <p>コンテクストマネジメントとは、AIが正確に理解できるように情報を整理し、伝達する方法を工夫することです。</p>
+    </div>
+    
+    <div class="card">
+      <h4><i class="fa-solid fa-puzzle-piece"></i> コンテクストマネジメントの目的</h4>
+      <ul class="icon-list check">
+        <li>AIの誤解を最小限に抑える</li>
+        <li>情報の優先順位を明確にする</li>
+        <li>複雑な指示でも理解しやすくする</li>
+      </ul>
+    </div>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <h3>情報の階層化</h3>
+        <p>重要度に応じた構造化</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-sort-amount-down"></i>
+        <h3>優先順位の明確化</h3>
+        <p>何が最も重要かを示す</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スライド11：良い指示の構造② - コンテクストマネジメント（具体例） -->
+<section class="slide" id="section3-slide11">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-sitemap"></i> コンテクストマネジメントの具体的な方法</h1>
+    
+    <div class="feature-section">
+      <div class="feature-item">
+        <i class="fa-solid fa-code"></i>
+        <h3>プロンプトフォーマット</h3>
+        <ul>
+          <li>マークダウン（見出しやリスト）</li>
+          <li>数式や論理記号</li>
+          <li>プログラミングコード形式</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-memory"></i>
+        <h3>ステートレスという前提</h3>
+        <ul>
+          <li>「毎日新しいSESに優秀なエンジニアが来る」</li>
+          <li>重要な前提は都度伝える</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="alert info">
+      <h4><i class="fa-solid fa-lightbulb"></i> ポイント</h4>
+      <p>重要な情報ほど、繰り返し伝えることで認識のズレを防ぐことができます。</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- まとめスライド -->
+<!-- まとめタイトルスライド -->
+<section class="slide" id="section3-slide12">
+  <div class="slide-content center">
+    <h1>AI活用の大前提：目的意識を持つ</h1>
+    
+    <div class="card info">
+      <h3><i class="fa-solid fa-question-circle"></i> なぜ目的が必要か？</h3>
+      <p>目的や欲求がないとAIを使いこなすのは難しい</p>
+      
+      <h4>目的の見つけ方</h4>
+      <ul class="icon-list star">
+        <li>給料を上げたい、独立したい、子育てを上手くやりたい等の個人的な目標</li>
+        <li>日常の悩み、解決方法が思いつかない課題からスタートする</li>
+      </ul>
+    </div>
+    
+    <div class="card success" style="margin-top: 1em;">
+      <h3><i class="fa-solid fa-bullseye"></i> AIの強み</h3>
+      <p>AIは抽象的な悩みから具体的なアクションへ「解像度を上げていく」のが得意</p>
+    </div>
+  </div>
+</section>
+
+<!-- まとめタイトルスライド -->
+<section class="slide" id="section3-slide13">
+  <div class="slide-content lead gradient-mint">
+    <h1>まとめ：効果的な指示</h1>
+  </div>
+</section>
+
+<!-- まとめ内容スライド -->
+<section class="slide" id="section3-slide14">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-handshake"></i> AIへの指示の質を高める「観点」と「方針」</h1>
+    
+    <div class="feature-section animate__animated animate__fadeIn">
+      <div class="feature-item">
+        <i class="fa-solid fa-eye"></i>
+        <h3>観点 (Perspective)</h3>
+        <ul>
+          <li>AIに役割を与えることで、その視点からの回答を引き出す</li>
+          <li>例：「認知科学の知見で考えたら？」「営業職の目線で見たら？」</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-compass"></i>
+        <h3>方針 (Policy/Guiding Principle)</h3>
+        <ul>
+          <li>AIが自律的に判断するための、適切な「抽象度」の指示</li>
+          <li>人間の場合：具体的に指示しすぎるとメンバーの可能性を潰す</li>
+          <li>AIの場合：記憶がないため、背景情報やガードレールも同時に設定</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="workshop animate__animated animate__fadeIn animate__delay-1s">
+      <h3><i class="fa-solid fa-lightbulb"></i> AIとの対話による「抽象度」と「解像度」の調整</h3>
+      <p>具体思考が得意な人：AIとの対話で思考の抽象度を上げる</p>
+      <p>抽象思考が得意な人：AIとの対話で具体的なレイヤー（実行策）を見つける</p>
+      <p>目指すは、最適なレイヤーでの指示</p>
+    </div>
+  </div>
+</section>
+
+<!-- 新しいまとめスライド -->
+<section class="slide" id="section3-slide15">
+  <div class="slide-content">
+    <h1><i class="fa-solid fa-handshake"></i> 効果的な指示のポイント</h1>
+    
+    <div class="feature-section animate__animated animate__fadeIn">
+      <div class="feature-item">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>プロンプトの心得</h3>
+        <ul>
+          <li>AIは「高学歴なタイミーさん」</li>
+          <li>厳密に指示する</li>
+          <li>ブラッシュアップ前提で対話</li>
+          <li>簡潔に（必要情報は確保）</li>
+        </ul>
+      </div>
+      
+      <div class="feature-item">
+        <i class="fa-solid fa-sitemap"></i>
+        <h3>構造化のポイント</h3>
+        <ul>
+          <li>アンカリングで認識合わせ</li>
+          <li>コンテクストを整理して伝える</li>
+          <li>出力形式を明確に指定する</li>
+          <li>重要情報は繰り返し伝える</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>準備</h4>
+        <p>目的と必要情報の整理</p>
+      </div>
+      <div class="timeline-item">
+        <h4>指示</h4>
+        <p>構造化された明確な依頼</p>
+      </div>
+      <div class="timeline-item">
+        <h4>改善</h4>
+        <p>フィードバックと調整</p>
+      </div>
+    </div>
+  </div>
+</section>

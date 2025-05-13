@@ -1,0 +1,58 @@
+/* テキストシャドウ - 白い文字を背景上で見やすくする */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* アイコンシャドウ - 白いアイコンを背景上で見やすくする */
+.icon-shadow {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* アイコンカラーバリエーション */
+.icon-yellow {
+  color: #FFD700;
+}
+
+.icon-orange {
+  color: #FF8C00;
+}
+
+.icon-green {
+  color: #50C878;
+}
+
+.icon-lightblue {
+  color: #87CEEB;
+}
+
+.icon-pink {
+  color: #FFB6C1;
+}
+
+.icon-teal {
+  color: #008080;
+}
+
+/* グラデーション背景のスライドでテキストとアイコンの視認性向上 */
+.gradient-purple i,
+.gradient-purple h1,
+.gradient-purple h2,
+.gradient-purple h3,
+.gradient-purple p,
+.gradient-blue i,
+.gradient-blue h1,
+.gradient-blue h2,
+.gradient-blue h3,
+.gradient-blue p,
+.gradient-sunset i,
+.gradient-sunset h1,
+.gradient-sunset h2,
+.gradient-sunset h3,
+.gradient-sunset p,
+.gradient-mint i,
+.gradient-mint h1,
+.gradient-mint h2,
+.gradient-mint h3,
+.gradient-mint p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+} 

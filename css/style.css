@@ -1,0 +1,900 @@
+/* =============================================
+ * 基本設定
+ * ============================================= */
+
+/* カラースキームの定義 - アクセシビリティを考慮した配色 */
+:root {
+  /* メインカラー */
+  --color-primary: #2563eb;        /* 青：主要な見出しやアクセント */
+  --color-secondary: #7c3aed;      /* 紫：セカンダリーアクセント */
+  --color-tertiary: #0891b2;       /* 水色：補助的なアクセント */
+  
+  /* 背景色 */
+  --color-background-light: #f8fafc; /* 明るい背景 */
+  --color-background-dark: #1e293b;  /* 暗い背景 */
+  --color-background-alt: #f0f9ff;   /* 代替背景色（薄い青） */
+  
+  /* テキスト色 */
+  --color-text-dark: #1e293b;      /* 暗いテキスト（明るい背景用） */
+  --color-text-light: #f8fafc;     /* 明るいテキスト（暗い背景用） */
+  --color-text-muted: #64748b;     /* 控えめなテキスト */
+  
+  /* アクセント色 */
+  --color-accent-success: #10b981; /* 成功/ポジティブ */
+  --color-accent-warning: #f59e0b; /* 警告/注意 */
+  --color-accent-danger: #ef4444;  /* 危険/エラー */
+  
+  /* グラデーション用 */
+  --gradient-blue: linear-gradient(135deg, #2563eb, #0891b2);
+  --gradient-purple: linear-gradient(135deg, #7c3aed, #c026d3);
+  --gradient-sunset: linear-gradient(135deg, #f59e0b, #ef4444);
+  --gradient-mint: linear-gradient(135deg, #10b981, #0891b2);
+  
+  /* シャドウ */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* アニメーション時間 */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  
+  /* 角丸 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* リセットとベーススタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #000;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================
+ * プレゼンテーションコンテナ
+ * ============================================= */
+.presentation-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* セクションメニュー */
+.section-menu {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 20px;
+  border-radius: var(--radius-md);
+  min-width: 80%;
+}
+
+.section-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  flex: 1;
+  text-align: center;
+}
+
+.section-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.section-btn.active {
+  background-color: var(--color-primary);
+}
+
+/* スライドコンテナ */
+.slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* 個別スライド */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  overflow: hidden;
+}
+
+/* アクティブスライド */
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+/* スライドコンテンツ */
+.slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* コンテンツを垂直方向に中央揃え */
+  padding: 40px;
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  overflow: auto;
+  /* 16:9のアスペクト比を維持 */
+  max-width: calc((100vh - 80px) * 16 / 9);
+  max-height: 100vh;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+
+/* 中央揃えのスライドコンテンツ */
+.slide-content.center {
+  text-align: center; /* テキストを水平方向に中央揃え */
+  align-items: center; /* 子要素を水平方向に中央揃え */
+}
+
+/* ナビゲーションコントロール */
+.navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.prev-btn, .next-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* スライドインジケーター */
+.slide-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  z-index: 100;
+}
+
+/* フルスクリーンボタン */
+.fullscreen-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.fullscreen-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.fullscreen-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* フルスクリーンモード時のアイコン変更 */
+.fullscreen-active .fa-expand:before {
+  content: '\f066'; /* fa-compress アイコン */
+}
+
+/* =============================================
+ * 見出しスタイル
+ * ============================================= */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.4em;
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 0.2em;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  margin-top: 0.2em;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-tertiary);
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+/* =============================================
+ * リストスタイル
+ * ============================================= */
+ul, ol {
+  padding-left: 1em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+li {
+  margin-bottom: 0.4em;
+  position: relative;
+}
+
+/* アイコン付きリスト */
+ul.icon-list {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
+ul.icon-list li {
+  padding-left: 2em;
+  position: relative;
+  margin-bottom: 0.8em;
+}
+
+ul.icon-list li::before {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+ul.icon-list.check li::before {
+  content: '\f00c'; /* チェックマーク */
+}
+
+ul.icon-list.arrow li::before {
+  content: '\f061'; /* 矢印 */
+}
+
+ul.icon-list.star li::before {
+  content: '\f005'; /* 星 */
+}
+
+/* =============================================
+ * 画像スタイル
+ * ============================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* 画像ホバーエフェクト */
+img:hover:not([alt*="bg"]) {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 画像サイズバリエーション */
+img.small {
+  max-width: 30%;
+  max-height: 200px;
+}
+
+img.medium {
+  max-width: 50%;
+  max-height: 300px;
+}
+
+img.large {
+  max-width: 80%;
+  max-height: 400px;
+}
+
+/* 画像位置調整 */
+.img-center {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+/* =============================================
+ * レイアウトテンプレート
+ * ============================================= */
+
+/* 2カラムレイアウト */
+.columns {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.8em 0;
+}
+
+.column {
+  flex: 1;
+  min-width: 0; /* テキストオーバーフローを防止 */
+}
+
+/* 中央揃えのスライド */
+.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* ダークモードのスライド */
+.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+}
+
+/* グラデーション背景 */
+.gradient-blue {
+  background: var(--gradient-blue);
+  color: var(--color-text-light);
+}
+
+.gradient-purple {
+  background: var(--gradient-purple);
+  color: var(--color-text-light);
+}
+
+.gradient-sunset {
+  background: var(--gradient-sunset);
+  color: var(--color-text-light);
+}
+
+.gradient-mint {
+  background: var(--gradient-mint);
+  color: var(--color-text-light);
+}
+
+/* 表紙スライド以外のグラデーション背景内のテキストはオレンジ色に */
+section:not([id$="-slide1"]) .gradient-blue,
+section:not([id$="-slide1"]) .gradient-purple,
+section:not([id$="-slide1"]) .gradient-sunset,
+section:not([id$="-slide1"]) .gradient-mint {
+  color: var(--color-accent-warning);
+}
+
+/* グラデーション背景での見出し */
+.gradient-blue h1, .gradient-purple h1, .gradient-sunset h1, .gradient-mint h1,
+.gradient-blue h2, .gradient-purple h2, .gradient-sunset h2, .gradient-mint h2,
+.gradient-blue h3, .gradient-purple h3, .gradient-sunset h3, .gradient-mint h3 {
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+}
+
+/* 背景画像付きスライド */
+.image-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text-light);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.image-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4); /* 暗めのオーバーレイ */
+  z-index: 0;
+}
+
+.image-bg h1, .image-bg h2, .image-bg h3, .image-bg p {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-light);
+}
+
+.image-bg h1, .image-bg h2 {
+  border-color: var(--color-text-light);
+}
+
+/* 画像とテキストのレイアウト */
+.image-right {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  height: 100%;
+}
+
+.image-left {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+  align-items: center;
+  height: 100%;
+}
+
+/* 右側に画像を配置 */
+.img-right {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 30%;
+}
+
+/* =============================================
+ * カードとアラートスタイル
+ * ============================================= */
+.card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: 1.2em;
+  box-shadow: var(--shadow-md);
+  margin: 1em 0;
+  border-left: 4px solid var(--color-primary);
+}
+
+.card.success {
+  border-left-color: var(--color-accent-success);
+}
+
+.card h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+.card.success h3 {
+  color: var(--color-accent-success);
+}
+
+.alert {
+  border-radius: var(--radius-md);
+  padding: 1.2em;
+  margin: 1em 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.alert.warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--color-accent-warning);
+}
+
+.alert.info {
+  background-color: rgba(37, 99, 235, 0.1);
+  border-left: 4px solid var(--color-primary);
+}
+
+.alert h3 {
+  color: var(--color-accent-warning);
+  margin-top: 0;
+}
+
+.alert.info h3 {
+  color: var(--color-primary);
+}
+
+/* =============================================
+ * タイムラインスタイル
+ * ============================================= */
+.timeline {
+  margin: 1.5em 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.5em;
+  padding-bottom: 1.5em;
+  border-left: 2px solid var(--color-accent-warning);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-accent-warning);
+}
+
+.timeline-item h4 {
+  margin-top: 0;
+  color: var(--color-accent-warning);
+}
+
+.timeline-item p {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内の.timeline-itemの段落は白色に */
+[id$="-slide1"] .timeline-item p {
+  color: white !important;
+}
+
+/* =============================================
+ * 用語定義スタイル
+ * ============================================= */
+.term-definition {
+  background-color: rgba(8, 145, 178, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.2em;
+  margin: 1em 0;
+  border-left: 4px solid var(--color-tertiary);
+}
+
+.term-definition h4 {
+  color: var(--color-tertiary);
+  margin-top: 0;
+}
+
+/* =============================================
+ * ケーススタディスタイル
+ * ============================================= */
+.case-study {
+  background-color: rgba(124, 58, 237, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.2em;
+  margin: 1em 0;
+  border-left: 4px solid var(--color-secondary);
+}
+
+.case-study h3 {
+  color: var(--color-secondary);
+  margin-top: 0;
+}
+
+/* =============================================
+ * 特徴セクションスタイル
+ * ============================================= */
+.feature-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1em 0;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.8em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.feature-item i {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  color: var(--color-accent-warning); /* オレンジ色 */
+}
+
+/* 表紙スライド内の.feature-itemのアイコンは白色に */
+[id$="-slide1"] .feature-item i {
+  color: white !important;
+}
+
+.feature-item h3 {
+  color: var(--color-text-dark); /* 白から黒色に変更 */
+  margin-top: 0.3em;
+}
+
+.feature-item p {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内の.feature-itemの段落は白色に */
+[id$="-slide1"] .feature-item p {
+  color: white !important;
+}
+
+/* 表紙スライド内の.feature-itemの見出しは白色に */
+[id$="-slide1"] .feature-item h3 {
+  color: white !important;
+}
+
+.feature-item ul {
+  list-style-position: inside;
+  text-align: left;
+  padding-left: 0;
+}
+
+.feature-item ul li {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内の.feature-itemのリスト項目は白色に */
+[id$="-slide1"] .feature-item ul li {
+  color: white !important;
+}
+
+/* =============================================
+ * ワークショップスタイル
+ * ============================================= */
+.workshop {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1em;
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.workshop h3 {
+  color: var(--color-text-dark); /* 白から黒色に変更 */
+  margin-top: 0;
+}
+
+/* 表紙スライド内の.workshopの見出しは白色に */
+[id$="-slide1"] .workshop h3 {
+  color: white !important;
+}
+
+.workshop i {
+  color: var(--color-accent-warning); /* アイコンをオレンジ色に変更 */
+}
+
+.workshop p {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内の.workshopの段落は白色に */
+[id$="-slide1"] .workshop p {
+  color: white !important;
+}
+
+.workshop ul li {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内の.workshopのリスト項目は白色に */
+[id$="-slide1"] .workshop ul li {
+  color: white !important;
+}
+
+/* =============================================
+ * ハイライトスタイル
+ * ============================================= */
+.highlight-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--color-accent-success);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+}
+
+/* 通常のテキストとリスト項目の色を変更 */
+.slide-content p:not(.highlight):not(.highlight-success),
+.slide-content li {
+  color: var(--color-text-dark); /* テキストを黒色に変更 */
+}
+
+/* 表紙スライド内のテキストとリスト項目は白色に */
+[id$="-slide1"] .slide-content p,
+[id$="-slide1"] .slide-content li {
+  color: white !important;
+}
+
+.highlight {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--color-accent-warning);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+}
+
+/* =============================================
+ * レスポンシブデザイン
+ * ============================================= */
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .columns {
+    flex-direction: column;
+  }
+  
+  .feature-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================
+ * アニメーション
+ * ============================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+
+/* =============================================
+ * アイコンスタイル
+ * ============================================= */
+.fa-solid, .fa-regular, .fa-brands {
+  color: var(--color-primary);
+  margin-right: 0.2em;
+}
+
+/* グラデーション背景でのアイコン */
+.gradient-blue .fa-solid, .gradient-purple .fa-solid,
+.gradient-sunset .fa-solid, .gradient-mint .fa-solid,
+.gradient-blue .fa-regular, .gradient-purple .fa-regular,
+.gradient-sunset .fa-regular, .gradient-mint .fa-regular,
+.gradient-blue .fa-brands, .gradient-purple .fa-brands,
+.gradient-sunset .fa-brands, .gradient-mint .fa-brands {
+  color: var(--color-accent-warning); /* オレンジ色 */
+}
+
+/* 表紙スライド（各セクションの1枚目）のアイコンは白色に */
+[id$="-slide1"] i {
+  color: white !important;
+}
+
+/* =============================================
+ * タイマースタイル
+ * ============================================= */
+.timer-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  z-index: 100;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-normal);
+}
+
+.timer-container.minimized {
+  transform: translateY(calc(100% - 35px));
+  opacity: 0.8;
+}
+
+.timer-container.minimized .timer-controls {
+  display: none;
+}
+
+.timer-container.minimized .timer-display {
+  font-size: 0.9rem;
+}
+
+.timer-container .timer-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-container .timer-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.timer-container .timer-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.timer-container .timer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.timer-container .timer-display {
+  font-weight: 500;
+  min-width: 60px;
+  text-align: center;
+}
