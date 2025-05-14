@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let slides = [];
   let currentIndex = 0;
-  let currentSection = 'section1'; // デフォルトのセクション
+  let currentSection = 'section0'; // デフォルトのセクション
   let isFullscreen = false; // フルスクリーンモードの状態
   
   // 初期化

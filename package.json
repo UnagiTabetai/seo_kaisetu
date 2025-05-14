@@ -1,0 +1,10 @@
+{
+  "name": "workshop-presentation",
+  "version": "1.0.0",
+  "description": "ワークショッププレゼンテーション",
+  "scripts": {
+    "start": "python3 -m http.server 8080"
+  },
+  "author": "",
+  "license": "ISC"
+}
