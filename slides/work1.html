@@ -1,0 +1,181 @@
+<!-- ワーク1: キーワード選定演習 -->
+<div class="slide" data-id="work1-intro">
+  <h2><i class="fas fa-laptop-code"></i> ワーク①：キーワード選定演習</h2>
+  <div class="work-container">
+    <div class="work-overview">
+      <h3>演習の目的</h3>
+      <p>実際のビジネスシーンを想定し、効果的なキーワード選定を実践します</p>
+      
+      <div class="scenario-box">
+        <h4><i class="fas fa-briefcase"></i> シナリオ</h4>
+        <p>あなたは中小企業向けのクラウド会計ソフトを提供する企業のマーケティング担当者です。<br>
+        SEO記事を作成するため、適切なキーワードを選定する必要があります。</p>
+      </div>
+    </div>
+    
+    <div class="work-steps">
+      <h3>演習ステップ</h3>
+      <div class="step-cards">
+        <div class="step-card">
+          <span class="step-num">1</span>
+          <h4>ペルソナ設定</h4>
+          <p>ターゲットとなる中小企業の担当者像を明確化</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">2</span>
+          <h4>検索意図分析</h4>
+          <p>Know/Do/Buy/Goクエリに分類</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">3</span>
+          <h4>キーワード候補出し</h4>
+          <p>メイン・サブ・ロングテールを各5個</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">4</span>
+          <h4>優先順位付け</h4>
+          <p>難易度と効果のマトリクスで評価</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ワーク1: テンプレート -->
+<div class="slide" data-id="work1-template">
+  <h2><i class="fas fa-clipboard-list"></i> キーワード選定テンプレート</h2>
+  <div class="template-container">
+    <div class="template-section">
+      <h3>1. ペルソナ設定</h3>
+      <div class="template-box">
+        <ul>
+          <li><strong>業種：</strong> ＿＿＿＿＿＿＿＿</li>
+          <li><strong>企業規模：</strong> 従業員＿＿名</li>
+          <li><strong>役職：</strong> ＿＿＿＿＿＿＿＿</li>
+          <li><strong>課題：</strong> ＿＿＿＿＿＿＿＿</li>
+          <li><strong>検索する状況：</strong> ＿＿＿＿＿＿＿＿</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="template-section">
+      <h3>2. キーワード候補リスト</h3>
+      <div class="keyword-table">
+        <table>
+          <thead>
+            <tr>
+              <th>種類</th>
+              <th>キーワード</th>
+              <th>検索意図</th>
+              <th>想定検索量</th>
+              <th>競合度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>メイン</td>
+              <td>クラウド会計ソフト</td>
+              <td>Buy</td>
+              <td>高</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>サブ</td>
+              <td>クラウド会計 比較</td>
+              <td>Buy</td>
+              <td>中</td>
+              <td>中</td>
+            </tr>
+            <tr>
+              <td>ロングテール</td>
+              <td>中小企業 クラウド会計 導入事例</td>
+              <td>Know</td>
+              <td>低</td>
+              <td>低</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="template-section">
+      <h3>3. 優先順位マトリクス</h3>
+      <div class="matrix-grid">
+        <div class="matrix-cell high-priority">
+          <h4>高優先度</h4>
+          <p>効果：高 × 難易度：低</p>
+        </div>
+        <div class="matrix-cell medium-priority">
+          <h4>中優先度</h4>
+          <p>効果：高 × 難易度：高</p>
+        </div>
+        <div class="matrix-cell medium-priority">
+          <h4>中優先度</h4>
+          <p>効果：低 × 難易度：低</p>
+        </div>
+        <div class="matrix-cell low-priority">
+          <h4>低優先度</h4>
+          <p>効果：低 × 難易度：高</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ワーク1: AIプロンプト -->
+<div class="slide" data-id="work1-ai-prompt">
+  <h2><i class="fas fa-robot"></i> AIを使ったキーワード生成プロンプト</h2>
+  <div class="prompt-container">
+    <div class="prompt-box">
+      <h3>キーワード候補生成プロンプト</h3>
+      <div class="code-block">
+        <pre><code>あなたは経験豊富なSEOスペシャリストです。
+以下の条件でメインキーワードを提案してください：
+
+業界: クラウド会計ソフト
+ターゲット: 中小企業の経理担当者・経営者
+目的: サービスの認知度向上と導入検討促進
+BtoB/BtoC: BtoB
+
+以下の観点から10個のメインキーワード候補を提案し、
+それぞれについて検索意図と戦略を分析してください：
+
+1. 検索意図の分類（Know/Do/Buy/Go）
+2. BtoBに適した表現か
+3. ビジネス関連性
+4. 競合の少なさ
+5. 検索ボリュームの適切さ
+
+【出力形式】
+各キーワードについて以下を記載：
+- キーワード
+- 検索意図分類
+- 想定検索ボリューム（高/中/低）
+- 競合度（高/中/低）
+- 推奨理由</code></pre>
+      </div>
+    </div>
+    
+    <div class="prompt-tips">
+      <h3>プロンプト作成のコツ</h3>
+      <div class="tips-grid">
+        <div class="tip">
+          <i class="fas fa-check-circle"></i>
+          <p><strong>具体的な条件設定</strong><br>業界、ターゲット、目的を明確に</p>
+        </div>
+        <div class="tip">
+          <i class="fas fa-check-circle"></i>
+          <p><strong>評価基準の明示</strong><br>判断基準を具体的に指定</p>
+        </div>
+        <div class="tip">
+          <i class="fas fa-check-circle"></i>
+          <p><strong>出力形式の指定</strong><br>欲しい情報の形式を明確に</p>
+        </div>
+        <div class="tip">
+          <i class="fas fa-check-circle"></i>
+          <p><strong>役割の設定</strong><br>AIに専門家の役割を与える</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

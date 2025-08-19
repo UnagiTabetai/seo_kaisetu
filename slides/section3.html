@@ -1,0 +1,292 @@
+<!-- スライド1: AIツールとSEO -->
+<div class="slide" data-id="ai-seo-intro">
+  <h2><i class="fas fa-robot"></i> AIツールを活用したSEO記事作成</h2>
+  <div class="ai-overview">
+    <div class="ai-benefits">
+      <h3>AIツール活用のメリット</h3>
+      <div class="benefit-cards">
+        <div class="benefit-card">
+          <i class="fas fa-tachometer-alt"></i>
+          <h4>効率化</h4>
+          <p>記事作成時間を大幅短縮</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-brain"></i>
+          <h4>アイデア創出</h4>
+          <p>多角的な視点から内容提案</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>品質向上</h4>
+          <p>網羅的で構造化された内容</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-sync-alt"></i>
+          <h4>継続的改善</h4>
+          <p>フィードバックによる最適化</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ai-tools">
+      <h3>主要なAIツール</h3>
+      <div class="tools-comparison">
+        <div class="tool-item">
+          <div class="tool-logo">ChatGPT</div>
+          <ul>
+            <li>汎用的な文章生成</li>
+            <li>幅広い知識ベース</li>
+            <li>コード生成も可能</li>
+          </ul>
+        </div>
+        <div class="tool-item">
+          <div class="tool-logo">Claude</div>
+          <ul>
+            <li>長文生成に強い</li>
+            <li>論理的な構成力</li>
+            <li>正確性重視</li>
+          </ul>
+        </div>
+        <div class="tool-item">
+          <div class="tool-logo">Gemini</div>
+          <ul>
+            <li>最新情報の取得</li>
+            <li>Google検索連携</li>
+            <li>マルチモーダル対応</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- スライド2: プロンプトエンジニアリング基礎 -->
+<div class="slide" data-id="prompt-basics">
+  <h2><i class="fas fa-code"></i> プロンプトエンジニアリングの基礎</h2>
+  <div class="prompt-principles">
+    <h3>効果的なプロンプトの5原則</h3>
+    <div class="principle-cards">
+      <div class="principle">
+        <div class="principle-number">1</div>
+        <h4>明確な指示</h4>
+        <p>曖昧な表現を避け、具体的に指示する</p>
+        <div class="example">
+          <span class="bad">❌ 良い記事を書いて</span>
+          <span class="good">✅ 8000文字のSEO記事を書いて</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-number">2</div>
+        <h4>役割設定</h4>
+        <p>AIに専門家としての役割を与える</p>
+        <div class="example">
+          <span class="good">✅ あなたは経験豊富なSEOスペシャリストです</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-number">3</div>
+        <h4>文脈提供</h4>
+        <p>背景情報や条件を詳しく説明</p>
+        <div class="example">
+          <span class="good">✅ BtoB向け、中小企業がターゲット</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-number">4</div>
+        <h4>出力形式指定</h4>
+        <p>望む形式やフォーマットを明示</p>
+        <div class="example">
+          <span class="good">✅ Markdown形式、H2見出し5個以上</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-number">5</div>
+        <h4>制約条件</h4>
+        <p>守るべきルールや避けるべき内容</p>
+        <div class="example">
+          <span class="good">✅ 専門用語は初出時に説明を追加</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- スライド3: 記事構成プロンプト -->
+<div class="slide" data-id="article-structure-prompt">
+  <h2><i class="fas fa-sitemap"></i> 記事構成作成プロンプト</h2>
+  <div class="prompt-template">
+    <h3>SEO記事構成テンプレート</h3>
+    <div class="code-block large">
+      <pre><code>以下の条件でSEO記事の構成を作成してください：
+
+<span class="highlight">【基本情報】</span>
+メインキーワード: [キーワード]
+ターゲット読者: [読者層]
+記事の目的: [目的]
+想定文字数: [文字数]
+
+<span class="highlight">【要求事項】</span>
+以下の要素を含む詳細な構成を提案してください：
+
+1. タイトル案（3パターン）
+   - 32文字以内
+   - メインキーワードを前半に配置
+   - クリックを促す魅力的な表現
+
+2. メタディスクリプション（120-160文字）
+
+3. 導入文の概要（300-400文字）
+   - 読者の課題への共感
+   - 記事で得られる価値の明示
+
+4. 見出し構造（H2、H3レベルまで）
+   - H2見出し: 5-8個
+   - 各H2の下にH3: 2-4個
+
+5. 各セクションで扱う内容の概要
+   - 具体例やデータの種類
+   - 含めるべき重要ポイント
+
+6. まとめセクションの方向性
+   - 要点の整理
+   - 次のアクション提案
+
+7. 内部リンク候補（3-5個）
+
+8. 関連キーワードの配置案
+
+<span class="highlight">【SEO要件】</span>
+- E-E-A-Tを意識した信頼性の高い内容
+- 検索意図を満たす網羅的な情報
+- 競合記事との差別化ポイント</code></pre>
+    </div>
+    <div class="prompt-tips">
+      <h4>💡 構成作成のポイント</h4>
+      <ul>
+        <li>読者の検索意図を的確に捉える</li>
+        <li>論理的な流れで情報を整理</li>
+        <li>各セクションの役割を明確化</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- スライド4: 本文作成プロンプト -->
+<div class="slide" data-id="content-creation-prompt">
+  <h2><i class="fas fa-pen-fancy"></i> 本文作成プロンプト</h2>
+  <div class="content-prompt">
+    <div class="prompt-sections">
+      <div class="section-prompt">
+        <h3>セクション別執筆プロンプト</h3>
+        <div class="code-block">
+          <pre><code>以下の見出しについて、SEOを意識した本文を作成してください：
+
+<span class="highlight">【セクション情報】</span>
+見出し: [H2またはH3見出し]
+ターゲットキーワード: [キーワード]
+関連キーワード: [関連キーワードリスト]
+想定文字数: [文字数]
+読者レベル: [初心者/中級者/上級者]
+
+<span class="highlight">【執筆要件】</span>
+1. キーワードを自然に含める（密度2-3%）
+2. 読みやすい文章構造
+   - 1文60文字以内
+   - 適切な段落分け
+3. 具体例や数字を含める
+4. 読者の疑問に答える内容
+5. 次のセクションへの自然な流れ
+
+<span class="highlight">【文体・トーン】</span>
+- です・ます調で統一
+- 専門用語は初出時に説明
+- 親しみやすく権威的なバランス</code></pre>
+        </div>
+      </div>
+      
+      <div class="writing-techniques">
+        <h3>AIを使った文章改善テクニック</h3>
+        <div class="technique-cards">
+          <div class="technique">
+            <h4>リライト依頼</h4>
+            <p>「この文章をより分かりやすく、SEOに最適化してリライトしてください」</p>
+          </div>
+          <div class="technique">
+            <h4>具体例追加</h4>
+            <p>「この説明に実際の事例や数値データを3つ追加してください」</p>
+          </div>
+          <div class="technique">
+            <h4>見出し最適化</h4>
+            <p>「この見出しをよりSEO効果的で魅力的なものに改善してください」</p>
+          </div>
+          <div class="technique">
+            <h4>FAQ生成</h4>
+            <p>「この内容に関してよくある質問を5つ生成し、回答してください」</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- スライド5: 関連キーワード生成 -->
+<div class="slide" data-id="related-keywords">
+  <h2><i class="fas fa-project-diagram"></i> 関連キーワード・共起語の生成</h2>
+  <div class="keyword-generation">
+    <div class="generation-prompt">
+      <h3>関連キーワード抽出プロンプト</h3>
+      <div class="code-block">
+        <pre><code>メインキーワード「[メインキーワード]」に関連する
+以下のタイプのキーワードを各10個ずつ生成してください：
+
+<span class="highlight">【生成するキーワード種別】</span>
+1. LSIキーワード（意味的に関連するキーワード）
+2. 共起語（よく一緒に使われる単語）
+3. 類義語・同義語
+4. 関連する疑問文キーワード
+5. ロングテールキーワード
+
+<span class="highlight">【各キーワードの情報】</span>
+- 検索意図のタイプ（Know/Do/Buy/Go）
+- 記事内での使用推奨箇所
+- 想定される検索ボリューム（高/中/低）
+- なぜ重要か（簡潔な理由）
+
+<span class="highlight">【出力形式】</span>
+カテゴリ別に整理し、表形式で出力してください。</code></pre>
+      </div>
+    </div>
+    
+    <div class="keyword-examples">
+      <h3>生成例：「SEO対策」の関連キーワード</h3>
+      <div class="keyword-categories">
+        <div class="category">
+          <h4>LSIキーワード</h4>
+          <div class="keyword-tags">
+            <span>検索エンジン最適化</span>
+            <span>Google アルゴリズム</span>
+            <span>検索順位</span>
+            <span>オーガニック検索</span>
+          </div>
+        </div>
+        <div class="category">
+          <h4>共起語</h4>
+          <div class="keyword-tags">
+            <span>コンテンツ</span>
+            <span>キーワード</span>
+            <span>内部リンク</span>
+            <span>メタタグ</span>
+          </div>
+        </div>
+        <div class="category">
+          <h4>疑問文キーワード</h4>
+          <div class="keyword-tags">
+            <span>SEO対策 何から始める</span>
+            <span>SEO対策 費用 いくら</span>
+            <span>SEO対策 効果 いつ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

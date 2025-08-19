@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO記事作成 完全マニュアル - AIを活用した実践ガイド</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/manual-style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="manual-header">
+    <div class="header-content">
+      <h1><i class="fas fa-book"></i> SEO記事作成 完全マニュアル</h1>
+      <p class="header-subtitle">検索上位を獲得するコンテンツマーケティングの実践ガイド</p>
+    </div>
+  </header>
+
+  <!-- ナビゲーション -->
+  <nav class="sticky-nav">
+    <div class="nav-content">
+      <a href="#intro">はじめに</a>
+      <a href="#seo-basics">SEO基礎知識</a>
+      <a href="#keyword-research">キーワード戦略</a>
+      <a href="#article-creation">記事作成実践</a>
+      <a href="#ai-tools">AI活用法</a>
+      <a href="#templates">テンプレート集</a>
+      <a href="#checklist">チェックリスト</a>
+      <a href="#case-studies">事例研究</a>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="manual-content">
+    <div class="container">
+      
+      <!-- 目次 -->
+      <section class="toc-section">
+        <h2>目次</h2>
+        <div class="toc">
+          <ol>
+            <li><a href="#intro">はじめに - このマニュアルの使い方</a></li>
+            <li><a href="#seo-basics">第1章：SEOの基礎知識</a>
+              <ul>
+                <li><a href="#what-is-seo">1.1 SEOとは何か</a></li>
+                <li><a href="#search-engine">1.2 検索エンジンの仕組み</a></li>
+                <li><a href="#seo-types">1.3 SEOの3つの柱</a></li>
+                <li><a href="#eeat">1.4 E-E-A-Tの重要性</a></li>
+              </ul>
+            </li>
+            <li><a href="#keyword-research">第2章：キーワード戦略</a>
+              <ul>
+                <li><a href="#search-intent">2.1 検索意図の4分類</a></li>
+                <li><a href="#keyword-selection">2.2 効果的なキーワード選定</a></li>
+                <li><a href="#longtail">2.3 ロングテールキーワード戦略</a></li>
+                <li><a href="#competitor-analysis">2.4 競合分析手法</a></li>
+              </ul>
+            </li>
+            <li><a href="#article-creation">第3章：SEO記事作成実践</a>
+              <ul>
+                <li><a href="#article-structure">3.1 記事構成の設計</a></li>
+                <li><a href="#writing-rules">3.2 執筆ルールとガイドライン</a></li>
+                <li><a href="#optimization">3.3 最適化テクニック</a></li>
+                <li><a href="#quality-check">3.4 品質チェック方法</a></li>
+              </ul>
+            </li>
+            <li><a href="#ai-tools">第4章：AI活用法</a>
+              <ul>
+                <li><a href="#ai-prompts">4.1 効果的なプロンプト作成</a></li>
+                <li><a href="#ai-workflow">4.2 AIを使った執筆ワークフロー</a></li>
+                <li><a href="#ai-best-practices">4.3 ベストプラクティス</a></li>
+              </ul>
+            </li>
+            <li><a href="#templates">第5章：実践テンプレート集</a></li>
+            <li><a href="#checklist">第6章：チェックリスト</a></li>
+            <li><a href="#case-studies">第7章：成功事例と分析</a></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- はじめに -->
+      <section id="intro" class="manual-section">
+        <h2><i class="fas fa-flag"></i> はじめに - このマニュアルの使い方</h2>
+        
+        <div class="intro-box">
+          <h3>このマニュアルの目的</h3>
+          <p>このマニュアルは、SEO（検索エンジン最適化）の基礎から実践まで、体系的に学び、実際に成果を出すための完全ガイドです。AIツールを効果的に活用しながら、高品質なSEO記事を作成する方法を詳しく解説します。</p>
+        </div>
+
+        <div class="target-audience">
+          <h3>対象読者</h3>
+          <ul>
+            <li><i class="fas fa-check"></i> Webマーケティング担当者</li>
+            <li><i class="fas fa-check"></i> コンテンツライター・編集者</li>
+            <li><i class="fas fa-check"></i> 中小企業の経営者・Web担当者</li>
+            <li><i class="fas fa-check"></i> ブロガー・アフィリエイター</li>
+            <li><i class="fas fa-check"></i> SEOを基礎から学びたい方</li>
+          </ul>
+        </div>
+
+        <div class="learning-outcomes">
+          <h3>このマニュアルで得られる成果</h3>
+          <div class="outcome-cards">
+            <div class="outcome-card">
+              <i class="fas fa-trophy"></i>
+              <h4>検索順位の向上</h4>
+              <p>適切なキーワード選定と最適化により、狙ったキーワードで上位表示を実現</p>
+            </div>
+            <div class="outcome-card">
+              <i class="fas fa-users"></i>
+              <h4>トラフィック増加</h4>
+              <p>オーガニック検索からの流入を増やし、見込み客を継続的に獲得</p>
+            </div>
+            <div class="outcome-card">
+              <i class="fas fa-clock"></i>
+              <h4>作業効率化</h4>
+              <p>AIツールとテンプレートを活用し、記事作成時間を50%以上短縮</p>
+            </div>
+            <div class="outcome-card">
+              <i class="fas fa-chart-line"></i>
+              <h4>売上向上</h4>
+              <p>質の高いコンテンツによりコンバージョン率を改善し、売上に貢献</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-to-use">
+          <h3>効果的な使い方</h3>
+          <ol>
+            <li><strong>第1章から順番に読む</strong> - 基礎知識をしっかり理解してから実践へ</li>
+            <li><strong>テンプレートを活用</strong> - 第5章のテンプレートをコピーして使用</li>
+            <li><strong>チェックリストで確認</strong> - 記事作成後は第6章のチェックリストで品質確認</li>
+            <li><strong>実践しながら学ぶ</strong> - 実際に記事を作成しながら理解を深める</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 第1章：SEOの基礎知識 -->
+      <section id="seo-basics" class="manual-section">
+        <h2><i class="fas fa-graduation-cap"></i> 第1章：SEOの基礎知識</h2>
+        
+        <div id="what-is-seo" class="subsection">
+          <h3>1.1 SEOとは何か</h3>
+          
+          <div class="definition-box">
+            <h4>SEO（Search Engine Optimization）の定義</h4>
+            <p>SEOとは「検索エンジン最適化」のことで、GoogleやYahoo!などの検索エンジンで、特定のキーワードで検索された際に、自社のWebサイトを検索結果の上位に表示させるための施策全般を指します。</p>
+          </div>
+
+          <div class="importance">
+            <h4>なぜSEOが重要なのか</h4>
+            <div class="stats-grid">
+              <div class="stat">
+                <div class="stat-number">68%</div>
+                <div class="stat-label">オンライン体験は検索エンジンから始まる</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">検索結果1ページ目の結果をクリック</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">33%</div>
+                <div class="stat-label">検索結果1位のクリック率</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">5.7倍</div>
+                <div class="stat-label">SEOは有料広告より費用対効果が高い</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="seo-benefits">
+            <h4>SEOがもたらす具体的なメリット</h4>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>メリット</th>
+                  <th>詳細</th>
+                  <th>期待される効果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>継続的な集客</strong></td>
+                  <td>一度上位表示されれば、広告費なしで継続的にトラフィックを獲得</td>
+                  <td>月間数千〜数万の訪問者</td>
+                </tr>
+                <tr>
+                  <td><strong>信頼性の向上</strong></td>
+                  <td>検索上位＝信頼できるサイトという認識</td>
+                  <td>コンバージョン率2-3倍向上</td>
+                </tr>
+                <tr>
+                  <td><strong>ブランド認知</strong></td>
+                  <td>検索結果での露出によりブランド認知度が向上</td>
+                  <td>指名検索の増加</td>
+                </tr>
+                <tr>
+                  <td><strong>競合優位性</strong></td>
+                  <td>競合より上位表示することで市場シェア拡大</td>
+                  <td>売上20-30%向上</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="search-engine" class="subsection">
+          <h3>1.2 検索エンジンの仕組み</h3>
+          
+          <div class="process-flow">
+            <h4>検索エンジンの3つのステップ</h4>
+            
+            <div class="step-cards">
+              <div class="step-card">
+                <div class="step-number">STEP 1</div>
+                <h5><i class="fas fa-spider"></i> クローリング（Crawling）</h5>
+                <p>Googlebot（クローラー）と呼ばれるプログラムが、インターネット上のWebページを巡回し、新しいページや更新されたページを発見します。</p>
+                <ul>
+                  <li>リンクをたどってページを発見</li>
+                  <li>XMLサイトマップから情報取得</li>
+                  <li>robots.txtでクロール制御</li>
+                </ul>
+              </div>
+              
+              <div class="step-card">
+                <div class="step-number">STEP 2</div>
+                <h5><i class="fas fa-database"></i> インデックス（Indexing）</h5>
+                <p>クローリングで収集した情報を解析し、検索エンジンのデータベースに格納・整理します。</p>
+                <ul>
+                  <li>ページ内容の理解と分類</li>
+                  <li>キーワードとの関連付け</li>
+                  <li>重複コンテンツの処理</li>
+                </ul>
+              </div>
+              
+              <div class="step-card">
+                <div class="step-number">STEP 3</div>
+                <h5><i class="fas fa-trophy"></i> ランキング（Ranking）</h5>
+                <p>検索クエリに対して、最も関連性が高く価値のあるページを順位付けして表示します。</p>
+                <ul>
+                  <li>200以上のランキング要因</li>
+                  <li>アルゴリズムによる評価</li>
+                  <li>ユーザー体験の重視</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="ranking-factors">
+            <h4>主要なランキング要因</h4>
+            <div class="factor-categories">
+              <div class="factor-category">
+                <h5>コンテンツ要因</h5>
+                <ul>
+                  <li>コンテンツの質と独自性</li>
+                  <li>キーワードの関連性</li>
+                  <li>コンテンツの鮮度</li>
+                  <li>網羅性と詳細度</li>
+                </ul>
+              </div>
+              <div class="factor-category">
+                <h5>技術的要因</h5>
+                <ul>
+                  <li>ページ読み込み速度</li>
+                  <li>モバイル対応</li>
+                  <li>HTTPS化</li>
+                  <li>構造化データ</li>
+                </ul>
+              </div>
+              <div class="factor-category">
+                <h5>権威性要因</h5>
+                <ul>
+                  <li>被リンクの質と量</li>
+                  <li>ドメインの信頼性</li>
+                  <li>ブランドシグナル</li>
+                  <li>E-E-A-T</li>
+                </ul>
+              </div>
+              <div class="factor-category">
+                <h5>ユーザー体験要因</h5>
+                <ul>
+                  <li>直帰率</li>
+                  <li>滞在時間</li>
+                  <li>クリック率（CTR）</li>
+                  <li>Core Web Vitals</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="seo-types" class="subsection">
+          <h3>1.3 SEOの3つの柱</h3>
+          
+          <div class="seo-pillars">
+            <div class="pillar">
+              <div class="pillar-header on-page">
+                <i class="fas fa-file-alt"></i>
+                <h4>オンページSEO</h4>
+              </div>
+              <div class="pillar-content">
+                <p>Webページ内部の最適化。コンテンツと HTML ソースコードの両方を含みます。</p>
+                
+                <h5>主要な施策</h5>
+                <ul>
+                  <li><strong>タイトルタグ</strong> - 32文字以内でキーワードを含める</li>
+                  <li><strong>メタディスクリプション</strong> - 120-160文字で魅力的な説明</li>
+                  <li><strong>見出しタグ（H1-H6）</strong> - 論理的な階層構造</li>
+                  <li><strong>内部リンク</strong> - 関連ページへの適切なリンク</li>
+                  <li><strong>画像最適化</strong> - alt属性とファイルサイズ最適化</li>
+                  <li><strong>URL構造</strong> - 分かりやすく短いURL</li>
+                </ul>
+                
+                <div class="best-practice">
+                  <h5>ベストプラクティス</h5>
+                  <p>キーワードを自然に配置し、ユーザーにとって価値のあるコンテンツを作成することが最重要です。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pillar">
+              <div class="pillar-header off-page">
+                <i class="fas fa-link"></i>
+                <h4>オフページSEO</h4>
+              </div>
+              <div class="pillar-content">
+                <p>Webサイト外部からの評価を高める施策。主に被リンク獲得に関連します。</p>
+                
+                <h5>主要な施策</h5>
+                <ul>
+                  <li><strong>被リンク獲得</strong> - 権威あるサイトからのリンク</li>
+                  <li><strong>ブランドメンション</strong> - サイト名の言及</li>
+                  <li><strong>ソーシャルシグナル</strong> - SNSでの共有・反応</li>
+                  <li><strong>ローカルSEO</strong> - Googleマイビジネス最適化</li>
+                  <li><strong>PR活動</strong> - メディア露出</li>
+                  <li><strong>ゲストブログ</strong> - 他サイトへの寄稿</li>
+                </ul>
+                
+                <div class="warning">
+                  <h5>注意点</h5>
+                  <p>不自然なリンク構築はペナルティの対象。質の高いコンテンツによる自然なリンク獲得を目指しましょう。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pillar">
+              <div class="pillar-header technical">
+                <i class="fas fa-code"></i>
+                <h4>テクニカルSEO</h4>
+              </div>
+              <div class="pillar-content">
+                <p>検索エンジンがサイトをクロール・インデックスしやすくする技術的な最適化。</p>
+                
+                <h5>主要な施策</h5>
+                <ul>
+                  <li><strong>サイト速度</strong> - Core Web Vitals の改善</li>
+                  <li><strong>モバイル対応</strong> - レスポンシブデザイン</li>
+                  <li><strong>SSL証明書</strong> - HTTPS化</li>
+                  <li><strong>XMLサイトマップ</strong> - クロール効率化</li>
+                  <li><strong>robots.txt</strong> - クロール制御</li>
+                  <li><strong>構造化データ</strong> - リッチスニペット表示</li>
+                  <li><strong>正規化</strong> - 重複コンテンツ対策</li>
+                </ul>
+                
+                <div class="tools">
+                  <h5>診断ツール</h5>
+                  <p>Google Search Console、PageSpeed Insights、モバイルフレンドリーテストなどを活用して定期的にチェック。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="eeat" class="subsection">
+          <h3>1.4 E-E-A-Tの重要性</h3>
+          
+          <div class="eeat-intro">
+            <p>E-E-A-Tは、Googleが重視するコンテンツ品質の評価基準です。特にYMYL（Your Money or Your Life）分野では極めて重要です。</p>
+          </div>
+
+          <div class="eeat-components">
+            <div class="eeat-card">
+              <div class="eeat-icon experience">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <h4>Experience（経験）</h4>
+              <p>コンテンツ作成者の実体験に基づく情報</p>
+              <h5>実践方法</h5>
+              <ul>
+                <li>実際の使用体験を詳しく記載</li>
+                <li>具体的な事例やケーススタディ</li>
+                <li>独自の写真や動画を含める</li>
+                <li>失敗談や学びも共有</li>
+              </ul>
+              <div class="example">
+                <strong>例：</strong>「3ヶ月間実際に使用した結果、〇〇の機能が特に役立ちました」
+              </div>
+            </div>
+
+            <div class="eeat-card">
+              <div class="eeat-icon expertise">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h4>Expertise（専門性）</h4>
+              <p>トピックに関する深い知識と理解</p>
+              <h5>実践方法</h5>
+              <ul>
+                <li>専門用語を正確に使用</li>
+                <li>詳細で正確な情報提供</li>
+                <li>最新の研究やデータを引用</li>
+                <li>複雑な概念を分かりやすく説明</li>
+              </ul>
+              <div class="example">
+                <strong>例：</strong>資格保有者による専門的な解説、業界経験に基づく洞察
+              </div>
+            </div>
+
+            <div class="eeat-card">
+              <div class="eeat-icon authority">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4>Authoritativeness（権威性）</h4>
+              <p>業界での認知度と信頼される立場</p>
+              <h5>実践方法</h5>
+              <ul>
+                <li>著者プロフィールの充実</li>
+                <li>資格・実績の明記</li>
+                <li>他の権威サイトからの引用・リンク</li>
+                <li>業界団体への所属</li>
+              </ul>
+              <div class="example">
+                <strong>例：</strong>「〇〇協会認定専門家」「〇〇賞受賞」などの実績表示
+              </div>
+            </div>
+
+            <div class="eeat-card">
+              <div class="eeat-icon trust">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Trustworthiness（信頼性）</h4>
+              <p>正確で透明性のある情報提供</p>
+              <h5>実践方法</h5>
+              <ul>
+                <li>情報源を明記</li>
+                <li>更新日時を表示</li>
+                <li>連絡先情報の掲載</li>
+                <li>プライバシーポリシー</li>
+                <li>公平で客観的な視点</li>
+              </ul>
+              <div class="example">
+                <strong>例：</strong>「最終更新日：2024年8月」「参考文献：〇〇研究所レポート」
+              </div>
+            </div>
+          </div>
+
+          <div class="ymyl-section">
+            <h4>YMYL（Your Money or Your Life）分野とE-E-A-T</h4>
+            <p>以下の分野では特にE-E-A-Tが重要視されます：</p>
+            <ul>
+              <li><strong>医療・健康</strong> - 病気、治療、薬、栄養など</li>
+              <li><strong>金融</strong> - 投資、保険、ローン、税金など</li>
+              <li><strong>法律</strong> - 法的アドバイス、権利関係など</li>
+              <li><strong>ニュース・時事</strong> - 重要な出来事、政治など</li>
+              <li><strong>その他</strong> - 子育て、住宅購入など人生の重要な決定に関わる情報</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第2章：キーワード戦略 -->
+      <section id="keyword-research" class="manual-section">
+        <h2><i class="fas fa-key"></i> 第2章：キーワード戦略</h2>
+        
+        <div id="search-intent" class="subsection">
+          <h3>2.1 検索意図の4分類</h3>
+          
+          <div class="intent-intro">
+            <p>効果的なSEOの第一歩は、ユーザーの検索意図（サーチインテント）を正確に理解することです。Googleは検索意図を満たすコンテンツを高く評価します。</p>
+          </div>
+
+          <div class="intent-types">
+            <div class="intent-card know">
+              <div class="intent-header">
+                <i class="fas fa-question-circle"></i>
+                <h4>Knowクエリ（情報収集型）</h4>
+                <span class="intent-percentage">全検索の80%</span>
+              </div>
+              <div class="intent-content">
+                <p><strong>特徴：</strong>何かを知りたい、調べたい、学びたい段階</p>
+                
+                <h5>キーワード例</h5>
+                <div class="keyword-examples">
+                  <span>○○とは</span>
+                  <span>○○ 方法</span>
+                  <span>○○ 意味</span>
+                  <span>○○ 原因</span>
+                  <span>○○ 違い</span>
+                </div>
+                
+                <h5>最適なコンテンツ形式</h5>
+                <ul>
+                  <li>解説記事・ガイド記事</li>
+                  <li>用語集・辞典</li>
+                  <li>How-to記事</li>
+                  <li>比較・まとめ記事</li>
+                </ul>
+                
+                <div class="strategy-box">
+                  <h5>攻略ポイント</h5>
+                  <p>網羅的で分かりやすい情報提供。初心者にも理解できる説明を心がける。図解や例を豊富に使用。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="intent-card do">
+              <div class="intent-header">
+                <i class="fas fa-play-circle"></i>
+                <h4>Doクエリ（行動型）</h4>
+                <span class="intent-percentage">全検索の10%</span>
+              </div>
+              <div class="intent-content">
+                <p><strong>特徴：</strong>具体的なアクションを起こしたい段階</p>
+                
+                <h5>キーワード例</h5>
+                <div class="keyword-examples">
+                  <span>○○ ダウンロード</span>
+                  <span>○○ 申し込み</span>
+                  <span>○○ 予約</span>
+                  <span>○○ 計算</span>
+                  <span>○○ ツール</span>
+                </div>
+                
+                <h5>最適なコンテンツ形式</h5>
+                <ul>
+                  <li>ツール・計算機</li>
+                  <li>フォーム・申込ページ</li>
+                  <li>ダウンロードページ</li>
+                  <li>オンラインサービス</li>
+                </ul>
+                
+                <div class="strategy-box">
+                  <h5>攻略ポイント</h5>
+                  <p>シンプルで使いやすいUI。目的の行動をすぐに実行できる設計。不要な情報は省く。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="intent-card buy">
+              <div class="intent-header">
+                <i class="fas fa-shopping-cart"></i>
+                <h4>Buyクエリ（購入検討型）</h4>
+                <span class="intent-percentage">全検索の10%</span>
+              </div>
+              <div class="intent-content">
+                <p><strong>特徴：</strong>商品・サービスの購入を検討している段階</p>
+                
+                <h5>キーワード例</h5>
+                <div class="keyword-examples">
+                  <span>○○ おすすめ</span>
+                  <span>○○ 比較</span>
+                  <span>○○ レビュー</span>
+                  <span>○○ 価格</span>
+                  <span>○○ ランキング</span>
+                </div>
+                
+                <h5>最適なコンテンツ形式</h5>
+                <ul>
+                  <li>商品比較表</li>
+                  <li>ランキング記事</li>
+                  <li>レビュー・口コミ</li>
+                  <li>価格比較ページ</li>
+                </ul>
+                
+                <div class="strategy-box">
+                  <h5>攻略ポイント</h5>
+                  <p>客観的で信頼できる情報。実体験に基づくレビュー。メリット・デメリットを公平に記載。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="intent-card go">
+              <div class="intent-header">
+                <i class="fas fa-location-arrow"></i>
+                <h4>Goクエリ（案内型）</h4>
+                <span class="intent-percentage">全検索の10%未満</span>
+              </div>
+              <div class="intent-content">
+                <p><strong>特徴：</strong>特定のサイトやページを訪れたい段階</p>
+                
+                <h5>キーワード例</h5>
+                <div class="keyword-examples">
+                  <span>○○ 公式サイト</span>
+                  <span>○○ ログイン</span>
+                  <span>○○ 店舗</span>
+                  <span>ブランド名</span>
+                </div>
+                
+                <h5>最適なコンテンツ形式</h5>
+                <ul>
+                  <li>トップページ</li>
+                  <li>ログインページ</li>
+                  <li>店舗情報ページ</li>
+                  <li>お問い合わせページ</li>
+                </ul>
+                
+                <div class="strategy-box">
+                  <h5>攻略ポイント</h5>
+                  <p>サイト名・ブランド名での検索に対応。分かりやすいナビゲーション。素早いページ遷移。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="keyword-selection" class="subsection">
+          <h3>2.2 効果的なキーワード選定</h3>
+          
+          <div class="keyword-process">
+            <h4>キーワード選定の5ステップ</h4>
+            
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-header">
+                  <span class="step-num">STEP 1</span>
+                  <h5>ビジネス目標の明確化</h5>
+                </div>
+                <div class="step-content">
+                  <p>まず、SEOで達成したい目標を明確にします。</p>
+                  <ul>
+                    <li>売上向上</li>
+                    <li>リード獲得</li>
+                    <li>ブランド認知度向上</li>
+                    <li>サポートコスト削減</li>
+                  </ul>
+                  <div class="tip">
+                    <strong>ポイント：</strong>目標によって狙うべきキーワードが変わります。
+                  </div>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-header">
+                  <span class="step-num">STEP 2</span>
+                  <h5>ターゲット層の分析</h5>
+                </div>
+                <div class="step-content">
+                  <p>ペルソナを設定し、検索行動を理解します。</p>
+                  <div class="persona-template">
+                    <h6>ペルソナ設定項目</h6>
+                    <ul>
+                      <li>年齢・性別</li>
+                      <li>職業・役職</li>
+                      <li>抱える課題・悩み</li>
+                      <li>情報収集方法</li>
+                      <li>使用デバイス</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-header">
+                  <span class="step-num">STEP 3</span>
+                  <h5>キーワード候補の洗い出し</h5>
+                </div>
+                <div class="step-content">
+                  <p>様々な方法でキーワード候補を収集します。</p>
+                  <ul>
+                    <li><strong>ブレインストーミング</strong> - チームで思いつくキーワードを列挙</li>
+                    <li><strong>競合分析</strong> - 競合サイトが狙っているキーワード</li>
+                    <li><strong>ツール活用</strong> - Googleキーワードプランナー等</li>
+                    <li><strong>サジェスト</strong> - Google検索の候補表示</li>
+                    <li><strong>Q&Aサイト</strong> - Yahoo!知恵袋等での質問</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-header">
+                  <span class="step-num">STEP 4</span>
+                  <h5>キーワードの評価</h5>
+                </div>
+                <div class="step-content">
+                  <p>各キーワードを以下の観点で評価します。</p>
+                  <table class="evaluation-table">
+                    <thead>
+                      <tr>
+                        <th>評価項目</th>
+                        <th>重要度</th>
+                        <th>判断基準</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>検索ボリューム</td>
+                        <td>★★★★☆</td>
+                        <td>月間100回以上が目安</td>
+                      </tr>
+                      <tr>
+                        <td>競合性</td>
+                        <td>★★★★★</td>
+                        <td>上位サイトのドメイン権威</td>
+                      </tr>
+                      <tr>
+                        <td>関連性</td>
+                        <td>★★★★★</td>
+                        <td>ビジネスとの関連度</td>
+                      </tr>
+                      <tr>
+                        <td>購買意欲</td>
+                        <td>★★★☆☆</td>
+                        <td>コンバージョンの可能性</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="step-header">
+                  <span class="step-num">STEP 5</span>
+                  <h5>優先順位付け</h5>
+                </div>
+                <div class="step-content">
+                  <p>効果と難易度のマトリクスで優先順位を決定します。</p>
+                  <div class="priority-matrix">
+                    <div class="matrix-quadrant high-priority">
+                      <h6>最優先</h6>
+                      <p>効果：高 × 難易度：低</p>
+                      <p>すぐに着手すべきキーワード</p>
+                    </div>
+                    <div class="matrix-quadrant medium-priority">
+                      <h6>次点</h6>
+                      <p>効果：高 × 難易度：高</p>
+                      <p>中長期的に狙うキーワード</p>
+                    </div>
+                    <div class="matrix-quadrant low-priority">
+                      <h6>保留</h6>
+                      <p>効果：低 × 難易度：高</p>
+                      <p>優先度の低いキーワード</p>
+                    </div>
+                    <div class="matrix-quadrant quick-win">
+                      <h6>クイックウィン</h6>
+                      <p>効果：低 × 難易度：低</p>
+                      <p>簡単に獲得できるキーワード</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="longtail" class="subsection">
+          <h3>2.3 ロングテールキーワード戦略</h3>
+          
+          <div class="longtail-intro">
+            <h4>ロングテールキーワードとは</h4>
+            <p>3語以上の複合語から成る、検索ボリュームは少ないが具体的なキーワードです。全検索の70%を占め、コンバージョン率が高い特徴があります。</p>
+          </div>
+
+          <div class="keyword-comparison">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>種類</th>
+                  <th>語数</th>
+                  <th>例</th>
+                  <th>検索量</th>
+                  <th>競合</th>
+                  <th>CVR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="short-tail">
+                  <td><strong>ショートテール</strong></td>
+                  <td>1-2語</td>
+                  <td>「SEO」</td>
+                  <td>高（10,000+）</td>
+                  <td>高</td>
+                  <td>低（1%以下）</td>
+                </tr>
+                <tr class="middle-tail">
+                  <td><strong>ミドルテール</strong></td>
+                  <td>2-3語</td>
+                  <td>「SEO 対策 方法」</td>
+                  <td>中（1,000-10,000）</td>
+                  <td>中</td>
+                  <td>中（2-3%）</td>
+                </tr>
+                <tr class="long-tail">
+                  <td><strong>ロングテール</strong></td>
+                  <td>3語以上</td>
+                  <td>「中小企業 SEO対策 費用 相場」</td>
+                  <td>低（100-1,000）</td>
+                  <td>低</td>
+                  <td>高（5%以上）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="longtail-benefits">
+            <h4>ロングテールキーワードのメリット</h4>
+            <div class="benefit-cards">
+              <div class="benefit">
+                <i class="fas fa-bullseye"></i>
+                <h5>高いコンバージョン率</h5>
+                <p>具体的な検索意図を持つユーザーが多く、成約に繋がりやすい</p>
+              </div>
+              <div class="benefit">
+                <i class="fas fa-trophy"></i>
+                <h5>上位表示しやすい</h5>
+                <p>競合が少ないため、新規サイトでも上位獲得が可能</p>
+              </div>
+              <div class="benefit">
+                <i class="fas fa-users"></i>
+                <h5>質の高いトラフィック</h5>
+                <p>ニーズが明確なユーザーが訪問するため、エンゲージメントが高い</p>
+              </div>
+              <div class="benefit">
+                <i class="fas fa-dollar-sign"></i>
+                <h5>費用対効果が高い</h5>
+                <p>少ないリソースで成果を出せる</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="longtail-generation">
+            <h4>ロングテールキーワードの生成方法</h4>
+            
+            <div class="generation-methods">
+              <div class="method">
+                <h5>1. 5W1Hを活用</h5>
+                <div class="example-box">
+                  <p><strong>基本キーワード：</strong>「SEO対策」</p>
+                  <ul>
+                    <li><strong>What：</strong>SEO対策 何から始める</li>
+                    <li><strong>When：</strong>SEO対策 いつから効果</li>
+                    <li><strong>Where：</strong>SEO対策 地域名 会社</li>
+                    <li><strong>Who：</strong>SEO対策 初心者向け</li>
+                    <li><strong>Why：</strong>SEO対策 なぜ必要</li>
+                    <li><strong>How：</strong>SEO対策 やり方 手順</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="method">
+                <h5>2. 修飾語の追加</h5>
+                <div class="modifier-list">
+                  <div class="modifier-category">
+                    <h6>価格関連</h6>
+                    <span>無料</span>
+                    <span>格安</span>
+                    <span>費用</span>
+                    <span>相場</span>
+                  </div>
+                  <div class="modifier-category">
+                    <h6>比較関連</h6>
+                    <span>おすすめ</span>
+                    <span>比較</span>
+                    <span>ランキング</span>
+                    <span>違い</span>
+                  </div>
+                  <div class="modifier-category">
+                    <h6>対象者</h6>
+                    <span>初心者</span>
+                    <span>中小企業</span>
+                    <span>個人</span>
+                    <span>BtoB</span>
+                  </div>
+                  <div class="modifier-category">
+                    <h6>地域</h6>
+                    <span>東京</span>
+                    <span>大阪</span>
+                    <span>地域名</span>
+                    <span>近く</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="method">
+                <h5>3. 問題・解決パターン</h5>
+                <ul>
+                  <li>「〇〇 できない 原因」</li>
+                  <li>「〇〇 失敗 対策」</li>
+                  <li>「〇〇 改善 方法」</li>
+                  <li>「〇〇 効果ない 理由」</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="competitor-analysis" class="subsection">
+          <h3>2.4 競合分析手法</h3>
+          
+          <div class="competitor-process">
+            <h4>競合分析の4ステップ</h4>
+            
+            <div class="analysis-steps">
+              <div class="analysis-step">
+                <h5>1. 競合の特定</h5>
+                <p>ターゲットキーワードで検索し、上位10サイトを分析対象とする</p>
+                <ul>
+                  <li>直接競合：同じ商品・サービスを提供</li>
+                  <li>間接競合：異なる方法で同じニーズを満たす</li>
+                  <li>検索競合：SEOで競合するが事業は異なる</li>
+                </ul>
+              </div>
+
+              <div class="analysis-step">
+                <h5>2. コンテンツ分析</h5>
+                <div class="analysis-checklist">
+                  <h6>チェック項目</h6>
+                  <ul>
+                    <li>□ タイトル・見出し構造</li>
+                    <li>□ 文字数・情報量</li>
+                    <li>□ 使用キーワードと密度</li>
+                    <li>□ 画像・動画の使用</li>
+                    <li>□ 内部リンク構造</li>
+                    <li>□ 独自コンテンツ</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="analysis-step">
+                <h5>3. ギャップ分析</h5>
+                <p>競合が扱っていない、または不十分な領域を発見</p>
+                <div class="gap-examples">
+                  <div class="gap">
+                    <strong>情報の深さ</strong>
+                    <p>表面的 → 専門的で詳細な解説</p>
+                  </div>
+                  <div class="gap">
+                    <strong>視覚的要素</strong>
+                    <p>テキストのみ → 図解・動画追加</p>
+                  </div>
+                  <div class="gap">
+                    <strong>実践的要素</strong>
+                    <p>理論のみ → 具体例・テンプレート</p>
+                  </div>
+                  <div class="gap">
+                    <strong>最新性</strong>
+                    <p>古い情報 → 最新データ・トレンド</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="analysis-step">
+                <h5>4. 差別化戦略</h5>
+                <p>競合を上回る価値を提供する方法を決定</p>
+                <ul>
+                  <li><strong>10x Content：</strong>競合の10倍優れたコンテンツ</li>
+                  <li><strong>独自データ：</strong>オリジナル調査・統計</li>
+                  <li><strong>専門家監修：</strong>権威性の付加</li>
+                  <li><strong>ユーザー体験：</strong>使いやすさ・読みやすさ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="analysis-template">
+            <h4>競合分析テンプレート</h4>
+            <table class="competitor-table">
+              <thead>
+                <tr>
+                  <th>分析項目</th>
+                  <th>競合A</th>
+                  <th>競合B</th>
+                  <th>競合C</th>
+                  <th>自社戦略</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>タイトル文字数</td>
+                  <td>28文字</td>
+                  <td>31文字</td>
+                  <td>25文字</td>
+                  <td>30文字以内</td>
+                </tr>
+                <tr>
+                  <td>本文文字数</td>
+                  <td>3,000字</td>
+                  <td>5,000字</td>
+                  <td>4,000字</td>
+                  <td>6,000字以上</td>
+                </tr>
+                <tr>
+                  <td>H2見出し数</td>
+                  <td>5個</td>
+                  <td>7個</td>
+                  <td>6個</td>
+                  <td>8個以上</td>
+                </tr>
+                <tr>
+                  <td>画像・図表</td>
+                  <td>3枚</td>
+                  <td>5枚</td>
+                  <td>2枚</td>
+                  <td>10枚以上</td>
+                </tr>
+                <tr>
+                  <td>独自要素</td>
+                  <td>事例紹介</td>
+                  <td>専門家インタビュー</td>
+                  <td>比較表</td>
+                  <td>動画解説＋テンプレート</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 続きは次のセクションで... -->
+
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="manual-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 SEO記事作成マニュアル. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/manual.js"></script>
+</body>
+</html>

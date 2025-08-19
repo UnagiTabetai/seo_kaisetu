@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // セクションのHTMLを取得（キャッシュ無効化パラメータ付き）
     const timestamp = new Date().getTime();
-    fetch(`sections/${section}.html?_=${timestamp}`)
+    fetch(`slides/${section}.html?_=${timestamp}`)
       .then(response => response.text())
       .then(html => {
         // スライドコンテナにHTMLを設定

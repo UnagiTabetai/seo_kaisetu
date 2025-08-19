@@ -1,0 +1,252 @@
+<!-- ワーク2: AI記事作成演習 -->
+<div class="slide" data-id="work2-intro">
+  <h2><i class="fas fa-pencil-alt"></i> ワーク②：AI記事作成演習</h2>
+  <div class="work-container">
+    <div class="work-overview">
+      <h3>演習の目的</h3>
+      <p>AIツールを活用して、実際にSEO最適化された記事を作成します</p>
+      
+      <div class="scenario-box">
+        <h4><i class="fas fa-clipboard-check"></i> 課題</h4>
+        <p>「中小企業向けDXツール導入ガイド」というテーマで、<br>
+        3000文字程度のSEO記事を作成してください。</p>
+        
+        <div class="requirements">
+          <h5>要件：</h5>
+          <ul>
+            <li>メインキーワード：「中小企業 DX ツール」</li>
+            <li>ターゲット：従業員50名以下の企業の経営者・IT担当者</li>
+            <li>検索意図：Know（情報収集）＋ Buy（購入検討）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="work-flow">
+      <h3>作成フロー</h3>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <span class="step-num">1</span>
+          <h4>構成作成</h4>
+          <p>AIで記事構成を生成</p>
+          <span class="time">10分</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">2</span>
+          <h4>導入文作成</h4>
+          <p>読者を引き込む導入部</p>
+          <span class="time">10分</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">3</span>
+          <h4>本文執筆</h4>
+          <p>セクションごとに作成</p>
+          <span class="time">20分</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="flow-step">
+          <span class="step-num">4</span>
+          <h4>最適化</h4>
+          <p>SEO要素の調整</p>
+          <span class="time">10分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ワーク2: 構成作成プロンプト -->
+<div class="slide" data-id="work2-structure">
+  <h2><i class="fas fa-sitemap"></i> Step1: 記事構成の作成</h2>
+  <div class="prompt-practice">
+    <div class="prompt-box">
+      <h3>実践プロンプト</h3>
+      <div class="code-block">
+        <pre><code>以下の条件でSEO記事の構成を作成してください：
+
+<span class="highlight">【基本情報】</span>
+メインキーワード: 中小企業 DX ツール
+ターゲット読者: 従業員50名以下の企業の経営者・IT担当者
+記事の目的: DXツールの必要性理解と導入検討の促進
+想定文字数: 3000文字
+BtoB/BtoC: BtoB
+
+<span class="highlight">【記事構成要件】</span>
+1. タイトル案（3パターン、32文字以内）
+2. メタディスクリプション（120-160文字）
+3. 導入文の概要（300文字程度）
+4. 見出し構造
+   - H2見出し: 4-5個
+   - 各H2の下にH3: 2-3個
+5. 各セクションの内容概要と文字数配分
+6. まとめセクションの方向性
+
+<span class="highlight">【含めるべき要素】</span>
+- 中小企業がDXに取り組むべき理由
+- 導入しやすいツールの種類と特徴
+- 費用対効果の説明
+- 導入ステップ
+- 成功事例（具体的な数値を含む）
+
+<span class="highlight">【SEO最適化要件】</span>
+- 関連キーワード: デジタル化、業務効率化、生産性向上
+- E-E-A-Tを意識した信頼性の高い内容
+- 競合記事との差別化（実践的、具体的）</code></pre>
+      </div>
+    </div>
+    
+    <div class="expected-output">
+      <h3>期待される出力例</h3>
+      <div class="output-preview">
+        <h4>タイトル案：</h4>
+        <ul>
+          <li>1. 中小企業のDXツール導入完全ガイド2024</li>
+          <li>2. 中小企業向けDXツール選び方と成功事例</li>
+          <li>3. 50名以下企業のDXツール活用術【保存版】</li>
+        </ul>
+        
+        <h4>見出し構造：</h4>
+        <div class="structure-tree">
+          <div class="h2">H2: 中小企業にDXが必要な3つの理由</div>
+          <div class="h3">├ H3: 人手不足の解消</div>
+          <div class="h3">├ H3: 競争力の向上</div>
+          <div class="h3">└ H3: コスト削減効果</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ワーク2: 本文作成プロンプト -->
+<div class="slide" data-id="work2-content">
+  <h2><i class="fas fa-pen"></i> Step2: 本文の作成</h2>
+  <div class="content-creation">
+    <div class="prompt-box">
+      <h3>セクション執筆プロンプト</h3>
+      <div class="code-block">
+        <pre><code>以下の見出しについて、SEOを意識した本文を作成してください：
+
+<span class="highlight">【セクション情報】</span>
+見出し: 中小企業にDXが必要な3つの理由
+位置: 記事の第1セクション（導入文の後）
+ターゲットキーワード: 中小企業 DX
+関連キーワード: デジタル化、業務効率化、生産性向上
+想定文字数: 600-700文字
+読者レベル: DX初心者の経営者
+
+<span class="highlight">【執筆要件】</span>
+1. 冒頭に問題提起または結論を配置
+2. 3つの理由を明確に提示
+   - 人手不足の解消
+   - 競争力の向上
+   - コスト削減効果
+3. 各理由に具体的な数値やデータを含める
+4. 中小企業の実情に寄り添った表現
+5. 次のセクション（ツール紹介）への自然な誘導
+
+<span class="highlight">【文体指定】</span>
+- です・ます調
+- 経営者目線での共感的な表現
+- 専門用語は平易な言葉で説明
+- 説得力のある論理展開</code></pre>
+      </div>
+    </div>
+    
+    <div class="writing-tips">
+      <h3>効果的な本文作成のコツ</h3>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <i class="fas fa-lightbulb"></i>
+          <h4>PREP法の活用</h4>
+          <p>Point（結論）→ Reason（理由）→ Example（具体例）→ Point（結論）</p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>数値データの活用</h4>
+          <p>「約70%の中小企業が...」など具体的な数値で説得力UP</p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-users"></i>
+          <h4>ペルソナを意識</h4>
+          <p>読者の立場・悩みに共感する表現を使用</p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-link"></i>
+          <h4>内部リンクの設置</h4>
+          <p>関連記事への自然な誘導でサイト回遊率向上</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ワーク2: SEO最適化チェック -->
+<div class="slide" data-id="work2-optimization">
+  <h2><i class="fas fa-check-double"></i> Step3: SEO最適化チェック</h2>
+  <div class="optimization-checklist">
+    <h3>記事の最適化チェックリスト</h3>
+    
+    <div class="checklist-sections">
+      <div class="checklist-section">
+        <h4><i class="fas fa-heading"></i> タイトル・見出し</h4>
+        <ul class="checklist">
+          <li>□ タイトルにメインキーワードが含まれている</li>
+          <li>□ タイトルは32文字以内</li>
+          <li>□ H2見出しに関連キーワードが自然に配置</li>
+          <li>□ 見出し構造が論理的（H1→H2→H3）</li>
+        </ul>
+      </div>
+      
+      <div class="checklist-section">
+        <h4><i class="fas fa-file-alt"></i> 本文</h4>
+        <ul class="checklist">
+          <li>□ キーワード密度が2-3%程度</li>
+          <li>□ 1文が60文字以内で読みやすい</li>
+          <li>□ 段落が適切に分けられている</li>
+          <li>□ 具体例・数値データが含まれている</li>
+        </ul>
+      </div>
+      
+      <div class="checklist-section">
+        <h4><i class="fas fa-tag"></i> メタ情報</h4>
+        <ul class="checklist">
+          <li>□ メタディスクリプションが120-160文字</li>
+          <li>□ メタディスクリプションにキーワード含有</li>
+          <li>□ 内部リンクが3-5個設置されている</li>
+          <li>□ 画像にalt属性が設定されている</li>
+        </ul>
+      </div>
+      
+      <div class="checklist-section">
+        <h4><i class="fas fa-award"></i> E-E-A-T</h4>
+        <ul class="checklist">
+          <li>□ 執筆者の専門性が示されている</li>
+          <li>□ 信頼できる情報源が明記されている</li>
+          <li>□ 実体験や事例が含まれている</li>
+          <li>□ 最新の情報にアップデートされている</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="optimization-prompt">
+      <h3>最適化依頼プロンプト</h3>
+      <div class="code-block small">
+        <pre><code>以下の記事をSEO観点から分析し、改善提案をしてください：
+
+[記事内容をペースト]
+
+<span class="highlight">【分析項目】</span>
+1. キーワード最適化（密度、配置）
+2. 見出し構造の適切性
+3. 内容の網羅性と独自性
+4. E-E-A-Tの観点
+5. 読みやすさ・ユーザビリティ
+
+<span class="highlight">【改善提案】</span>
+具体的な修正箇所と改善案を提示してください。</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
