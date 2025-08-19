@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実践演習 - SEO記事作成マスターガイド</title>
+  <meta name="description" content="実際に手を動かして学ぶSEO記事作成の実践演習。キーワード選定、競合分析、記事作成、成功事例研究を通じて実力を身につけます。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .exercise-container {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .exercise-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .exercise-number {
+      background: #667eea;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .exercise-title {
+      flex: 1;
+    }
+
+    .exercise-title h3 {
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .exercise-title .time {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .task-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border: 2px dashed #667eea;
+    }
+
+    .task-box h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .worksheet {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .worksheet textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .worksheet label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .analysis-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .analysis-card h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .analysis-card input[type="text"],
+    .analysis-card input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+
+    .scoring-section {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .score-item {
+      background: rgba(255,255,255,0.2);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .score-item h5 {
+      margin-bottom: 10px;
+    }
+
+    .score-input {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+    }
+
+    .hint-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+
+    .hint-box h5 {
+      color: #856404;
+      margin-bottom: 10px;
+    }
+
+    .submit-button {
+      background: #28a745;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .submit-button:hover {
+      background: #218838;
+    }
+
+    .case-study-card {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .case-study-card h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .metric-item {
+      text-align: center;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .metric-item .value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .metric-item .label {
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .breadcrumb {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .nav-button {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.prev {
+      background: #6c757d;
+    }
+
+    .nav-button.prev:hover {
+      background: #5a6268;
+    }
+
+    @media (max-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a> &gt; 実践演習
+  </div>
+
+  <div class="hero-section">
+    <h1><i class="fas fa-laptop-code"></i> 実践演習</h1>
+    <p>手を動かして学ぶSEO記事作成の実践トレーニング</p>
+  </div>
+
+  <div class="content-section">
+    <!-- 演習1: キーワード選定 -->
+    <div class="section-card">
+      <h2><i class="fas fa-dumbbell"></i> 演習1：キーワード選定演習</h2>
+      
+      <div class="exercise-container">
+        <div class="exercise-header">
+          <div class="exercise-number">1</div>
+          <div class="exercise-title">
+            <h3>自社ビジネスのキーワード戦略立案</h3>
+            <span class="time">⏱ 推奨時間：30分</span>
+          </div>
+        </div>
+
+        <div class="task-box">
+          <h4>📝 課題</h4>
+          <p>あなたのビジネス（または仮想のビジネス）に関連するキーワード戦略を立案してください。</p>
+        </div>
+
+        <div class="worksheet">
+          <label for="business">ビジネス概要</label>
+          <textarea id="business" placeholder="例：中小企業向けのクラウド会計ソフトを提供"></textarea>
+
+          <label for="target">ターゲット顧客</label>
+          <textarea id="target" placeholder="例：従業員50名以下の企業の経理担当者"></textarea>
+
+          <label for="main-keywords">メインキーワード（5個）</label>
+          <textarea id="main-keywords" placeholder="1. クラウド会計
+2. 会計ソフト 中小企業
+3. ..."></textarea>
+
+          <label for="long-tail">ロングテールキーワード（10個）</label>
+          <textarea id="long-tail" placeholder="1. クラウド会計ソフト 無料 個人事業主
+2. 中小企業 会計ソフト 比較 2024
+3. ..."></textarea>
+
+          <label for="intent-analysis">検索意図の分析</label>
+          <textarea id="intent-analysis" placeholder="各キーワードの検索意図（Know/Do/Buy/Go）を分析"></textarea>
+        </div>
+
+        <div class="hint-box">
+          <h5>💡 ヒント</h5>
+          <ul>
+            <li>競合サイトのキーワードを参考にする</li>
+            <li>Googleサジェストを活用する</li>
+            <li>関連キーワード取得ツールを使用する</li>
+            <li>季節性やトレンドを考慮する</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 演習2: 競合分析 -->
+    <div class="section-card">
+      <h2><i class="fas fa-search-dollar"></i> 演習2：競合分析実践</h2>
+      
+      <div class="exercise-container">
+        <div class="exercise-header">
+          <div class="exercise-number">2</div>
+          <div class="exercise-title">
+            <h3>上位3サイトの徹底分析</h3>
+            <span class="time">⏱ 推奨時間：45分</span>
+          </div>
+        </div>
+
+        <div class="task-box">
+          <h4>📝 課題</h4>
+          <p>選定したキーワードで実際に検索し、上位3サイトを分析してください。</p>
+        </div>
+
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <h4>競合サイト1</h4>
+            <input type="text" placeholder="サイト名/URL">
+            <input type="number" placeholder="文字数">
+            <input type="text" placeholder="H2見出し数">
+            <textarea placeholder="独自要素・強み"></textarea>
+          </div>
+          
+          <div class="analysis-card">
+            <h4>競合サイト2</h4>
+            <input type="text" placeholder="サイト名/URL">
+            <input type="number" placeholder="文字数">
+            <input type="text" placeholder="H2見出し数">
+            <textarea placeholder="独自要素・強み"></textarea>
+          </div>
+          
+          <div class="analysis-card">
+            <h4>競合サイト3</h4>
+            <input type="text" placeholder="サイト名/URL">
+            <input type="number" placeholder="文字数">
+            <input type="text" placeholder="H2見出し数">
+            <textarea placeholder="独自要素・強み"></textarea>
+          </div>
+        </div>
+
+        <div class="worksheet">
+          <label for="gap-analysis">コンテンツギャップ分析</label>
+          <textarea id="gap-analysis" placeholder="競合が扱っていない、または不十分な情報を列挙"></textarea>
+
+          <label for="differentiation">差別化戦略</label>
+          <textarea id="differentiation" placeholder="自社記事で提供する独自価値を3つ以上"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 演習3: 記事作成 -->
+    <div class="section-card">
+      <h2><i class="fas fa-pen-fancy"></i> 演習3：SEO記事作成ワーク</h2>
+      
+      <div class="exercise-container">
+        <div class="exercise-header">
+          <div class="exercise-number">3</div>
+          <div class="exercise-title">
+            <h3>2000文字のSEO記事を作成</h3>
+            <span class="time">⏱ 推奨時間：60分</span>
+          </div>
+        </div>
+
+        <div class="task-box">
+          <h4>📝 課題</h4>
+          <p>以下のテーマで実際にSEO記事を作成してください。AIツールの使用も可能です。</p>
+          <ul>
+            <li>テーマ：「初心者向け〇〇入門ガイド」（〇〇は自由設定）</li>
+            <li>文字数：2000文字程度</li>
+            <li>ターゲット：完全初心者</li>
+          </ul>
+        </div>
+
+        <div class="worksheet">
+          <label for="article-title">記事タイトル（32文字以内）</label>
+          <input type="text" id="article-title" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+
+          <label for="meta-description">メタディスクリプション（120-160文字）</label>
+          <textarea id="meta-description" rows="3"></textarea>
+
+          <label for="article-structure">記事構成（見出し構造）</label>
+          <textarea id="article-structure" rows="8" placeholder="H1: タイトル
+H2: はじめに
+H2: 〇〇とは
+  H3: 定義
+  H3: メリット
+H2: ..."></textarea>
+
+          <label for="article-content">本文</label>
+          <textarea id="article-content" rows="20" placeholder="記事本文を入力..."></textarea>
+        </div>
+
+        <div class="scoring-section">
+          <h4>自己評価チェック</h4>
+          <div class="scoring-grid">
+            <div class="score-item">
+              <h5>キーワード最適化</h5>
+              <input type="number" class="score-input" min="0" max="10" placeholder="10">
+            </div>
+            <div class="score-item">
+              <h5>構成の論理性</h5>
+              <input type="number" class="score-input" min="0" max="10" placeholder="10">
+            </div>
+            <div class="score-item">
+              <h5>読みやすさ</h5>
+              <input type="number" class="score-input" min="0" max="10" placeholder="10">
+            </div>
+            <div class="score-item">
+              <h5>独自性</h5>
+              <input type="number" class="score-input" min="0" max="10" placeholder="10">
+            </div>
+            <div class="score-item">
+              <h5>E-E-A-T</h5>
+              <input type="number" class="score-input" min="0" max="10" placeholder="10">
+            </div>
+            <div class="score-item">
+              <h5>総合評価</h5>
+              <input type="number" class="score-input" min="0" max="50" placeholder="50">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 成功事例研究 -->
+    <div class="section-card">
+      <h2><i class="fas fa-trophy"></i> 成功事例研究</h2>
+      
+      <div class="case-study-card">
+        <h3>事例1：B2B SaaSスタートアップの成功</h3>
+        <p>クラウド会計ソフトを提供するスタートアップA社が、SEO記事戦略で月間10万PVを達成した事例。</p>
+        
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="value">6ヶ月</div>
+            <div class="label">実施期間</div>
+          </div>
+          <div class="metric-item">
+            <div class="value">150記事</div>
+            <div class="label">公開記事数</div>
+          </div>
+          <div class="metric-item">
+            <div class="value">10万PV</div>
+            <div class="label">月間アクセス</div>
+          </div>
+        </div>
+
+        <h4>成功要因</h4>
+        <ul>
+          <li>🎯 ロングテールキーワードに集中</li>
+          <li>📊 競合分析を徹底的に実施</li>
+          <li>✍️ 専門家による監修で信頼性向上</li>
+          <li>🔄 定期的な記事更新（月2回）</li>
+          <li>🎨 図解やインフォグラフィックを多用</li>
+        </ul>
+
+        <div class="hint-box">
+          <h5>学べるポイント</h5>
+          <p>初期はビッグキーワードを避け、ロングテールで着実にトラフィックを積み上げる戦略が効果的。ドメインパワーが上がってから徐々に競合度の高いキーワードに挑戦。</p>
+        </div>
+      </div>
+
+      <div class="case-study-card">
+        <h3>事例2：ECサイトのコンテンツマーケティング</h3>
+        <p>アウトドア用品ECサイトB社が、ハウツー記事で売上を3倍に増加させた事例。</p>
+        
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="value">1年</div>
+            <div class="label">実施期間</div>
+          </div>
+          <div class="metric-item">
+            <div class="value">3倍</div>
+            <div class="label">売上増加</div>
+          </div>
+          <div class="metric-item">
+            <div class="value">25%</div>
+            <div class="label">記事経由CV率</div>
+          </div>
+        </div>
+
+        <h4>戦略のポイント</h4>
+        <ul>
+          <li>🏕️ 商品の使い方・選び方記事に注力</li>
+          <li>📹 動画コンテンツと連携</li>
+          <li>👥 ユーザー投稿コンテンツを活用</li>
+          <li>🎁 記事内で関連商品を自然に紹介</li>
+          <li>📧 メルマガと連動した集客</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 演習提出 -->
+    <div class="section-card">
+      <h2><i class="fas fa-paper-plane"></i> 演習の振り返り</h2>
+      
+      <div class="worksheet">
+        <label for="learning">今回の演習で学んだこと</label>
+        <textarea id="learning" rows="5" placeholder="新しく学んだ知識やスキルを記入"></textarea>
+
+        <label for="challenges">直面した課題</label>
+        <textarea id="challenges" rows="5" placeholder="演習中に難しかった点や疑問点"></textarea>
+
+        <label for="next-action">次のアクション</label>
+        <textarea id="next-action" rows="5" placeholder="実務で活用したいポイントや、さらに学びたいこと"></textarea>
+      </div>
+
+      <button class="submit-button" onclick="saveExercise()">演習内容を保存</button>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="templates.html" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：テンプレート集
+    </a>
+    <a href="../index.html" class="nav-button">
+      ホームに戻る <i class="fas fa-home"></i>
+    </a>
+  </div>
+
+  <script>
+    // 入力内容を自動保存
+    document.querySelectorAll('textarea, input[type="text"], input[type="number"]').forEach(element => {
+      const key = `practice-${element.id || Math.random().toString(36).substr(2, 9)}`;
+      
+      // 保存された値を復元
+      const savedValue = localStorage.getItem(key);
+      if (savedValue) {
+        element.value = savedValue;
+      }
+      
+      // 入力時に自動保存
+      element.addEventListener('input', function() {
+        localStorage.setItem(key, this.value);
+      });
+    });
+
+    function saveExercise() {
+      const data = {
+        timestamp: new Date().toISOString(),
+        business: document.getElementById('business').value,
+        target: document.getElementById('target').value,
+        mainKeywords: document.getElementById('main-keywords').value,
+        longTail: document.getElementById('long-tail').value,
+        learning: document.getElementById('learning').value,
+        challenges: document.getElementById('challenges').value,
+        nextAction: document.getElementById('next-action').value
+      };
+      
+      localStorage.setItem('exercise-data', JSON.stringify(data));
+      
+      alert('演習内容を保存しました！\n\n保存された内容はブラウザに記録されています。');
+    }
+  </script>
+</body>
+</html>

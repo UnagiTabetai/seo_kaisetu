@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テンプレート集 - SEO記事作成マスターガイド</title>
+  <meta name="description" content="すぐに使えるSEO記事テンプレートとAIプロンプト集。記事構成テンプレート、チェックリスト、分析シートを収録。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .template-box {
+      background: #f8f9fa;
+      border: 2px dashed #667eea;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .template-box h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background: #764ba2;
+    }
+
+    .template-content {
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      line-height: 1.8;
+    }
+
+    .template-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .tab-button.active {
+      color: #667eea;
+      border-bottom-color: #667eea;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .prompt-collection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .prompt-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .prompt-item h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .prompt-item .prompt-text {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .checklist-template {
+      background: white;
+      border: 2px solid #28a745;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .checklist-template h4 {
+      color: #28a745;
+      margin-bottom: 15px;
+    }
+
+    .checklist-template ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist-template li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .checklist-template input[type="checkbox"] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .download-section {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .download-button {
+      background: white;
+      color: #333;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+      transition: all 0.3s;
+    }
+
+    .download-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .breadcrumb {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .nav-button {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.prev {
+      background: #6c757d;
+    }
+
+    .nav-button.prev:hover {
+      background: #5a6268;
+    }
+
+    @media (max-width: 768px) {
+      .template-tabs {
+        flex-wrap: wrap;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a> &gt; テンプレート集
+  </div>
+
+  <div class="hero-section">
+    <h1><i class="fas fa-file-code"></i> テンプレート集</h1>
+    <p>すぐに使える記事テンプレートとプロンプト集</p>
+  </div>
+
+  <div class="content-section">
+    <!-- 記事構成テンプレート -->
+    <div class="section-card">
+      <h2><i class="fas fa-file-alt"></i> 記事構成テンプレート</h2>
+      <p>目的別の記事構成テンプレートです。コピーしてカスタマイズしてご利用ください。</p>
+      
+      <div class="template-tabs">
+        <button class="tab-button active" onclick="showTab('howto')">ハウツー記事</button>
+        <button class="tab-button" onclick="showTab('comparison')">比較記事</button>
+        <button class="tab-button" onclick="showTab('listicle')">リスト記事</button>
+        <button class="tab-button" onclick="showTab('case-study')">事例記事</button>
+      </div>
+
+      <div id="howto" class="tab-content active">
+        <div class="template-box">
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+          <h3>ハウツー記事テンプレート</h3>
+          <div class="template-content">【タイトル】
+〇〇を成功させる5つのステップ【2024年最新版】
+
+【メタディスクリプション】
+〇〇の具体的な方法を5つのステップで解説。初心者でも実践できる手順と成功のコツ、よくある失敗例と対策を紹介します。
+
+【記事構成】
+# 導入文（300-400文字）
+- 読者の悩み・課題への共感
+- この記事で得られる価値
+- 簡潔な結論の提示
+
+# H2: 〇〇とは？基本を理解しよう
+## H3: 〇〇の定義と重要性
+## H3: なぜ今〇〇が必要なのか
+## H3: 〇〇のメリット・デメリット
+
+# H2: 〇〇を始める前の準備
+## H3: 必要なツール・環境
+## H3: 事前に知っておくべき注意点
+## H3: 目標設定の方法
+
+# H2: 〇〇の具体的な5つのステップ
+## H3: ステップ1：〇〇
+## H3: ステップ2：〇〇
+## H3: ステップ3：〇〇
+## H3: ステップ4：〇〇
+## H3: ステップ5：〇〇
+
+# H2: 成功のコツと注意点
+## H3: プロが実践する3つのコツ
+## H3: よくある失敗パターンと対策
+## H3: 効率を上げる裏技
+
+# H2: よくある質問（FAQ）
+## H3: Q1: 〇〇にかかる時間は？
+## H3: Q2: 〇〇の費用はどれくらい？
+## H3: Q3: 初心者でも大丈夫？
+
+# まとめ（200-300文字）
+- 要点の整理
+- 次のアクションの提示
+- 関連記事への誘導</div>
+        </div>
+      </div>
+
+      <div id="comparison" class="tab-content">
+        <div class="template-box">
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+          <h3>比較記事テンプレート</h3>
+          <div class="template-content">【タイトル】
+【2024年版】〇〇おすすめ10選｜徹底比較と選び方ガイド
+
+【メタディスクリプション】
+〇〇を徹底比較。価格・機能・評判を詳しく解説し、あなたに最適な選択をサポート。比較表とチェックリスト付き。
+
+【記事構成】
+# 導入文
+- 選択の難しさへの共感
+- 比較の重要性
+- この記事の価値
+
+# H2: 〇〇を選ぶ際の5つのポイント
+## H3: ポイント1：価格・コスパ
+## H3: ポイント2：機能・性能
+## H3: ポイント3：使いやすさ
+## H3: ポイント4：サポート体制
+## H3: ポイント5：将来性・拡張性
+
+# H2: 〇〇おすすめ10選
+## H3: 1位：製品A
+### 特徴・メリット
+### デメリット・注意点
+### こんな人におすすめ
+### 料金プラン
+## H3: 2位：製品B
+（以下同様の構成で10位まで）
+
+# H2: 目的別おすすめ〇〇
+## H3: 初心者向け
+## H3: コスパ重視
+## H3: 機能重視
+## H3: 大企業向け
+
+# H2: 〇〇比較表
+（表形式での一覧比較）
+
+# H2: 〇〇導入の流れ
+## H3: 選定から導入まで
+## H3: 導入後の運用ポイント
+
+# まとめ
+- 選び方のポイント再確認
+- 最終的な推奨</div>
+        </div>
+      </div>
+
+      <div id="listicle" class="tab-content">
+        <div class="template-box">
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+          <h3>リスト記事テンプレート</h3>
+          <div class="template-content">【タイトル】
+〇〇を改善する21の方法【すぐ実践できる】
+
+【メタディスクリプション】
+〇〇を改善する実践的な21の方法を紹介。初心者でもすぐに始められる簡単な方法から、上級者向けのテクニックまで網羅。
+
+【記事構成】
+# 導入文
+- 問題提起
+- 改善の重要性
+- 記事の構成説明
+
+# H2: 今すぐできる基本編（1-7）
+## 1. 〇〇を整理する
+## 2. 〇〇を見直す
+## 3. 〇〇を活用する
+## 4. 〇〇を習慣化する
+## 5. 〇〇を測定する
+## 6. 〇〇を最適化する
+## 7. 〇〇を自動化する
+
+# H2: 効果を高める応用編（8-14）
+## 8. 〇〇と組み合わせる
+## 9. 〇〇を分析する
+（以下同様）
+
+# H2: プロが実践する上級編（15-21）
+## 15. 〇〇戦略を立てる
+## 16. 〇〇を予測する
+（以下同様）
+
+# H2: 実践する際の注意点
+## H3: 優先順位の付け方
+## H3: 効果測定の方法
+## H3: 継続のコツ
+
+# まとめ
+- 重要ポイントの整理
+- 実践の第一歩</div>
+        </div>
+      </div>
+
+      <div id="case-study" class="tab-content">
+        <div class="template-box">
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+          <h3>事例記事テンプレート</h3>
+          <div class="template-content">【タイトル】
+〇〇社が売上を3倍にした方法｜成功事例から学ぶ5つのポイント
+
+【メタディスクリプション】
+〇〇社の成功事例を詳しく解説。具体的な施策と結果、成功要因を分析し、あなたのビジネスに活かせるポイントを紹介。
+
+【記事構成】
+# 導入文
+- 事例の概要
+- 読者が得られる学び
+- 記事の流れ
+
+# H2: 〇〇社の課題と背景
+## H3: 直面していた3つの課題
+## H3: なぜ変革が必要だったか
+## H3: 目標設定と戦略
+
+# H2: 実施した5つの施策
+## H3: 施策1：〇〇の導入
+### 実施内容
+### 投資額と期間
+### 直面した課題
+## H3: 施策2：〇〇の改革
+（以下同様）
+
+# H2: 得られた成果
+## H3: 定量的な成果
+### 売上の変化
+### コスト削減効果
+### 生産性向上
+## H3: 定性的な成果
+### 組織文化の変化
+### 顧客満足度
+### 従業員満足度
+
+# H2: 成功要因の分析
+## H3: 外部要因
+## H3: 内部要因
+## H3: キーパーソンの役割
+
+# H2: 他社が学べる5つのポイント
+## H3: ポイント1：〇〇
+## H3: ポイント2：〇〇
+（以下同様）
+
+# H2: 導入を検討する際の注意点
+## H3: 必要なリソース
+## H3: 想定されるリスク
+## H3: 成功の条件
+
+# まとめ
+- 事例からの学び
+- 実践への第一歩</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AIプロンプト集 -->
+    <div class="section-card">
+      <h2><i class="fas fa-robot"></i> AIプロンプト集</h2>
+      <p>用途別のAIプロンプトテンプレートです。状況に応じてカスタマイズしてご利用ください。</p>
+      
+      <div class="prompt-collection">
+        <div class="prompt-item">
+          <h4><i class="fas fa-search"></i> キーワードリサーチ</h4>
+          <div class="prompt-text">以下のビジネスに関連するSEOキーワードを提案してください：
+
+業界：[業界名]
+商品/サービス：[内容]
+ターゲット：[顧客層]
+
+1. ビッグキーワード5個
+2. ミドルキーワード10個
+3. ロングテールキーワード20個
+4. 各キーワードの検索意図
+5. 競合難易度の推定</div>
+        </div>
+
+        <div class="prompt-item">
+          <h4><i class="fas fa-sitemap"></i> 記事構成作成</h4>
+          <div class="prompt-text">以下の条件でSEO記事の構成を作成してください：
+
+キーワード：[メインキーワード]
+文字数：[目標文字数]
+ターゲット：[読者層]
+目的：[記事の目的]
+
+含めるべき要素：
+- タイトル案3つ
+- メタディスクリプション
+- H2見出し5個
+- 各H2にH3を2-3個
+- CTAの配置提案</div>
+        </div>
+
+        <div class="prompt-item">
+          <h4><i class="fas fa-pen"></i> 導入文作成</h4>
+          <div class="prompt-text">以下の記事の導入文を作成してください：
+
+タイトル：[記事タイトル]
+キーワード：[メインキーワード]
+文字数：300-400文字
+
+含める要素：
+1. 読者の課題への共感
+2. 記事で得られる価値
+3. 簡潔な結論
+4. 読み進める動機付け</div>
+        </div>
+
+        <div class="prompt-item">
+          <h4><i class="fas fa-edit"></i> リライト依頼</h4>
+          <div class="prompt-text">以下の文章をSEO最適化してリライトしてください：
+
+[元の文章]
+
+リライト要件：
+- キーワード「[キーワード]」を自然に含める
+- 1文60文字以内
+- PREP法で論理的に
+- 具体例を追加
+- 読みやすさを向上</div>
+        </div>
+
+        <div class="prompt-item">
+          <h4><i class="fas fa-question-circle"></i> FAQ生成</h4>
+          <div class="prompt-text">「[トピック]」に関するFAQを10個作成してください。
+
+要件：
+- 実際によく検索される質問形式
+- 各回答は150-200文字
+- 専門用語は避ける
+- 具体的で実用的な回答
+- SEOキーワードを含める</div>
+        </div>
+
+        <div class="prompt-item">
+          <h4><i class="fas fa-bullhorn"></i> CTA作成</h4>
+          <div class="prompt-text">以下の記事のCTA（行動喚起）を5パターン作成してください：
+
+記事内容：[概要]
+目的：[コンバージョン目標]
+ターゲット：[読者層]
+
+各CTAに含める：
+- アクション動詞
+- ベネフィット
+- 緊急性/限定性
+- 30文字以内</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- チェックリスト -->
+    <div class="section-card">
+      <h2><i class="fas fa-check-double"></i> SEO記事チェックリスト</h2>
+      <p>記事公開前の最終チェックにご利用ください。</p>
+      
+      <div class="checklist-template">
+        <h4>コンテンツチェック</h4>
+        <ul>
+          <li><input type="checkbox"> タイトルは32文字以内か</li>
+          <li><input type="checkbox"> メインキーワードがタイトル前半にあるか</li>
+          <li><input type="checkbox"> メタディスクリプションは120-160文字か</li>
+          <li><input type="checkbox"> 導入文で価値を明確にしているか</li>
+          <li><input type="checkbox"> 見出し構造は論理的か</li>
+          <li><input type="checkbox"> 1文が60文字以内か</li>
+          <li><input type="checkbox"> 専門用語に説明があるか</li>
+          <li><input type="checkbox"> 具体例・データが含まれているか</li>
+          <li><input type="checkbox"> 画像にalt属性が設定されているか</li>
+          <li><input type="checkbox"> 内部リンクが3-5個あるか</li>
+        </ul>
+      </div>
+
+      <div class="checklist-template">
+        <h4>SEO技術チェック</h4>
+        <ul>
+          <li><input type="checkbox"> キーワード密度は2-3%か</li>
+          <li><input type="checkbox"> 関連キーワードが含まれているか</li>
+          <li><input type="checkbox"> H1タグは1つだけか</li>
+          <li><input type="checkbox"> H2-H3タグが適切に使われているか</li>
+          <li><input type="checkbox"> URLは適切か</li>
+          <li><input type="checkbox"> ページ速度は3秒以内か</li>
+          <li><input type="checkbox"> モバイル対応しているか</li>
+          <li><input type="checkbox"> 構造化データが実装されているか</li>
+          <li><input type="checkbox"> サイトマップに追加されているか</li>
+          <li><input type="checkbox"> 誤字脱字はないか</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ダウンロードセクション -->
+    <div class="download-section">
+      <h2><i class="fas fa-download"></i> テンプレートをダウンロード</h2>
+      <p>すべてのテンプレートをまとめてダウンロードできます</p>
+      <div>
+        <a href="#" class="download-button" onclick="alert('ダウンロード機能は準備中です')">
+          <i class="fas fa-file-excel"></i> Excelテンプレート
+        </a>
+        <a href="#" class="download-button" onclick="alert('ダウンロード機能は準備中です')">
+          <i class="fas fa-file-word"></i> Wordテンプレート
+        </a>
+        <a href="#" class="download-button" onclick="alert('ダウンロード機能は準備中です')">
+          <i class="fas fa-file-pdf"></i> PDFチェックリスト
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="ai-utilization.html" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：AI活用術
+    </a>
+    <a href="practice.html" class="nav-button">
+      次へ：実践演習 <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      // すべてのタブコンテンツを非表示
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // すべてのタブボタンを非アクティブ
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+      
+      // 選択されたタブを表示
+      document.getElementById(tabName).classList.add('active');
+      
+      // クリックされたボタンをアクティブ
+      event.target.classList.add('active');
+    }
+
+    function copyTemplate(button) {
+      const templateBox = button.parentElement;
+      const templateText = templateBox.querySelector('.template-content').textContent;
+      
+      navigator.clipboard.writeText(templateText).then(() => {
+        button.innerHTML = '<i class="fas fa-check"></i> コピー完了';
+        button.style.background = '#28a745';
+        
+        setTimeout(() => {
+          button.innerHTML = '<i class="fas fa-copy"></i> コピー';
+          button.style.background = '#667eea';
+        }, 2000);
+      });
+    }
+
+    // チェックボックスの状態保存
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+      const key = `template-check-${index}`;
+      
+      // 保存された状態を復元
+      if (localStorage.getItem(key) === 'true') {
+        checkbox.checked = true;
+      }
+      
+      // 状態変更時に保存
+      checkbox.addEventListener('change', function() {
+        localStorage.setItem(key, this.checked);
+      });
+    });
+  </script>
+</body>
+</html>

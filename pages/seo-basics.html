@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO基礎知識 - SEO記事作成マスターガイド</title>
+  <meta name="description" content="SEOの基本概念から仕組みまで、初心者にも分かりやすく解説。検索エンジンの仕組み、SEOの3つの柱、E-E-A-Tの重要性を学びます。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../styles/common.css">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .section-card h3 {
+      color: #555;
+      margin: 25px 0 15px 0;
+    }
+
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .term-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+
+    .term-card h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .pillars-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .pillar-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .pillar-card .icon {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .pillar-card h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .process-flow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .process-step {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      min-width: 150px;
+    }
+
+    .process-step .step-icon {
+      width: 80px;
+      height: 80px;
+      background: #667eea;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .process-arrow {
+      font-size: 2rem;
+      color: #667eea;
+    }
+
+    .eeat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .eeat-card {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .eeat-card h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .eeat-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .eeat-card li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .eeat-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .breadcrumb {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .nav-button {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.prev {
+      background: #6c757d;
+    }
+
+    .nav-button.prev:hover {
+      background: #5a6268;
+    }
+
+    @media (max-width: 768px) {
+      .process-flow {
+        flex-direction: column;
+      }
+      
+      .process-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+      }
+
+      .eeat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a> &gt; SEO基礎知識
+  </div>
+
+  <div class="hero-section">
+    <h1><i class="fas fa-graduation-cap"></i> SEO基礎知識</h1>
+    <p>検索エンジン最適化の基本を体系的に学ぶ</p>
+  </div>
+
+  <div class="content-section">
+    <!-- SEOとは -->
+    <div class="section-card">
+      <h2><i class="fas fa-question-circle"></i> SEOとは何か？</h2>
+      <p>
+        SEO（Search Engine Optimization：検索エンジン最適化）とは、GoogleやYahoo!などの検索エンジンで、
+        特定のキーワードで検索された際に、自社のウェブサイトを上位に表示させるための施策全般を指します。
+      </p>
+      <p>
+        単に順位を上げることだけが目的ではなく、<strong>ユーザーの検索意図に応える質の高いコンテンツを提供し、
+        結果として検索エンジンから評価を得る</strong>ことが本質的な目的です。
+      </p>
+      
+      <h3>SEOが重要な理由</h3>
+      <ul>
+        <li>🔍 <strong>購買行動の起点</strong>：約70%のユーザーが商品・サービスの検索から購買を開始</li>
+        <li>💰 <strong>費用対効果</strong>：広告と異なり、一度上位表示されれば継続的な集客が可能</li>
+        <li>🎯 <strong>ターゲティング精度</strong>：能動的に検索するユーザーは購買意欲が高い</li>
+        <li>📈 <strong>ブランド認知</strong>：上位表示されることで信頼性と認知度が向上</li>
+      </ul>
+    </div>
+
+    <!-- 検索エンジンの仕組み -->
+    <div class="section-card">
+      <h2><i class="fas fa-cog"></i> 検索エンジンの仕組み</h2>
+      <p>検索エンジンがどのようにウェブサイトを発見し、評価し、順位を決定するのかを理解することは、効果的なSEO対策の第一歩です。</p>
+      
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-icon">
+            <i class="fas fa-spider"></i>
+          </div>
+          <h4>クローリング</h4>
+          <p>検索エンジンのボットがウェブサイトを巡回して情報を収集</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="step-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h4>インデックス</h4>
+          <p>収集した情報をデータベースに整理・保存</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="step-icon">
+            <i class="fas fa-sort-amount-up"></i>
+          </div>
+          <h4>ランキング</h4>
+          <p>アルゴリズムに基づいて順位を決定</p>
+        </div>
+      </div>
+
+      <h3>Googleのアルゴリズムの特徴</h3>
+      <ul>
+        <li><strong>200以上の要因</strong>：コンテンツの質、被リンク、ページ速度など多角的に評価</li>
+        <li><strong>機械学習の活用</strong>：RankBrainやBERTなどのAI技術で検索意図を理解</li>
+        <li><strong>定期的なアップデート</strong>：年に数回の大規模更新と日々の微調整</li>
+        <li><strong>モバイルファースト</strong>：モバイル版のサイトを主に評価</li>
+      </ul>
+    </div>
+
+    <!-- SEOの3つの柱 -->
+    <div class="section-card">
+      <h2><i class="fas fa-columns"></i> SEOの3つの柱</h2>
+      <p>効果的なSEOは、以下の3つの要素をバランスよく最適化することで実現されます。</p>
+      
+      <div class="pillars-container">
+        <div class="pillar-card">
+          <div class="icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>コンテンツSEO</h3>
+          <p>ユーザーの検索意図に応える質の高いコンテンツの作成</p>
+          <ul style="text-align: left; margin-top: 15px;">
+            <li>キーワード最適化</li>
+            <li>有益で独自性のある情報</li>
+            <li>適切な見出し構造</li>
+            <li>読みやすい文章</li>
+          </ul>
+        </div>
+        
+        <div class="pillar-card">
+          <div class="icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>テクニカルSEO</h3>
+          <p>検索エンジンがサイトを理解しやすくする技術的な最適化</p>
+          <ul style="text-align: left; margin-top: 15px;">
+            <li>ページ速度の改善</li>
+            <li>モバイル対応</li>
+            <li>XMLサイトマップ</li>
+            <li>構造化データ</li>
+          </ul>
+        </div>
+        
+        <div class="pillar-card">
+          <div class="icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <h3>外部SEO</h3>
+          <p>他サイトからの評価を高める外部要因の強化</p>
+          <ul style="text-align: left; margin-top: 15px;">
+            <li>質の高い被リンク獲得</li>
+            <li>ブランド認知の向上</li>
+            <li>SNSでの言及</li>
+            <li>ローカルSEO対策</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-E-A-T -->
+    <div class="section-card">
+      <h2><i class="fas fa-award"></i> E-E-A-Tの重要性</h2>
+      <p>E-E-A-T（Experience, Expertise, Authoritativeness, Trustworthiness）は、Googleがコンテンツの品質を評価する際の重要な指標です。</p>
+      
+      <div class="eeat-grid">
+        <div class="eeat-card">
+          <h4><i class="fas fa-user-check"></i> Experience（経験）</h4>
+          <p>実際の体験や実践に基づく情報</p>
+          <ul>
+            <li>実際に使用した感想</li>
+            <li>現場での経験談</li>
+            <li>具体的な事例やデータ</li>
+          </ul>
+        </div>
+        
+        <div class="eeat-card">
+          <h4><i class="fas fa-user-graduate"></i> Expertise（専門性）</h4>
+          <p>トピックに関する深い知識と理解</p>
+          <ul>
+            <li>専門的な知識の提供</li>
+            <li>詳細で正確な情報</li>
+            <li>技術的な説明の充実</li>
+          </ul>
+        </div>
+        
+        <div class="eeat-card">
+          <h4><i class="fas fa-certificate"></i> Authoritativeness（権威性）</h4>
+          <p>業界や分野での認知と評価</p>
+          <ul>
+            <li>著者の資格や実績</li>
+            <li>他サイトからの引用</li>
+            <li>業界での評判</li>
+          </ul>
+        </div>
+        
+        <div class="eeat-card">
+          <h4><i class="fas fa-shield-alt"></i> Trustworthiness（信頼性）</h4>
+          <p>情報の正確性と透明性</p>
+          <ul>
+            <li>出典の明記</li>
+            <li>最新情報への更新</li>
+            <li>プライバシーポリシー</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 基本用語集 -->
+    <div class="section-card">
+      <h2><i class="fas fa-book"></i> SEO基本用語集</h2>
+      <p>SEOを学ぶ上で知っておくべき重要な用語を解説します。</p>
+      
+      <div class="term-grid">
+        <div class="term-card">
+          <h4>SERP</h4>
+          <p>Search Engine Results Pageの略。検索結果ページのこと。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>CTR（クリック率）</h4>
+          <p>Click Through Rateの略。表示回数に対するクリック数の割合。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>メタディスクリプション</h4>
+          <p>検索結果に表示される説明文。120-160文字が推奨。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>内部リンク</h4>
+          <p>同じサイト内の別ページへのリンク。サイト構造の最適化に重要。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>被リンク（バックリンク）</h4>
+          <p>他のサイトから自サイトへのリンク。サイトの信頼性を示す指標。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>ドメインオーソリティ</h4>
+          <p>ドメイン全体の信頼性や権威性を表す指標。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>ロングテールキーワード</h4>
+          <p>3語以上の具体的なキーワード。競合が少なく成約率が高い。</p>
+        </div>
+        
+        <div class="term-card">
+          <h4>検索意図</h4>
+          <p>ユーザーが検索を行う目的や背景。Know/Do/Buy/Goの4分類。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="../index.html" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> ホームに戻る
+    </a>
+    <a href="keyword-strategy.html" class="nav-button">
+      次へ：キーワード戦略 <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</body>
+</html>

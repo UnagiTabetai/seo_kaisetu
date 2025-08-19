@@ -3,80 +3,375 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI × SEO 完全攻略ガイド - SEO記事作成マニュアル</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
+  <title>SEO記事作成マスターガイド - メインメニュー</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  
-  <!-- メインスタイルシート -->
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+    }
+
+    .menu-container {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .menu-card .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .menu-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .menu-card p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .menu-card .topics {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .menu-card .topics h4 {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .menu-card .topics ul {
+      list-style: none;
+    }
+
+    .menu-card .topics li {
+      font-size: 0.85rem;
+      color: #777;
+      padding: 3px 0;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .menu-card .topics li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #667eea;
+    }
+
+    .menu-card .badge {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      margin-left: 10px;
+    }
+
+    .menu-card .badge.new {
+      background: #dc3545;
+    }
+
+    .menu-card .badge.popular {
+      background: #ffc107;
+      color: #333;
+    }
+
+    .quick-links {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 30px;
+    }
+
+    .quick-links h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .quick-link {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quick-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .quick-link i {
+      font-size: 1.2rem;
+    }
+
+    .footer {
+      color: white;
+      text-align: center;
+      padding: 20px;
+      opacity: 0.9;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .menu-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="presentation-container">
-    <!-- セクションメニュー -->
-    <div class="section-menu">
-      <button class="section-btn active" data-section="section0">オープニング</button>
-      <button class="section-btn" data-section="section1">SEO基礎</button>
-      <button class="section-btn" data-section="section2">キーワード戦略</button>
-      <button class="section-btn" data-section="work1">ワーク①</button>
-      <button class="section-btn" data-section="section3">AI活用術</button>
-      <button class="section-btn" data-section="work2">ワーク②</button>
-      <button class="section-btn" data-section="section4">実践技術</button>
-      <button class="section-btn" data-section="work3">ワーク③</button>
-      <button class="section-btn" data-section="work4">ワーク④</button>
-      <button class="section-btn" data-section="section5">まとめ</button>
-    </div>
+  <header class="header">
+    <h1><i class="fas fa-book-open"></i> SEO記事作成マスターガイド</h1>
+    <p>実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
+  </header>
 
-    <!-- スライドコンテナ -->
-    <div class="slides">
-      <!-- スライドはJavaScriptで動的に読み込まれます -->
-    </div>
-    
-    <!-- ナビゲーションコントロール -->
-    <div class="navigation">
-      <button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-    
-    <!-- フルスクリーンボタン -->
-    <div class="fullscreen-control">
-      <button class="fullscreen-btn" title="フルスクリーン切替">
-        <i class="fa-solid fa-expand"></i>
-      </button>
-    </div>
-    
-    <!-- スライドインジケーター -->
-    <div class="slide-indicator">
-      <span class="current-slide">1</span> / <span class="total-slides">0</span>
-    </div>
-    
-    <!-- タイマー -->
-    <div class="timer-container">
-      <button class="timer-toggle" title="タイマーの最小化/最大化">
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="timer-display">00:00</div>
-      <div class="timer-controls">
-        <button class="timer-btn timer-start" title="開始">
-          <i class="fa-solid fa-play"></i>
-        </button>
-        <button class="timer-btn timer-pause" title="一時停止">
-          <i class="fa-solid fa-pause"></i>
-        </button>
-        <button class="timer-btn timer-reset" title="リセット">
-          <i class="fa-solid fa-rotate"></i>
-        </button>
+  <main class="menu-container">
+    <!-- 基礎知識 -->
+    <a href="pages/seo-basics.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-graduation-cap"></i>
       </div>
-    </div>
-  </div>
+      <h2>SEO基礎知識</h2>
+      <p>SEOの基本概念から仕組みまで、初心者にも分かりやすく解説します。</p>
+      <div class="topics">
+        <h4>学習内容</h4>
+        <ul>
+          <li>SEO基本用語集</li>
+          <li>検索エンジンの仕組み</li>
+          <li>SEOの3つの柱</li>
+          <li>E-E-A-Tの重要性</li>
+        </ul>
+      </div>
+    </a>
 
-  <!-- スクリプトの読み込み -->
-  <script src="js/main.js"></script>
+    <!-- キーワード戦略 -->
+    <a href="pages/keyword-strategy.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-key"></i>
+      </div>
+      <h2>キーワード戦略</h2>
+      <p>効果的なキーワード選定から競合分析まで、戦略的アプローチを学びます。</p>
+      <div class="topics">
+        <h4>学習内容</h4>
+        <ul>
+          <li>検索意図の4分類</li>
+          <li>キーワード選定手法</li>
+          <li>ロングテール戦略</li>
+          <li>競合分析の実践</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- 記事作成実践 -->
+    <a href="pages/article-creation.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-pen-fancy"></i>
+      </div>
+      <h2>記事作成実践<span class="badge popular">人気</span></h2>
+      <p>実際にSEO記事を作成する具体的な手順とテクニックを習得します。</p>
+      <div class="topics">
+        <h4>学習内容</h4>
+        <ul>
+          <li>記事構成の設計</li>
+          <li>執筆ルールとガイドライン</li>
+          <li>最適化テクニック</li>
+          <li>品質チェック方法</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- AI活用術 -->
+    <a href="pages/ai-utilization.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-robot"></i>
+      </div>
+      <h2>AI活用術<span class="badge new">NEW</span></h2>
+      <p>ChatGPTやClaudeを使った効率的な記事作成方法を解説します。</p>
+      <div class="topics">
+        <h4>学習内容</h4>
+        <ul>
+          <li>効果的なプロンプト作成</li>
+          <li>AI記事作成ワークフロー</li>
+          <li>品質向上のコツ</li>
+          <li>注意点と限界</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- テンプレート集 -->
+    <a href="pages/templates.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-file-code"></i>
+      </div>
+      <h2>テンプレート集</h2>
+      <p>すぐに使える記事テンプレートとプロンプト集を提供します。</p>
+      <div class="topics">
+        <h4>収録内容</h4>
+        <ul>
+          <li>記事構成テンプレート</li>
+          <li>AIプロンプト集</li>
+          <li>チェックリスト</li>
+          <li>分析シート</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- 実践演習 -->
+    <a href="pages/practice.html" class="menu-card">
+      <div class="icon">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <h2>実践演習</h2>
+      <p>実際に手を動かして学ぶ、実践的な演習問題とケーススタディ。</p>
+      <div class="topics">
+        <h4>演習内容</h4>
+        <ul>
+          <li>キーワード選定演習</li>
+          <li>競合分析実践</li>
+          <li>記事作成ワーク</li>
+          <li>成功事例研究</li>
+        </ul>
+      </div>
+    </a>
+  </main>
+
+  <section class="quick-links">
+    <h3><i class="fas fa-rocket"></i> クイックアクセス</h3>
+    <div class="quick-links-grid">
+      <a href="pages/glossary.html" class="quick-link">
+        <i class="fas fa-book"></i>
+        <span>用語集</span>
+      </a>
+      <a href="pages/tools.html" class="quick-link">
+        <i class="fas fa-tools"></i>
+        <span>ツール一覧</span>
+      </a>
+      <a href="pages/checklist.html" class="quick-link">
+        <i class="fas fa-check-double"></i>
+        <span>チェックリスト</span>
+      </a>
+      <a href="pages/faq.html" class="quick-link">
+        <i class="fas fa-question-circle"></i>
+        <span>よくある質問</span>
+      </a>
+      <a href="pages/updates.html" class="quick-link">
+        <i class="fas fa-sync-alt"></i>
+        <span>最新情報</span>
+      </a>
+      <a href="pages/resources.html" class="quick-link">
+        <i class="fas fa-download"></i>
+        <span>ダウンロード</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 SEO記事作成マスターガイド. All rights reserved.</p>
+    <p>最終更新日: 2024年8月19日</p>
+  </footer>
 </body>
 </html>
