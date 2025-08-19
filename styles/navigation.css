@@ -1,0 +1,333 @@
+/* ========================================
+   Navigation System - ナビゲーション改善
+   ======================================== */
+
+/* ----------------------------------------
+   パンくずリストの強化
+   ---------------------------------------- */
+
+.breadcrumb {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: var(--font-size-sm);
+}
+
+/* パンくずリストのコンテナ */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+/* パンくずアイテム */
+.breadcrumb a {
+  color: var(--color-link);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb a:hover {
+  background: #f0f0f0;
+  color: var(--color-link-hover);
+}
+
+/* セパレータ */
+.breadcrumb-separator {
+  color: var(--color-text-muted);
+  margin: 0 var(--spacing-xs);
+}
+
+/* 現在のページ */
+.breadcrumb-current {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ホームアイコン */
+.breadcrumb-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.breadcrumb-home::before {
+  content: "🏠";
+  font-size: 1.1em;
+}
+
+/* ----------------------------------------
+   メインナビゲーション改善
+   ---------------------------------------- */
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: var(--spacing-3xl) auto;
+  padding: 0 var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+
+.nav-button {
+  background: #667eea;
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  min-height: 48px; /* タップターゲット最適化 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-button:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.nav-button.prev {
+  background: #6c757d;
+}
+
+.nav-button.prev:hover {
+  background: #5a6268;
+}
+
+/* ナビゲーションアイコン */
+.nav-button i {
+  font-size: 1.2em;
+}
+
+/* ----------------------------------------
+   スキップリンク（アクセシビリティ）
+   ---------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #667eea;
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 1000;
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+}
+
+/* ----------------------------------------
+   目次ナビゲーション（TOC）改善
+   ---------------------------------------- */
+
+.toc-sidebar {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 250px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: var(--spacing-lg);
+  z-index: 100;
+}
+
+.toc-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.toc-title::before {
+  content: "📑";
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.toc-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  background: #f0f0f0;
+  color: var(--color-link);
+  padding-left: var(--spacing-md);
+}
+
+.toc-link.active {
+  background: linear-gradient(90deg, #667eea10 0%, transparent 100%);
+  color: #667eea;
+  font-weight: 500;
+  border-left: 3px solid #667eea;
+}
+
+/* H3レベルのインデント */
+.toc-item.h3 {
+  margin-left: var(--spacing-lg);
+}
+
+.toc-item.h3 .toc-link {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ----------------------------------------
+   モバイル対応
+   ---------------------------------------- */
+
+@media (max-width: 768px) {
+  /* パンくずリストのモバイル調整 */
+  .breadcrumb {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8rem;
+  }
+  
+  /* ナビゲーションボタンの縦配置 */
+  .nav-buttons {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .nav-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* TOCをモバイルでは非表示（トグル式に改善予定） */
+  .toc-sidebar {
+    display: none;
+  }
+}
+
+/* ----------------------------------------
+   検索ボックス（将来実装用）
+   ---------------------------------------- */
+
+.search-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-right: calc(var(--spacing-md) * 3);
+  border: 2px solid #e0e0e0;
+  border-radius: 24px;
+  font-size: var(--font-size-base);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-button {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  background: #764ba2;
+}
+
+/* ----------------------------------------
+   ページ内ナビゲーション
+   ---------------------------------------- */
+
+.page-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: 50;
+}
+
+.page-nav-button {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-nav-button:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* トップへ戻るボタン */
+.back-to-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
