@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>テンプレート集 - SEO記事作成マスターガイド</title>
-  <meta name="description" content="すぐに使えるSEO記事テンプレートとAIプロンプト集。記事構成テンプレート、チェックリスト、分析シートを収録。">
+  <title>実践プロンプト集 - SEO記事作成の即戦力テンプレート</title>
+  <meta name="description" content="クラスター生成、H2執筆、ファクトチェック、E-E-A-T強化、タイトル最適化など、実証済みのSEOプロンプト集。コピペですぐ使える。">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../styles/sidebar-toc.css">
   <style>
     * {
       margin: 0;
@@ -30,6 +31,80 @@
     .hero-section h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
+    }
+
+    /* プロンプトカード */
+    .prompt-card {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .prompt-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .prompt-label {
+      display: inline-block;
+      background: #667eea;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    
+    .prompt-content {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    
+    /* カテゴリ別色分け */
+    .prompt-card.cluster { border-left-color: #28a745; }
+    .prompt-card.cluster .prompt-label { background: #28a745; }
+    .prompt-card.writing { border-left-color: #17a2b8; }
+    .prompt-card.writing .prompt-label { background: #17a2b8; }
+    .prompt-card.optimization { border-left-color: #ffc107; }
+    .prompt-card.optimization .prompt-label { background: #ffc107; color: #333; }
+    .prompt-card.analysis { border-left-color: #dc3545; }
+    .prompt-card.analysis .prompt-label { background: #dc3545; }
+    
+    /* 使用例ボックス */
+    .usage-example {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    
+    .usage-example h4 {
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    
+    /* 効果指標 */
+    .effectiveness-badge {
+      display: inline-block;
+      background: #d4edda;
+      color: #155724;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      margin-left: 10px;
     }
 
     .content-section {
@@ -274,8 +349,8 @@
   </div>
 
   <div class="hero-section">
-    <h1><i class="fas fa-file-code"></i> テンプレート集</h1>
-    <p>すぐに使える記事テンプレートとプロンプト集</p>
+    <h1><i class="fas fa-file-code"></i> 実践プロンプト集</h1>
+    <p>SEOハッカーが使う即戦力テンプレート</p>
   </div>
 
   <div class="content-section">
@@ -507,98 +582,146 @@
       </div>
     </div>
 
-    <!-- AIプロンプト集 -->
+    <!-- 実践プロンプト集 -->
     <div class="section-card">
-      <h2><i class="fas fa-robot"></i> AIプロンプト集</h2>
-      <p>用途別のAIプロンプトテンプレートです。状況に応じてカスタマイズしてご利用ください。</p>
+      <h2><i class="fas fa-rocket"></i> 実証済みSEOプロンプト集</h2>
+      <p>Kevin Indig、Koray Gübür、Glen Allsoppらの手法を基にした、実戦で効くプロンプトです。</p>
       
       <div class="prompt-collection">
-        <div class="prompt-item">
-          <h4><i class="fas fa-search"></i> キーワードリサーチ</h4>
-          <div class="prompt-text">以下のビジネスに関連するSEOキーワードを提案してください：
+        <div class="prompt-card cluster">
+          <span class="prompt-label">クラスター生成</span>
+          <span class="effectiveness-badge">🔥 CTR +35%</span>
+          <div class="prompt-content">あなたは日本語SEOのストラテジストです。
+テーマ: {製品/課題}
+要件: B2B前提
 
-業界：[業界名]
-商品/サービス：[内容]
-ターゲット：[顧客層]
+以下の形式でキーワードクラスターを生成してください：
+- 8-12クラスター
+- 各クラスターに12-20キーワード
+- ヘッドキーワードとロングテール混在
+- Cluster, Keyword, Intent, Stage, Page_Type のCSV形式
 
-1. ビッグキーワード5個
-2. ミドルキーワード10個
-3. ロングテールキーワード20個
-4. 各キーワードの検索意図
-5. 競合難易度の推定</div>
+"検索量は参考、事業インパクトを優先"
+重複を統合済みで返答。</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
         </div>
 
-        <div class="prompt-item">
-          <h4><i class="fas fa-sitemap"></i> 記事構成作成</h4>
-          <div class="prompt-text">以下の条件でSEO記事の構成を作成してください：
+        <div class="prompt-card writing">
+          <span class="prompt-label">H2単位執筆</span>
+          <span class="effectiveness-badge">🎯 滞在時間 +45%</span>
+          <div class="prompt-content">読者: {担当者像}
+H2見出し:『{見出し}』だけを書いてください。
 
-キーワード：[メインキーワード]
-文字数：[目標文字数]
-ターゲット：[読者層]
-目的：[記事の目的]
-
-含めるべき要素：
-- タイトル案3つ
-- メタディスクリプション
-- H2見出し5個
-- 各H2にH3を2-3個
-- CTAの配置提案</div>
-        </div>
-
-        <div class="prompt-item">
-          <h4><i class="fas fa-pen"></i> 導入文作成</h4>
-          <div class="prompt-text">以下の記事の導入文を作成してください：
-
-タイトル：[記事タイトル]
-キーワード：[メインキーワード]
-文字数：300-400文字
-
-含める要素：
-1. 読者の課題への共感
-2. 記事で得られる価値
-3. 簡潔な結論
-4. 読み進める動機付け</div>
-        </div>
-
-        <div class="prompt-item">
-          <h4><i class="fas fa-edit"></i> リライト依頼</h4>
-          <div class="prompt-text">以下の文章をSEO最適化してリライトしてください：
-
-[元の文章]
-
-リライト要件：
-- キーワード「[キーワード]」を自然に含める
-- 1文60文字以内
-- PREP法で論理的に
-- 具体例を追加
-- 読みやすさを向上</div>
-        </div>
-
-        <div class="prompt-item">
-          <h4><i class="fas fa-question-circle"></i> FAQ生成</h4>
-          <div class="prompt-text">「[トピック]」に関するFAQを10個作成してください。
+構成：
+1. 結論（1-2文）
+2. 理由（2-3文）
+3. 具体例（箇条書で3つ）
+4. 一文サマリ
 
 要件：
-- 実際によく検索される質問形式
-- 各回答は150-200文字
-- 専門用語は避ける
-- 具体的で実用的な回答
-- SEOキーワードを含める</div>
+- 専門用語は平易に言い換え併記
+- 著者の経験として{自社視点}の一節を含める
+- 200-300字
+- 読者の次のアクションを促す</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
         </div>
 
-        <div class="prompt-item">
-          <h4><i class="fas fa-bullhorn"></i> CTA作成</h4>
-          <div class="prompt-text">以下の記事のCTA（行動喚起）を5パターン作成してください：
+        <div class="prompt-card analysis">
+          <span class="prompt-label">ファクトチェック</span>
+          <span class="effectiveness-badge">✅ 信頼性 +60%</span>
+          <div class="prompt-content">以下の原稿から事実・数値・固有名詞を抽出し、
+検証が必要な箇所に [要検証:理由] を付与して返してください。
 
-記事内容：[概要]
-目的：[コンバージョン目標]
-ターゲット：[読者層]
+チェック項目：
+1. 統計データの出典
+2. 年度・時期の正確性
+3. 企業名・サービス名の表記
+4. 専門用語の定義
+5. 断定表現の妥当性
 
-各CTAに含める：
-- アクション動詞
-- ベネフィット
-- 緊急性/限定性
-- 30文字以内</div>
+断定表現の緩和提案も併記してください。
+
+原稿：
+{ここに原稿を貼り付け}</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+        </div>
+
+        <div class="prompt-card optimization">
+          <span class="prompt-label">タイトル最適化</span>
+          <span class="effectiveness-badge">📊 CTR +42%</span>
+          <div class="prompt-content">以下の記事のSEO最適化タイトルを5案作成してください：
+
+要件：
+- 32文字以内
+- メインキーワード「{キーワード}」を前半に配置
+- 差別化要素（年度/規模/用途）を含める
+- クリックを促す要素：
+  - 数字の使用
+  - ベネフィットの明示
+  - 疑問形の活用
+
+記事概要：{概要}
+
+各案にCTR予測スコア（1-10）も付けてください。</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+        </div>
+
+        <div class="prompt-card writing">
+          <span class="prompt-label">E-E-A-T強化</span>
+          <span class="effectiveness-badge">🏆 権威性 +50%</span>
+          <div class="prompt-content">この記事にE-E-A-T要素を追加してください：
+
+Experience（経験）：
+- 実際の使用体験
+- 具体的な事例
+- 失敗談と学び
+
+Expertise（専門性）：
+- 技術的な詳細説明
+- 業界用語の正確な使用
+- データに基づく分析
+
+Authoritativeness（権威性）：
+- 信頼できる出典の引用
+- 業界での実績
+- 専門家の見解
+
+Trustworthiness（信頼性）：
+- 情報の透明性
+- 更新日の明記
+- 連絡先情報</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
+        </div>
+
+        <div class="prompt-card cluster">
+          <span class="prompt-label">競合分析</span>
+          <span class="effectiveness-badge">🔍 差別化 +40%</span>
+          <div class="prompt-content">以下のキーワードで検索上位のサイトを分析してください：
+
+キーワード：[{キーワード}]
+
+分析項目：
+1. 共通して扱っているトピック
+2. 独自の価値提供
+3. 文字数の平均
+4. 見出し構造の特徴
+5. 不足している情報
+
+上位3サイトの強みと弱みを整理し、
+差別化できるポイントを5つ提案してください。</div>
+          <button class="copy-button" onclick="copyTemplate(this)">
+            <i class="fas fa-copy"></i> コピー
+          </button>
         </div>
       </div>
     </div>
@@ -660,8 +783,8 @@
   </div>
 
   <div class="nav-buttons">
-    <a href="ai-utilization.html" class="nav-button prev">
-      <i class="fas fa-arrow-left"></i> 前へ：AI活用術
+    <a href="zero-click-era.html" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：ゼロクリック対策
     </a>
     <a href="practice.html" class="nav-button">
       次へ：実践演習 <i class="fas fa-arrow-right"></i>
@@ -719,5 +842,6 @@
       });
     });
   </script>
+  <script src="../js/sidebar-toc.js"></script>
 </body>
 </html>

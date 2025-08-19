@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トピカルオーソリティ戦略 - テーマ支配で検索上位を独占する方法</title>
+  <meta name="description" content="トピカルオーソリティの概念から実践まで。ピラー・クラスター戦略、内部リンク構築、テーマ別設計で検索面を支配する具体的手法を解説。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../styles/sidebar-toc.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; line-height: 1.6; }
+    .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+    .hero-section h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .content-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .section-card { background: white; border-radius: 10px; padding: 30px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    .section-card h2 { color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #667eea; }
+    .section-card h3 { color: #555; margin: 25px 0 15px 0; }
+
+    /* 階層構造図 */
+    .hierarchy-diagram { margin: 30px 0; padding: 30px; background: #f8f9fa; border-radius: 10px; }
+    .hierarchy-level { display: flex; align-items: center; margin: 20px 0; position: relative; }
+    .hierarchy-node { background: white; border: 2px solid #667eea; border-radius: 10px; padding: 15px 20px; margin: 0 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s; }
+    .hierarchy-node:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .hierarchy-node.pillar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: bold; }
+    .hierarchy-node.cluster { background: #e3f2fd; }
+    .hierarchy-node.long-tail { background: #f3e5f5; }
+    .connection-line { position: absolute; width: 2px; background: #667eea; opacity: 0.3; }
+
+    /* クラスター戦略図 */
+    .cluster-strategy { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+    .cluster-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; }
+    .cluster-card h4 { margin-bottom: 10px; }
+    .cluster-card .number { font-size: 2rem; font-weight: bold; margin-bottom: 10px; }
+
+    /* 実装チェックリスト */
+    .implementation-checklist { background: white; border: 2px solid #28a745; border-radius: 10px; padding: 20px; margin: 20px 0; }
+    .checklist-item { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item input[type="checkbox"] { width: 20px; height: 20px; }
+    .checklist-item label { flex: 1; cursor: pointer; }
+
+    /* 競合分析表 */
+    .competitor-analysis { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+    .competitor-analysis th { background: #667eea; color: white; padding: 15px; text-align: left; }
+    .competitor-analysis td { padding: 15px; border-bottom: 1px solid #eee; }
+    .competitor-analysis tr:hover { background: #f8f9fa; }
+
+    /* 内部リンク戦略 */
+    .link-strategy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0; }
+    .link-strategy-box { background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; }
+    .link-strategy-box h4 { color: #667eea; margin-bottom: 10px; }
+
+    /* 成功指標 */
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+    .metric-card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; }
+    .metric-card .icon { font-size: 2rem; color: #667eea; margin-bottom: 10px; }
+    .metric-card h4 { margin: 10px 0 5px 0; }
+    .metric-card .value { font-size: 1.5rem; font-weight: bold; color: #28a745; }
+
+    /* 著者情報 */
+    .author-info { display: flex; align-items: center; gap: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; margin: 30px 0; }
+    .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+    .author-details h4 { margin: 0 0 5px 0; color: #333; }
+    .author-credentials { color: #666; font-size: 0.9rem; }
+
+    /* アラート */
+    .alert-box { padding: 15px; margin: 20px 0; border-radius: 5px; }
+    .alert-warning { background: #fff3cd; border-left: 4px solid #ffc107; }
+    .alert-success { background: #d4edda; border-left: 4px solid #28a745; }
+    .alert-info { background: #d1ecf1; border-left: 4px solid #17a2b8; }
+
+    .breadcrumb { max-width: 1000px; margin: 20px auto; padding: 0 20px; color: #666; }
+    .breadcrumb a { color: #667eea; text-decoration: none; }
+    .nav-buttons { display: flex; justify-content: space-between; max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .nav-button { background: #667eea; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
+    .nav-button:hover { background: #764ba2; transform: translateY(-2px); }
+    .nav-button.prev { background: #6c757d; }
+    .nav-button.prev:hover { background: #5a6268; }
+
+    @media (max-width: 768px) {
+      .hierarchy-level { flex-direction: column; }
+      .link-strategy-grid { grid-template-columns: 1fr; }
+      .cluster-strategy { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a> &gt; トピカルオーソリティ戦略
+  </div>
+
+  <div class="hero-section">
+    <h1><i class="fas fa-crown"></i> トピカルオーソリティ戦略</h1>
+    <p>テーマ支配による検索面の独占手法</p>
+  </div>
+
+  <div class="content-section">
+    <!-- 著者情報 -->
+    <div class="author-info">
+      <div class="author-avatar">
+        <i class="fas fa-chess-king"></i>
+      </div>
+      <div class="author-details">
+        <h4>執筆・監修：SEOマスターガイド編集部</h4>
+        <div class="author-credentials">
+          Koray Gübür、Kevin Indig、Glen Allsoppらの手法を基に、
+          日本市場向けにローカライズした実践的戦略を提供。
+        </div>
+      </div>
+    </div>
+
+    <!-- トピカルオーソリティとは -->
+    <div class="section-card">
+      <h2><i class="fas fa-sitemap"></i> トピカルオーソリティの本質</h2>
+      <p>トピカルオーソリティとは、特定のテーマにおいて網羅的かつ深い情報を提供することで、そのテーマの「権威」として検索エンジンに認識される戦略です。</p>
+      
+      <div class="alert-box alert-info">
+        <strong>💡 核心的洞察：</strong>
+        巨大サイトはテーマ別のサブフォルダ/サブドメインで検索面を面的に"押さえる"。
+        同一トピックの網羅×内部リンク網が支配力の核となります。
+      </div>
+
+      <h3>なぜトピカルオーソリティが重要なのか</h3>
+      <ul style="line-height: 2;">
+        <li><strong>検索意図の完全カバー</strong> - ユーザーの多様な検索ニーズに一つのサイトで応える</li>
+        <li><strong>セマンティック関連性の強化</strong> - 関連トピック間の意味的つながりを構築</li>
+        <li><strong>E-E-A-Tの自然な蓄積</strong> - テーマ特化により専門性と権威性が向上</li>
+        <li><strong>内部リンクの価値最大化</strong> - 関連コンテンツ間のリンクが自然かつ効果的に</li>
+        <li><strong>競合の参入障壁構築</strong> - 網羅的カバレッジにより後発の参入を困難に</li>
+      </ul>
+    </div>
+
+    <!-- 3層構造の設計 -->
+    <div class="section-card">
+      <h2><i class="fas fa-layer-group"></i> ピラー・クラスター・ロングテール3層構造</h2>
+      <p>効果的なトピカルオーソリティ構築には、階層的なコンテンツ設計が不可欠です。</p>
+      
+      <div class="hierarchy-diagram">
+        <h3>コンテンツ階層モデル</h3>
+        
+        <div class="hierarchy-level">
+          <div class="hierarchy-node pillar">
+            <strong>ピラーページ</strong><br>
+            テーマの中核<br>
+            3000-5000文字
+          </div>
+          <span style="margin: 0 20px;">→</span>
+          <div class="hierarchy-node cluster">
+            <strong>クラスターページ</strong><br>
+            用途・業界・フェーズ別<br>
+            2000-3000文字
+          </div>
+          <span style="margin: 0 20px;">→</span>
+          <div class="hierarchy-node long-tail">
+            <strong>ロングテール</strong><br>
+            個別ユースケース<br>
+            1000-2000文字
+          </div>
+        </div>
+      </div>
+
+      <h3>実例：「DXツール」のトピカルオーソリティ構築</h3>
+      <table class="competitor-analysis">
+        <thead>
+          <tr>
+            <th>階層</th>
+            <th>ページタイトル例</th>
+            <th>キーワード例</th>
+            <th>内部リンク数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ピラー</strong></td>
+            <td>DXツール完全ガイド2025</td>
+            <td>DXツール、デジタル変革</td>
+            <td>30-50本</td>
+          </tr>
+          <tr>
+            <td><strong>クラスター</strong></td>
+            <td>製造業向けDXツール15選</td>
+            <td>製造業 DX、工場 デジタル化</td>
+            <td>10-20本</td>
+          </tr>
+          <tr>
+            <td><strong>クラスター</strong></td>
+            <td>中小企業のDX導入ステップ</td>
+            <td>中小企業 DX、DX 始め方</td>
+            <td>10-20本</td>
+          </tr>
+          <tr>
+            <td><strong>ロングテール</strong></td>
+            <td>町工場のIoT導入事例5選</td>
+            <td>町工場 IoT、製造業 事例</td>
+            <td>3-5本</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- クラスター戦略 -->
+    <div class="section-card">
+      <h2><i class="fas fa-project-diagram"></i> クラスター生成と展開戦略</h2>
+      <p>トピックを8-12のクラスターに分解し、各クラスターで12-20のキーワードをカバーします。</p>
+      
+      <div class="cluster-strategy">
+        <div class="cluster-card">
+          <div class="number">30-60</div>
+          <h4>初期クラスター数</h4>
+          <p>製品/課題/業界×ファネルで設計</p>
+        </div>
+        <div class="cluster-card">
+          <div class="number">12-20</div>
+          <h4>クラスター内キーワード</h4>
+          <p>ヘッド＋ロングテール混在</p>
+        </div>
+        <div class="cluster-card">
+          <div class="number">3-5</div>
+          <h4>階層の深さ</h4>
+          <p>ピラーから最深部まで</p>
+        </div>
+        <div class="cluster-card">
+          <div class="number">70%</div>
+          <h4>内部リンク密度</h4>
+          <p>関連ページ間のリンク率</p>
+        </div>
+      </div>
+
+      <div class="alert-box alert-warning">
+        <strong>⚠️ 重要原則：</strong>
+        検索量は方位磁針であって速度計ではない。事業インパクトを優先し、
+        ゼロボリュームキーワードもH2/H3で積極的に拾って面を広げる。
+      </div>
+    </div>
+
+    <!-- 内部リンク戦略 -->
+    <div class="section-card">
+      <h2><i class="fas fa-link"></i> 戦略的内部リンク構築</h2>
+      <p>内部リンクはトピカルオーソリティの血管。適切な設計により、権威性を効率的に伝達します。</p>
+      
+      <div class="link-strategy-grid">
+        <div class="link-strategy-box">
+          <h4>階層間リンク</h4>
+          <ul>
+            <li>ピラー → 全クラスター（必須）</li>
+            <li>クラスター → ピラー（必須）</li>
+            <li>クラスター → 関連ロングテール</li>
+            <li>ロングテール → 親クラスター</li>
+          </ul>
+        </div>
+        
+        <div class="link-strategy-box">
+          <h4>横断的リンク</h4>
+          <ul>
+            <li>関連クラスター間の相互リンク</li>
+            <li>補完的トピックへの橋渡し</li>
+            <li>ユーザージャーニーに沿った誘導</li>
+            <li>コンテキストに基づく推奨</li>
+          </ul>
+        </div>
+        
+        <div class="link-strategy-box">
+          <h4>アンカーテキスト戦略</h4>
+          <ul>
+            <li>完全一致：20-30%</li>
+            <li>部分一致：40-50%</li>
+            <li>ブランド＋キーワード：10-20%</li>
+            <li>汎用的（こちら等）：10-20%</li>
+          </ul>
+        </div>
+        
+        <div class="link-strategy-box">
+          <h4>リンク配置の原則</h4>
+          <ul>
+            <li>導入部：ピラーページへのリンク</li>
+            <li>本文中：文脈に応じた関連リンク</li>
+            <li>末尾：次のステップへの誘導</li>
+            <li>サイドバー：カテゴリナビゲーション</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 実装チェックリスト -->
+    <div class="section-card">
+      <h2><i class="fas fa-tasks"></i> 実装チェックリスト</h2>
+      <p>トピカルオーソリティ構築の実践的ステップです。</p>
+      
+      <div class="implementation-checklist">
+        <div class="checklist-item">
+          <input type="checkbox" id="check1">
+          <label for="check1">テーマの棚卸し：製品/課題/業界×ファネルで30-60クラスターを洗い出す</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check2">
+          <label for="check2">SERP分析：競合の構造と不足コンテンツを特定</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check3">
+          <label for="check3">キーワードユニバース作成：事業インパクト順に優先順位付け</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check4">
+          <label for="check4">ピラーページ作成：包括的な概要ページを執筆</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check5">
+          <label for="check5">クラスターページ展開：月5-10ページペースで拡充</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check6">
+          <label for="check6">内部リンク最適化：階層構造に沿ったリンク網構築</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check7">
+          <label for="check7">構造化データ実装：BreadcrumbList、Article等を設定</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check8">
+          <label for="check8">定期的な更新：四半期ごとにコンテンツをリフレッシュ</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 成功指標 -->
+    <div class="section-card">
+      <h2><i class="fas fa-chart-line"></i> 成功を測る指標</h2>
+      <p>トピカルオーソリティの成果を定量的に評価するKPIです。</p>
+      
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-eye"></i></div>
+          <h4>カバレッジ率</h4>
+          <div class="value">80%+</div>
+          <p>ターゲットキーワードの網羅率</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-trophy"></i></div>
+          <h4>上位表示率</h4>
+          <div class="value">60%+</div>
+          <p>クラスター内TOP10率</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-users"></i></div>
+          <h4>滞在時間</h4>
+          <div class="value">3分+</div>
+          <p>平均ページ滞在時間</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-random"></i></div>
+          <h4>内部遷移率</h4>
+          <div class="value">40%+</div>
+          <p>関連ページへの遷移率</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-link"></i></div>
+          <h4>被リンク増加</h4>
+          <div class="value">+20%</div>
+          <p>四半期ごとの増加率</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="icon"><i class="fas fa-search"></i></div>
+          <h4>ブランド検索</h4>
+          <div class="value">+50%</div>
+          <p>「サイト名 + トピック」検索</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 先進事例 -->
+    <div class="section-card">
+      <h2><i class="fas fa-lightbulb"></i> 成功事例と学び</h2>
+      
+      <div class="alert-box alert-success">
+        <strong>✅ HubSpotの事例：</strong>
+        「インバウンドマーケティング」トピックで完全支配。
+        ピラー1本＋クラスター50本＋ロングテール500本の構造で、
+        関連キーワードの70%以上でTOP3を獲得。
+      </div>
+      
+      <h3>日本市場での応用ポイント</h3>
+      <ul style="line-height: 2;">
+        <li><strong>業界特化型アプローチ</strong> - 日本独自の業界慣習や規制を反映したコンテンツ設計</li>
+        <li><strong>BtoB重視の構成</strong> - 決裁プロセスや稟議書作成など日本企業特有のニーズに対応</li>
+        <li><strong>事例の充実</strong> - 国内企業の成功事例を豊富に掲載し信頼性を構築</li>
+        <li><strong>用語の正確性</strong> - カタカナ語と日本語の使い分けに配慮</li>
+      </ul>
+    </div>
+
+    <!-- 参考文献 -->
+    <div class="section-card">
+      <h2><i class="fas fa-book"></i> 参考文献・推奨リソース</h2>
+      <ul style="line-height: 2;">
+        <li>Koray Gübür - Holistic SEO & Topical Authority Framework</li>
+        <li>Kevin Indig - Keyword Universe Methodology</li>
+        <li>Glen Allsopp (Detailed) - SERP Domination Case Studies</li>
+        <li>HubSpot - Topic Cluster Model</li>
+        <li>Ahrefs - Content Hub Strategy Guide</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="ai-utilization.html" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：AI活用術
+    </a>
+    <a href="serp-optimization.html" class="nav-button">
+      次へ：SERP最適化 <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <script src="../js/sidebar-toc.js"></script>
+  <script>
+    // チェックボックスの状態保存
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+      const key = `topical-check-${index}`;
+      if (localStorage.getItem(key) === 'true') {
+        checkbox.checked = true;
+      }
+      checkbox.addEventListener('change', function() {
+        localStorage.setItem(key, this.checked);
+      });
+    });
+  </script>
+</body>
+</html>
