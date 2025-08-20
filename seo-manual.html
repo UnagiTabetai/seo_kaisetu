@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/enhanced-design.css">
   <!-- Glassmorphism Design -->
   <link rel="stylesheet" href="css/glassmorphism-design.css">
+  <!-- Responsive Layout -->
+  <link rel="stylesheet" href="css/responsive-layout.css">
 </head>
 <body>
   <script src="js/enhanced-animations.js" defer></script>
@@ -38,7 +40,10 @@
 
   <!-- メインコンテンツ -->
   <main class="manual-content">
-    <div class="container wide-container">
+    <div class="responsive-layout">
+      
+      <!-- メインコンテンツエリア -->
+      <div class="content-area">
       
       <!-- 目次 -->
       <section class="toc-section">
@@ -1023,8 +1028,110 @@
 
       <!-- 続きは次のセクションで... -->
 
+      </div>
+      <!-- コンテンツエリア終了 -->
+      
+      <!-- 右サイドバー（目次） -->
+      <aside class="toc-sidebar">
+        <div class="toc-container">
+          <button class="toc-toggle" onclick="toggleToc()">
+            <span>目次</span>
+            <i class="fas fa-chevron-down toc-toggle-icon"></i>
+          </button>
+          <nav class="toc-content">
+            <h3 class="hide-mobile">目次</h3>
+            <ul>
+              <li><a href="#intro">はじめに</a></li>
+              <li>
+                <a href="#seo-basics">第1章：SEOの基礎知識</a>
+                <ul>
+                  <li><a href="#what-is-seo">1.1 SEOとは何か</a></li>
+                  <li><a href="#search-engine">1.2 検索エンジンの仕組み</a></li>
+                  <li><a href="#seo-types">1.3 SEOの3つの柱</a></li>
+                  <li><a href="#eeat">1.4 E-E-A-Tの重要性</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#keyword-research">第2章：キーワード戦略</a>
+                <ul>
+                  <li><a href="#search-intent">2.1 検索意図の4分類</a></li>
+                  <li><a href="#keyword-selection">2.2 効果的なキーワード選定</a></li>
+                  <li><a href="#longtail">2.3 ロングテール戦略</a></li>
+                  <li><a href="#competitor-analysis">2.4 競合分析手法</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#article-creation">第3章：SEO記事作成実践</a>
+                <ul>
+                  <li><a href="#article-structure">3.1 記事構成の設計</a></li>
+                  <li><a href="#writing-rules">3.2 執筆ルール</a></li>
+                  <li><a href="#optimization">3.3 最適化テクニック</a></li>
+                  <li><a href="#quality-check">3.4 品質チェック</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ai-tools">第4章：AI活用法</a>
+                <ul>
+                  <li><a href="#ai-prompts">4.1 プロンプト作成</a></li>
+                  <li><a href="#ai-workflow">4.2 執筆ワークフロー</a></li>
+                  <li><a href="#ai-best-practices">4.3 ベストプラクティス</a></li>
+                </ul>
+              </li>
+              <li><a href="#templates">第5章：テンプレート集</a></li>
+              <li><a href="#checklist">第6章：チェックリスト</a></li>
+              <li><a href="#case-studies">第7章：成功事例</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      
     </div>
   </main>
+  
+  <!-- フローティング目次ボタン（モバイル用） -->
+  <button class="floating-toc-button" onclick="scrollToToc()">
+    <i class="fas fa-list"></i>
+  </button>
+  
+  <script>
+    // 目次の開閉トグル
+    function toggleToc() {
+      const toggle = document.querySelector('.toc-toggle');
+      const content = document.querySelector('.toc-content');
+      toggle.classList.toggle('active');
+      content.classList.toggle('active');
+    }
+    
+    // 目次へスクロール
+    function scrollToToc() {
+      const toc = document.querySelector('.toc-sidebar');
+      toc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // アクティブセクションのハイライト
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.manual-section');
+      const tocLinks = document.querySelectorAll('.toc-content a');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      tocLinks.forEach(link => {
+        const li = link.parentElement;
+        if (link.getAttribute('href') === '#' + current) {
+          li.classList.add('active');
+        } else {
+          li.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
   <!-- フッター -->
   <footer class="manual-footer">

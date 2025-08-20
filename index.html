@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SEO記事作成マスターガイド - メインメニュー</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Typography CSS replaced by design-system -->
   <link rel="stylesheet" href="styles/design-system.css">
@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="css/enhanced-design.css">
   <!-- Glassmorphism Design -->
   <link rel="stylesheet" href="css/glassmorphism-design.css">
+  <!-- Responsive Layout -->
+  <link rel="stylesheet" href="css/responsive-layout.css">
+  <!-- List Styles Fix -->
+  <link rel="stylesheet" href="css/list-styles-fix.css">
+  <!-- Typography Enhanced -->
+  <link rel="stylesheet" href="css/typography-enhanced.css">
   <style>
     * {
       margin: 0;
@@ -53,7 +59,7 @@
 
     .menu-container {
       width: 100%;
-      max-width: var(--content-max-width, 1400px);
+      max-width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--spacing-md);
@@ -163,7 +169,7 @@
       border-radius: var(--radius-md);
       padding: var(--spacing-lg);
       width: 100%;
-      max-width: var(--content-max-width, 1400px);
+      max-width: 100%;
       margin-bottom: var(--spacing-xl);
     }
 
@@ -235,18 +241,18 @@
 <body>
   <script src="js/enhanced-animations.js" defer></script>
   <header class="header enhanced-header glass-header geometric-bg">
-    <h1 class="heading-left"><i class="fas fa-book-open enhanced-heading-icon"></i> SEO記事作成マスターガイド</h1>
-    <p>実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
+    <h1 class="heading-left text-gradient"><i class="fas fa-book-open enhanced-heading-icon"></i> SEO記事作成マスターガイド</h1>
+    <p class="lead">実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
   </header>
 
-  <main class="menu-container enhanced-grid wide-container">
+  <main class="menu-container enhanced-grid fluid-container">
     <!-- 基礎知識 -->
     <a href="pages/seo-basics.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-graduation-cap"></i>
       </div>
-      <h2>SEO基礎知識</h2>
-      <p>SEOの基本概念から仕組みまで、初心者にも分かりやすく解説します。</p>
+      <h2 class="text-shadow">SEO基礎知識</h2>
+      <p class="small">SEOの基本概念から仕組みまで、初心者にも分かりやすく解説します。</p>
       <div class="topics">
         <h4>学習内容</h4>
         <ul>
@@ -263,8 +269,8 @@
       <div class="icon">
         <i class="fas fa-key"></i>
       </div>
-      <h2>キーワード戦略</h2>
-      <p>効果的なキーワード選定から競合分析まで、戦略的アプローチを学びます。</p>
+      <h2 class="text-shadow">キーワード戦略</h2>
+      <p class="small">効果的なキーワード選定から競合分析まで、戦略的アプローチを学びます。</p>
       <div class="topics">
         <h4>学習内容</h4>
         <ul>
@@ -281,8 +287,8 @@
       <div class="icon">
         <i class="fas fa-pen-fancy"></i>
       </div>
-      <h2>記事作成実践<span class="badge popular">人気</span></h2>
-      <p>実際にSEO記事を作成する具体的な手順とテクニックを習得します。</p>
+      <h2 class="text-shadow">記事作成実践<span class="badge popular">人気</span></h2>
+      <p class="small">実際にSEO記事を作成する具体的な手順とテクニックを習得します。</p>
       <div class="topics">
         <h4>学習内容</h4>
         <ul>
@@ -299,8 +305,8 @@
       <div class="icon">
         <i class="fas fa-robot"></i>
       </div>
-      <h2>AI活用術 完全ガイド<span class="badge new">NEW</span></h2>
-      <p>ChatGPT・Claude・Geminiの特徴と使い分け、実践的ハイブリッドワークフロー。</p>
+      <h2 class="text-shadow">AI活用術 完全ガイド<span class="badge new">NEW</span></h2>
+      <p class="small">ChatGPT・Claude・Geminiの特徴と使い分け、実践的ハイブリッドワークフロー。</p>
       <div class="topics">
         <h4>学習内容</h4>
         <ul>
@@ -317,8 +323,8 @@
       <div class="icon">
         <i class="fas fa-file-code"></i>
       </div>
-      <h2>実践プロンプト集<span class="badge hot">🔥</span></h2>
-      <p>SEOハッカーが使う即戦力テンプレート。コピペですぐ使える。</p>
+      <h2 class="text-shadow">実践プロンプト集<span class="badge hot">🔥</span></h2>
+      <p class="small">SEOハッカーが使う即戦力テンプレート。コピペですぐ使える。</p>
       <div class="topics">
         <h4>収録内容</h4>
         <ul>
@@ -335,8 +341,8 @@
       <div class="icon">
         <i class="fas fa-laptop-code"></i>
       </div>
-      <h2>実践演習</h2>
-      <p>実際に手を動かして学ぶ、実践的な演習問題とケーススタディ。</p>
+      <h2 class="text-shadow">実践演習</h2>
+      <p class="small">実際に手を動かして学ぶ、実践的な演習問題とケーススタディ。</p>
       <div class="topics">
         <h4>演習内容</h4>
         <ul>
@@ -379,9 +385,56 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 SEO記事作成マスターガイド. All rights reserved.</p>
-    <p>最終更新日: 2025年8月19日 | 実戦的SEOハッカー手法を追加</p>
+  <footer class="rich-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>SEOマスターガイド</h3>
+          <p class="footer-description">実践的なSEO対策で検索上位を獲得する完全マニュアル。最新のAI活用術と実戦的なSEOハッカー手法を網羅。</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>学習コンテンツ</h3>
+          <ul>
+            <li><a href="pages/seo-basics.html">SEO基礎知識</a></li>
+            <li><a href="pages/keyword-strategy.html">キーワード戦略</a></li>
+            <li><a href="pages/article-creation.html">記事作成実践</a></li>
+            <li><a href="pages/ai-utilization.html">AI活用術</a></li>
+            <li><a href="pages/templates.html">実践プロンプト集</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>最新戦略</h3>
+          <ul>
+            <li><a href="pages/topical-authority.html">トピカルオーソリティ</a></li>
+            <li><a href="pages/serp-optimization.html">SERP最適化</a></li>
+            <li><a href="pages/zero-click-era.html">ゼロクリック対策</a></li>
+            <li><a href="pages/practice.html">実践演習</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>リソース</h3>
+          <ul>
+            <li><a href="pages/glossary.html">用語集</a></li>
+            <li><a href="pages/checklist.html">チェックリスト</a></li>
+            <li><a href="pages/resources.html">ダウンロード</a></li>
+            <li><a href="seo-manual.html">統合マニュアル</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 SEO記事作成マスターガイド. All rights reserved. | 最終更新: 2025年8月20日</p>
+      </div>
+    </div>
   </footer>
   <script src="js/components.js"></script>
 </body>
