@@ -1,7 +1,7 @@
 /* サイドバー目次のスタイル */
 .toc-container {
   position: fixed;
-  left: 20px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   width: 250px;
@@ -112,7 +112,7 @@
 .toc-toggle {
   display: none;
   position: fixed;
-  left: 20px;
+  right: 20px;
   top: 100px;
   width: 50px;
   height: 50px;
@@ -134,8 +134,8 @@
 
 /* メインコンテンツの調整 */
 .with-sidebar .content-section {
-  margin-left: 290px;
-  transition: margin-left 0.3s;
+  margin-right: 290px;
+  transition: margin-right 0.3s;
   max-width: calc(1000px - 290px);
 }
 
@@ -146,7 +146,7 @@
   }
   
   .with-sidebar .content-section {
-    margin-left: 240px;
+    margin-right: 240px;
     max-width: calc(100% - 260px);
   }
 }
@@ -159,7 +159,7 @@
   }
   
   .toc-container {
-    transform: translateX(-100%) translateY(-50%);
+    transform: translateX(100%) translateY(-50%);
     transition: transform 0.3s;
   }
   
@@ -168,7 +168,7 @@
   }
   
   .with-sidebar .content-section {
-    margin-left: 0;
+    margin-right: 0;
   }
   
   /* オーバーレイ */
