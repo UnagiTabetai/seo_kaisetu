@@ -10,7 +10,7 @@
   <!-- Typography CSS replaced by design-system -->
   <link rel="stylesheet" href="../styles/design-system.css">
   <link rel="stylesheet" href="../css/typography-enhanced.css">  <link rel="stylesheet" href="../styles/sidebar-toc.css">
-  <link rel="stylesheet" href="../styles/sidebar-toc-right.css">  <style>
+  <link rel="stylesheet" href="../css/global-nav.css">  <link rel="stylesheet" href="../styles/sidebar-toc-right.css">  <style>
     * {
       margin: 0;
       padding: 0;
@@ -769,5 +769,23 @@
       </div>
     </div>
   </footer>  <script src="../js/components.js"></script>
-</body>
+  <script>
+    // モバイルメニュートグル
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const navMenu = document.getElementById("navMenu");
+    
+    mobileMenuToggle?.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+    
+    // スクロール時のナビゲーション変化
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".global-nav");
+      if (window.scrollY > 100) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+  </script></body>
 </html>

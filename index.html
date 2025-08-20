@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="css/list-styles-fix.css">
   <!-- Typography Enhanced -->
   <link rel="stylesheet" href="css/typography-enhanced.css">
+  <!-- Global Navigation -->
+  <link rel="stylesheet" href="css/global-nav.css">
+  <!-- Dynamic Homepage -->
+  <link rel="stylesheet" href="css/dynamic-homepage.css">
   <style>
     * {
       margin: 0;
@@ -266,9 +270,86 @@
 </head>
 <body>
   <script src="js/enhanced-animations.js" defer></script>
+  <!-- グローバルナビゲーション -->
+  <nav class="global-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <i class="fas fa-book-open"></i>
+        <span>SEOマスターガイド</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">ホーム</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">基礎知識 <i class="fas fa-chevron-down"></i></a>
+          <div class="nav-dropdown">
+            <a href="pages/seo-basics.html" class="dropdown-link">
+              <i class="fas fa-graduation-cap"></i> SEO基礎
+            </a>
+            <a href="pages/keyword-strategy.html" class="dropdown-link">
+              <i class="fas fa-key"></i> キーワード戦略
+            </a>
+            <a href="pages/article-creation.html" class="dropdown-link">
+              <i class="fas fa-pen-fancy"></i> 記事作成
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">応用技術 <i class="fas fa-chevron-down"></i></a>
+          <div class="nav-dropdown">
+            <a href="pages/ai-utilization.html" class="dropdown-link">
+              <i class="fas fa-robot"></i> AI活用術
+            </a>
+            <a href="pages/topical-authority.html" class="dropdown-link">
+              <i class="fas fa-crown"></i> トピカルオーソリティ
+            </a>
+            <a href="pages/serp-optimization.html" class="dropdown-link">
+              <i class="fas fa-search-plus"></i> SERP最適化
+            </a>
+            <a href="pages/zero-click-era.html" class="dropdown-link">
+              <i class="fas fa-robot"></i> ゼロクリック対策
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="pages/templates.html" class="nav-link">テンプレート</a>
+        </li>
+        <li class="nav-item">
+          <a href="pages/practice.html" class="nav-link">実践演習</a>
+        </li>
+        <li class="nav-item nav-cta">
+          <a href="seo-manual.html" class="cta-button">完全マニュアル</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="hero-section">
-    <h1><i class="fas fa-book-open"></i> SEO記事作成マスターガイド</h1>
-    <p>実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
+    <h1 class="hero-title">
+      <i class="fas fa-book-open"></i> SEO記事作成マスターガイド
+    </h1>
+    <p class="hero-subtitle">実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
+    
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">実践テンプレート</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">具体的テクニック</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3AI</span>
+        <span class="stat-label">活用ツール</span>
+      </div>
+    </div>
   </div>
 
   <div class="breadcrumb">
@@ -469,5 +550,66 @@
     </div>
   </footer>
   <script src="js/components.js"></script>
+  <!-- フローティングアクションボタン -->
+  <div class="floating-action" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // モバイルメニュートグル
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileMenuToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // スクロール時のナビゲーション変化
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.global-nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+    
+    // トップに戻るボタン
+    document.getElementById('scrollTop')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // カウントアップアニメーション
+    const animateValue = (obj, start, end, duration) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        obj.innerHTML = value + (obj.dataset.suffix || '');
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+    
+    // 統計数値のアニメーション
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = document.querySelectorAll('.stat-number');
+          statNumbers[0].dataset.suffix = '+';
+          statNumbers[1].dataset.suffix = '+';
+          animateValue(statNumbers[0], 0, 15, 2000);
+          animateValue(statNumbers[1], 0, 100, 2000);
+          observer.disconnect();
+        }
+      });
+    });
+    
+    const statsContainer = document.querySelector('.stats-container');
+    if (statsContainer) observer.observe(statsContainer);
+  </script>
 </body>
 </html>
