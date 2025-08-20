@@ -134,9 +134,11 @@
 
 /* メインコンテンツの調整 */
 .with-sidebar .content-section {
-  margin-right: 290px;
-  transition: margin-right 0.3s;
-  max-width: calc(1000px - 290px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 290px;
+  transition: padding-right 0.3s;
+  max-width: 1000px;
 }
 
 /* レスポンシブデザイン */
@@ -146,8 +148,8 @@
   }
   
   .with-sidebar .content-section {
-    margin-right: 240px;
-    max-width: calc(100% - 260px);
+    padding-right: 240px;
+    max-width: 100%;
   }
 }
 
@@ -168,7 +170,9 @@
   }
   
   .with-sidebar .content-section {
-    margin-right: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* オーバーレイ */

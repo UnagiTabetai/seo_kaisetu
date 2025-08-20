@@ -1,0 +1,77 @@
+/* ===== 右側配置の目次とコンテンツ中央配置 ===== */
+
+/* コンテンツエリアの中央配置 */
+.content-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* 目次がある場合のレイアウト調整 */
+@media (min-width: 1400px) {
+  /* 大画面：コンテンツ中央、目次は右の空きスペースに */
+  .with-sidebar .content-section {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 20px;
+  }
+  
+  .toc-container {
+    position: fixed;
+    right: calc((100vw - 1000px) / 2 - 270px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* 中画面：目次分のスペースを確保 */
+  .with-sidebar .content-section {
+    max-width: calc(100% - 300px);
+    margin-left: 20px;
+    margin-right: auto;
+  }
+  
+  .toc-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* 小画面：目次を狭くして対応 */
+  .with-sidebar .content-section {
+    max-width: calc(100% - 240px);
+    margin-left: 20px;
+    margin-right: auto;
+  }
+  
+  .toc-container {
+    width: 200px;
+    right: 20px;
+  }
+}
+
+/* モバイル：目次は隠す */
+@media (max-width: 991px) {
+  .with-sidebar .content-section {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+}
+
+/* 目次なしのページはシンプルに中央配置 */
+body:not(.with-sidebar) .content-section {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
