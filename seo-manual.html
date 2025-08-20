@@ -13,11 +13,83 @@
   <link rel="stylesheet" href="css/glassmorphism-design.css">
   <!-- Responsive Layout -->
   <link rel="stylesheet" href="css/responsive-layout.css">
+  <!-- Typography Enhanced -->
+  <link rel="stylesheet" href="css/typography-enhanced.css">
+  <!-- Global Navigation -->
+  <link rel="stylesheet" href="css/global-nav.css">
+  <!-- Manual Navigation Extensions -->
+  <link rel="stylesheet" href="css/manual-navigation.css">
 </head>
 <body>
   <script src="js/enhanced-animations.js" defer></script>
+  
+  <!-- グローバルナビゲーション -->
+  <nav class="global-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-book-open"></i>
+        <span>SEOマスターガイド</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">ホーム</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">基礎知識 <i class="fas fa-chevron-down"></i></a>
+          <div class="nav-dropdown">
+            <a href="pages/seo-basics.html" class="dropdown-link">
+              <i class="fas fa-graduation-cap"></i> SEO基礎
+            </a>
+            <a href="pages/keyword-strategy.html" class="dropdown-link">
+              <i class="fas fa-key"></i> キーワード戦略
+            </a>
+            <a href="pages/article-creation.html" class="dropdown-link">
+              <i class="fas fa-pen-fancy"></i> 記事作成
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">応用技術 <i class="fas fa-chevron-down"></i></a>
+          <div class="nav-dropdown">
+            <a href="pages/ai-utilization.html" class="dropdown-link">
+              <i class="fas fa-robot"></i> AI活用術
+            </a>
+            <a href="pages/topical-authority.html" class="dropdown-link">
+              <i class="fas fa-crown"></i> トピカルオーソリティ
+            </a>
+            <a href="pages/serp-optimization.html" class="dropdown-link">
+              <i class="fas fa-search-plus"></i> SERP最適化
+            </a>
+            <a href="pages/zero-click-era.html" class="dropdown-link">
+              <i class="fas fa-robot"></i> ゼロクリック対策
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="pages/templates.html" class="nav-link">テンプレート</a>
+        </li>
+        <li class="nav-item">
+          <a href="pages/practice.html" class="nav-link">実践演習</a>
+        </li>
+        <li class="nav-item nav-cta">
+          <a href="#" class="cta-button active">完全マニュアル</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumb" style="max-width: 1400px; margin: 90px auto 0; padding: 0 20px; color: #666;">
+    <a href="index.html" style="color: #667eea; text-decoration: none;">ホーム</a> &gt; SEO記事作成 完全マニュアル
+  </div>
+  
   <!-- ヘッダー -->
-  <header class="manual-header enhanced-header glass-header geometric-bg">
+  <header class="manual-header enhanced-header glass-header geometric-bg" style="margin-top: 20px;">
     <div class="header-content">
       <h1><i class="fas fa-book"></i> SEO記事作成 完全マニュアル</h1>
       <p class="header-subtitle">検索上位を獲得するコンテンツマーケティングの実践ガイド</p>
@@ -25,8 +97,9 @@
   </header>
 
   <!-- ナビゲーション -->
-  <nav class="sticky-nav enhanced glass-nav">
+  <nav class="sticky-nav enhanced glass-nav" style="top: 70px;">
     <div class="nav-content">
+      <a href="index.html" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 16px; border-radius: 20px;"><i class="fas fa-home"></i> ホーム</a>
       <a href="#intro">はじめに</a>
       <a href="#seo-basics">SEO基礎知識</a>
       <a href="#keyword-research">キーワード戦略</a>
@@ -39,7 +112,7 @@
   </nav>
 
   <!-- メインコンテンツ -->
-  <main class="manual-content">
+  <main class="manual-content" style="margin-top: 140px;">
     <div class="responsive-layout">
       
       <!-- メインコンテンツエリア -->
@@ -1141,5 +1214,48 @@
   </footer>
 
   <script src="js/manual.js"></script>
+  
+  <!-- フローティングアクションボタン -->
+  <div class="floating-buttons">
+    <!-- ホームへ戻るボタン -->
+    <a href="index.html" class="floating-button home" data-tooltip="ホームへ戻る">
+      <i class="fas fa-home" style="font-size: 1.5rem;"></i>
+    </a>
+    <!-- トップへ戻るボタン -->
+    <div id="scrollTop" class="floating-button top" data-tooltip="トップへ戻る">
+      <i class="fas fa-arrow-up" style="font-size: 1.25rem;"></i>
+    </div>
+  </div>
+  
+  <script>
+    // モバイルメニュートグル
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileMenuToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // スクロール時のナビゲーション変化
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.global-nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+    
+    // トップに戻るボタン
+    document.getElementById('scrollTop')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // スティッキーナビの位置調整（グローバルナビの高さ分）
+    const stickyNav = document.querySelector('.sticky-nav');
+    if (stickyNav) {
+      stickyNav.style.top = '70px';
+    }
+  </script>
 </body>
 </html>
