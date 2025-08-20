@@ -6,8 +6,8 @@
   <title>SEO記事作成マスターガイド - メインメニュー</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles/typography.css">
-  <link rel="stylesheet" href="styles/navigation.css">
+  <!-- Typography CSS replaced by design-system -->
+  <link rel="stylesheet" href="styles/design-system.css">
   <style>
     * {
       margin: 0;
@@ -16,53 +16,56 @@
     }
 
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: var(--font-family);
+      background: var(--color-gray-light);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
-      font-size: var(--font-size-base, 1rem);
-      line-height: var(--line-height-relaxed, 1.75);
+      padding: 0;
+      margin: 0;
     }
 
     .header {
+      width: 100%;
+      background: var(--color-primary);
       text-align: center;
-      color: white;
-      margin-bottom: 50px;
-      animation: fadeIn 1s ease-in;
+      color: var(--color-text-light);
+      padding: var(--spacing-xl) var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
     }
 
     .header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-text-light);
     }
 
     .header p {
-      font-size: 1.3rem;
+      font-size: 1.125rem;
       opacity: 0.95;
+      color: var(--color-text-light);
     }
 
     .menu-container {
       width: 100%;
-      max-width: 1200px;
+      max-width: var(--container-max-width);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+      padding: 0 var(--container-padding);
     }
 
     .menu-card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
+      background: var(--color-light);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      transition: opacity 0.2s ease;
       cursor: pointer;
       text-decoration: none;
-      color: #333;
+      color: var(--color-text-dark);
       position: relative;
       overflow: hidden;
     }
@@ -73,23 +76,19 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      height: 3px;
+      background: var(--color-primary);
     }
 
     .menu-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow-md);
+      opacity: 0.95;
     }
 
     .menu-card .icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-primary);
     }
 
     .menu-card h2 {
@@ -156,18 +155,18 @@
     }
 
     .quick-links {
-      background: rgba(255,255,255,0.95);
-      border-radius: 15px;
-      padding: 30px;
+      background: var(--color-light);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
       width: 100%;
-      max-width: 1200px;
-      margin-bottom: 30px;
+      max-width: var(--container-max-width);
+      margin-bottom: var(--spacing-xl);
     }
 
     .quick-links h3 {
-      color: #333;
-      margin-bottom: 20px;
-      font-size: 1.3rem;
+      color: var(--color-text-dark);
+      margin-bottom: var(--spacing-md);
+      font-size: 1.5rem;
     }
 
     .quick-links-grid {
@@ -177,21 +176,21 @@
     }
 
     .quick-link {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
+      background: var(--color-gray-light);
+      padding: var(--spacing-md);
+      border-radius: var(--radius-md);
       text-decoration: none;
-      color: #333;
-      transition: all 0.3s;
+      color: var(--color-text-dark);
+      transition: opacity 0.2s;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: var(--spacing-sm);
     }
 
     .quick-link:hover {
-      background: #667eea;
-      color: white;
-      transform: translateX(5px);
+      background: var(--color-primary);
+      color: var(--color-text-light);
+      opacity: 0.9;
     }
 
     .quick-link i {
@@ -199,10 +198,12 @@
     }
 
     .footer {
-      color: white;
+      width: 100%;
+      background: var(--color-dark);
+      color: var(--color-text-light);
       text-align: center;
-      padding: 20px;
-      opacity: 0.9;
+      padding: var(--spacing-lg);
+      margin-top: auto;
     }
 
     @keyframes fadeIn {
@@ -377,5 +378,6 @@
     <p>&copy; 2025 SEO記事作成マスターガイド. All rights reserved.</p>
     <p>最終更新日: 2025年8月19日 | 実戦的SEOハッカー手法を追加</p>
   </footer>
+  <script src="js/components.js"></script>
 </body>
 </html>

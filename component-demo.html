@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コンポーネントデモ - 再利用可能なUI要素</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles/design-system.css">
+</head>
+<body>
+  <!-- ヘッダー（共通コンポーネント） -->
+  <header class="header">
+    <h1>コンポーネントシステム</h1>
+    <p>再利用可能なUI要素のデモンストレーション</p>
+  </header>
+
+  <div class="container">
+    <!-- カードコンポーネント -->
+    <section class="card mb-4">
+      <h2>カードコンポーネント</h2>
+      <p>基本のカードスタイルです。.card クラスを使用します。</p>
+      
+      <div class="grid grid-3 mt-3">
+        <div class="card">
+          <h3>基本カード</h3>
+          <p>これは基本的なカードです。</p>
+        </div>
+        
+        <div class="card card-primary">
+          <h3>プライマリカード</h3>
+          <p>card-primary クラスを追加</p>
+        </div>
+        
+        <div class="card card-bordered">
+          <h3>ボーダー付きカード</h3>
+          <p>card-bordered クラスを追加</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- バッジコンポーネント -->
+    <section class="card mb-4">
+      <h2>バッジコンポーネント</h2>
+      <p>
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span>
+      </p>
+    </section>
+
+    <!-- ボタンコンポーネント -->
+    <section class="card mb-4">
+      <h2>ボタンコンポーネント</h2>
+      <div class="d-flex gap-2 mb-3">
+        <button class="btn btn-primary">
+          <i class="fas fa-check"></i> Primary
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-arrow-left"></i> Secondary
+        </button>
+        <button class="btn btn-outline">
+          <i class="fas fa-link"></i> Outline
+        </button>
+      </div>
+      
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Normal</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </section>
+
+    <!-- アラートボックス -->
+    <section class="card mb-4">
+      <h2>アラートボックス</h2>
+      
+      <div class="alert-info">
+        <strong>情報:</strong> これは情報メッセージです。
+      </div>
+      
+      <div class="alert-success">
+        <strong>成功:</strong> 操作が正常に完了しました。
+      </div>
+      
+      <div class="alert-warning">
+        <strong>警告:</strong> 注意が必要な内容です。
+      </div>
+      
+      <div class="alert-danger">
+        <strong>エラー:</strong> 問題が発生しました。
+      </div>
+    </section>
+
+    <!-- メトリックカード -->
+    <section class="card mb-4">
+      <h2>メトリックカード</h2>
+      
+      <div class="grid grid-auto">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="metric-value">1,234</div>
+          <div class="metric-label">ユーザー数</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="metric-value">+45%</div>
+          <div class="metric-label">成長率</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="metric-value">TOP 3</div>
+          <div class="metric-label">ランキング</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- インフォボックス -->
+    <section class="card mb-4">
+      <h2>インフォボックス</h2>
+      
+      <div class="info-box">
+        <div class="info-box-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="info-box-content">
+          <h4>ヒント</h4>
+          <p>これらのコンポーネントは自由に組み合わせて使用できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- チェックリスト -->
+    <section class="card mb-4">
+      <h2>チェックリスト</h2>
+      
+      <div class="checklist">
+        <div class="checklist-item">
+          <input type="checkbox" id="check1">
+          <label for="check1">デザインシステムを理解する</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check2">
+          <label for="check2">コンポーネントクラスを適用する</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check3">
+          <label for="check3">一貫性のあるUIを構築する</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 著者情報 -->
+    <section class="card mb-4">
+      <h2>著者情報ボックス</h2>
+      
+      <div class="author-box">
+        <div class="author-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="author-details">
+          <h4>SEOマスターガイド編集部</h4>
+          <p>実践的なSEO手法を体系的に解説</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ユーティリティクラス -->
+    <section class="card mb-4">
+      <h2>ユーティリティクラス</h2>
+      
+      <h3>スペーシング</h3>
+      <p>マージン: m-0, m-1, m-2, m-3, m-4, m-5</p>
+      <p>パディング: p-0, p-1, p-2, p-3, p-4, p-5</p>
+      <p>方向指定: mt-3（上）, mb-3（下）, など</p>
+      
+      <h3>テキスト</h3>
+      <p class="text-primary">text-primary - プライマリカラー</p>
+      <p class="text-muted">text-muted - 薄いテキスト</p>
+      <p class="text-center">text-center - 中央揃え</p>
+      
+      <h3>背景</h3>
+      <div class="p-2 bg-gray mb-2">bg-gray - グレー背景</div>
+      <div class="p-2 bg-primary text-light mb-2">bg-primary - プライマリ背景</div>
+      
+      <h3>グリッドレイアウト</h3>
+      <div class="grid grid-2 gap-2">
+        <div class="p-2 bg-gray">grid-2: 2列</div>
+        <div class="p-2 bg-gray">grid-2: 2列</div>
+      </div>
+    </section>
+
+    <!-- 使用例 -->
+    <section class="card mb-4">
+      <h2>実装例</h2>
+      
+      <pre><code>&lt;!-- カードコンポーネント --&gt;
+&lt;div class="card card-primary"&gt;
+  &lt;h3&gt;タイトル&lt;/h3&gt;
+  &lt;p&gt;内容&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- ボタン --&gt;
+&lt;button class="btn btn-primary"&gt;
+  &lt;i class="fas fa-check"&gt;&lt;/i&gt; 保存
+&lt;/button&gt;
+
+&lt;!-- グリッドレイアウト --&gt;
+&lt;div class="grid grid-3 gap-3"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ユーティリティクラスの組み合わせ --&gt;
+&lt;div class="text-center mt-4 mb-4"&gt;
+  &lt;h2 class="text-primary"&gt;見出し&lt;/h2&gt;
+  &lt;p class="text-muted"&gt;説明文&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+  </div>
+
+  <!-- ナビゲーションボタン -->
+  <div class="container d-flex justify-content-between mb-4">
+    <a href="index.html" class="btn btn-secondary">
+      <i class="fas fa-home"></i> ホーム
+    </a>
+  </div>
+
+  <!-- フッター（共通コンポーネント） -->
+  <footer class="footer">
+    <p>&copy; 2025 SEO記事作成マスターガイド. All rights reserved.</p>
+    <p>コンポーネントシステム v1.0</p>
+  </footer>
+</body>
+</html>
