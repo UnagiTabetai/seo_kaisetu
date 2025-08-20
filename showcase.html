@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Design Showcase - sample.html & sample_top.html要素</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="css/enhanced-design.css">
+  <script src="js/enhanced-animations.js" defer></script>
+</head>
+<body>
+
+  <!-- ヒーロースライダー -->
+  <section class="hero-slider">
+    <div class="slider-container">
+      <div class="slider-item">
+        <div class="slider-content">
+          <h1 class="slider-title">プロフェッショナルなデザイン</h1>
+          <p class="slider-description">sample_top.htmlから抽出したスライダー機能</p>
+        </div>
+      </div>
+      <div class="slider-item" style="background: var(--gradient-secondary);">
+        <div class="slider-content">
+          <h1 class="slider-title">モダンなアニメーション</h1>
+          <p class="slider-description">スムーズな切り替えと自動再生</p>
+        </div>
+      </div>
+      <div class="slider-item" style="background: var(--gradient-success);">
+        <div class="slider-content">
+          <h1 class="slider-title">レスポンシブ対応</h1>
+          <p class="slider-description">あらゆるデバイスで美しく表示</p>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots"></div>
+  </section>
+
+  <!-- 装飾タイトル -->
+  <div class="design-title scroll-reveal">
+    <div class="design-title-sub">Pick Up Contents</div>
+    <h2 class="design-title-main">注目のコンテンツ</h2>
+  </div>
+
+  <!-- リッチメニュー -->
+  <section class="rich-menu">
+    <div class="rich-menu-item fade-in-sequence">
+      <img src="https://via.placeholder.com/400x225/667eea/ffffff?text=Design+1" alt="Design 1" class="rich-menu-image">
+      <div class="rich-menu-overlay">
+        <h3 class="rich-menu-title">グラデーションデザイン</h3>
+        <p class="rich-menu-description">美しいグラデーションと滑らかなアニメーション</p>
+      </div>
+    </div>
+    <div class="rich-menu-item fade-in-sequence">
+      <img src="https://via.placeholder.com/400x225/f093fb/ffffff?text=Design+2" alt="Design 2" class="rich-menu-image">
+      <div class="rich-menu-overlay">
+        <h3 class="rich-menu-title">インタラクティブ要素</h3>
+        <p class="rich-menu-description">ホバー効果とスクロール連動アニメーション</p>
+      </div>
+    </div>
+    <div class="rich-menu-item fade-in-sequence">
+      <img src="https://via.placeholder.com/400x225/4facfe/ffffff?text=Design+3" alt="Design 3" class="rich-menu-image">
+      <div class="rich-menu-overlay">
+        <h3 class="rich-menu-title">レスポンシブレイアウト</h3>
+        <p class="rich-menu-description">あらゆるデバイスに最適化されたデザイン</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ピックアップセクション -->
+  <section class="pickup-section">
+    <div class="design-title">
+      <div class="design-title-sub">Featured Articles</div>
+      <h2 class="design-title-main">おすすめ記事</h2>
+    </div>
+    
+    <div class="pickup-grid">
+      <div class="pickup-card">
+        <h3><i class="fas fa-star"></i> 基本機能</h3>
+        <p>sample.htmlから抽出したカード要素のホバー効果とアニメーション</p>
+      </div>
+      <div class="pickup-card">
+        <h3><i class="fas fa-rocket"></i> 高度な機能</h3>
+        <p>sample_top.htmlのスライダーとリッチメニューの実装</p>
+      </div>
+      <div class="pickup-card">
+        <h3><i class="fas fa-paint-brush"></i> デザイン要素</h3>
+        <p>グラデーション、シャドウ、トランジションの活用</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- フルワイドセクション -->
+  <section class="full-width-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div class="design-title">
+        <h2 class="design-title-main" style="color: white;">フルワイド背景</h2>
+      </div>
+      <p style="text-align: center; font-size: 1.2rem;">
+        画面幅いっぱいに広がる印象的なセクション
+      </p>
+    </div>
+  </section>
+
+  <!-- アニメーション要素のデモ -->
+  <section style="padding: 3rem 2rem;">
+    <div class="design-title">
+      <div class="design-title-sub">Animation Showcase</div>
+      <h2 class="design-title-main">アニメーション効果</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div class="enhanced-card scroll-reveal-left">
+        <h3>左からスライド</h3>
+        <p>スクロール時に左から表示されるアニメーション</p>
+      </div>
+      
+      <div class="enhanced-card scroll-reveal">
+        <h3>下からフェードイン</h3>
+        <p>スクロール時に下から表示されるアニメーション</p>
+      </div>
+      
+      <div class="enhanced-card scroll-reveal-right">
+        <h3>右からスライド</h3>
+        <p>スクロール時に右から表示されるアニメーション</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- タグクラウド -->
+  <section style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+    <h3 style="margin-bottom: 1rem;">タグクラウド</h3>
+    <div class="tag-cloud">
+      <span class="tag-item">デザイン</span>
+      <span class="tag-item">アニメーション</span>
+      <span class="tag-item">レスポンシブ</span>
+      <span class="tag-item">グラデーション</span>
+      <span class="tag-item">インタラクティブ</span>
+      <span class="tag-item">モダン</span>
+      <span class="tag-item">UX</span>
+      <span class="tag-item">UI</span>
+    </div>
+  </section>
+
+  <!-- ボタン要素 -->
+  <section style="padding: 2rem; text-align: center;">
+    <button class="enhanced-button">リップル効果ボタン</button>
+    <a href="#" class="enhanced-button" style="margin-left: 1rem;">リンクボタン</a>
+  </section>
+
+  <!-- トースト通知デモ -->
+  <section style="padding: 2rem; text-align: center;">
+    <button onclick="showToast('デモ通知メッセージ', 'success', 3000)" class="enhanced-button">
+      トースト通知を表示
+    </button>
+  </section>
+
+  <!-- プログレスバー -->
+  <section style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+    <h3>プログレスバー</h3>
+    <div class="progress-bar">
+      <div class="progress-bar-fill" style="width: 75%;"></div>
+    </div>
+    <p style="text-align: center; margin-top: 0.5rem;">75% 完了</p>
+  </section>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background: var(--color-gray-light);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    section {
+      margin-bottom: 3rem;
+    }
+  </style>
+
+</body>
+</html>
