@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="styles/design-system.css">
   <!-- Enhanced Design from sample.html -->
   <link rel="stylesheet" href="css/enhanced-design.css">
+  <!-- Glassmorphism Design -->
+  <link rel="stylesheet" href="css/glassmorphism-design.css">
   <style>
     * {
       margin: 0;
@@ -51,7 +53,7 @@
 
     .menu-container {
       width: 100%;
-      max-width: var(--container-max-width);
+      max-width: var(--content-max-width, 1400px);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--spacing-md);
@@ -161,7 +163,7 @@
       border-radius: var(--radius-md);
       padding: var(--spacing-lg);
       width: 100%;
-      max-width: var(--container-max-width);
+      max-width: var(--content-max-width, 1400px);
       margin-bottom: var(--spacing-xl);
     }
 
@@ -232,14 +234,14 @@
 </head>
 <body>
   <script src="js/enhanced-animations.js" defer></script>
-  <header class="header enhanced-header">
-    <h1><i class="fas fa-book-open enhanced-heading-icon"></i> SEO記事作成マスターガイド</h1>
+  <header class="header enhanced-header glass-header geometric-bg">
+    <h1 class="heading-left"><i class="fas fa-book-open enhanced-heading-icon"></i> SEO記事作成マスターガイド</h1>
     <p>実践的なSEO対策で検索上位を獲得する完全マニュアル</p>
   </header>
 
-  <main class="menu-container enhanced-grid">
+  <main class="menu-container enhanced-grid wide-container">
     <!-- 基礎知識 -->
-    <a href="pages/seo-basics.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/seo-basics.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-graduation-cap"></i>
       </div>
@@ -257,7 +259,7 @@
     </a>
 
     <!-- キーワード戦略 -->
-    <a href="pages/keyword-strategy.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/keyword-strategy.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-key"></i>
       </div>
@@ -275,7 +277,7 @@
     </a>
 
     <!-- 記事作成実践 -->
-    <a href="pages/article-creation.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/article-creation.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-pen-fancy"></i>
       </div>
@@ -293,7 +295,7 @@
     </a>
 
     <!-- AI活用術 -->
-    <a href="pages/ai-utilization.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/ai-utilization.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-robot"></i>
       </div>
@@ -311,7 +313,7 @@
     </a>
 
     <!-- 実践プロンプト集 -->
-    <a href="pages/templates.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/templates.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-file-code"></i>
       </div>
@@ -329,7 +331,7 @@
     </a>
 
     <!-- 実践演習 -->
-    <a href="pages/practice.html" class="menu-card enhanced-card fade-in-scroll">
+    <a href="pages/practice.html" class="glass-menu-card fade-in-scroll">
       <div class="icon">
         <i class="fas fa-laptop-code"></i>
       </div>
