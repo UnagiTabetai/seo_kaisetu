@@ -1,0 +1,685 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: '記事作成実践' }
+];
+---
+
+<Layout title="記事作成実践 - SEO記事作成マスターガイド" description="実際にSEO記事を作成する具体的な手順とテクニック。記事構成の設計、執筆ルール、最適化テクニック、品質チェック方法を実践的に解説。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-pen-fancy"></i> 記事作成実践</h1>
+    <p>SEO最適化された高品質な記事を作成する実践的手法</p>
+  </div>
+
+  <div class="content-section">
+    <!-- 記事作成ワークフロー -->
+    <div class="section-card">
+      <h2><i class="fas fa-stream"></i> 記事作成の5ステップワークフロー</h2>
+      <p>効果的なSEO記事は、以下の5つのステップを踏むことで作成できます。</p>
+      
+      <div class="workflow-container" style="counter-reset: step;">
+        <div class="workflow-step">
+          <h4>競合分析</h4>
+          <p>上位1-3位の記事の構成とコンテンツを分析し、差別化ポイントを発見</p>
+          <ul style="margin-top: 10px;">
+            <li>文字数の確認</li>
+            <li>見出し構造の分析</li>
+            <li>独自要素の特定</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>記事構成作成</h4>
+          <p>検索意図に応える論理的な構成を設計</p>
+          <ul style="margin-top: 10px;">
+            <li>タイトル決定</li>
+            <li>見出し階層設計</li>
+            <li>各セクションの概要</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>本文執筆</h4>
+          <p>ユーザーファーストで価値ある内容を執筆</p>
+          <ul style="margin-top: 10px;">
+            <li>PREP法で論理展開</li>
+            <li>具体例・データ追加</li>
+            <li>独自の見解を含める</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>SEO最適化</h4>
+          <p>検索エンジンとユーザー両方に最適化</p>
+          <ul style="margin-top: 10px;">
+            <li>キーワード配置調整</li>
+            <li>内部リンク設置</li>
+            <li>メタ情報設定</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>品質チェック</h4>
+          <p>公開前の最終確認と調整</p>
+          <ul style="margin-top: 10px;">
+            <li>誤字脱字チェック</li>
+            <li>読みやすさ確認</li>
+            <li>SEO要素の最終確認</li>
+          </ul>
+        
+  </div>
+
+  <div class="content-section">
+    <!-- 記事作成ワークフロー -->
+    <div class="section-card">
+      <h2><i class="fas fa-stream"></i> 記事作成の5ステップワークフロー</h2>
+      <p>効果的なSEO記事は、以下の5つのステップを踏むことで作成できます。</p>
+      
+      <div class="workflow-container" style="counter-reset: step;">
+        <div class="workflow-step">
+          <h4>競合分析</h4>
+          <p>上位1-3位の記事の構成とコンテンツを分析し、差別化ポイントを発見</p>
+          <ul style="margin-top: 10px;">
+            <li>文字数の確認</li>
+            <li>見出し構造の分析</li>
+            <li>独自要素の特定</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>記事構成作成</h4>
+          <p>検索意図に応える論理的な構成を設計</p>
+          <ul style="margin-top: 10px;">
+            <li>タイトル決定</li>
+            <li>見出し階層設計</li>
+            <li>各セクションの概要</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>本文執筆</h4>
+          <p>ユーザーファーストで価値ある内容を執筆</p>
+          <ul style="margin-top: 10px;">
+            <li>PREP法で論理展開</li>
+            <li>具体例・データ追加</li>
+            <li>独自の見解を含める</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>SEO最適化</h4>
+          <p>検索エンジンとユーザー両方に最適化</p>
+          <ul style="margin-top: 10px;">
+            <li>キーワード配置調整</li>
+            <li>内部リンク設置</li>
+            <li>メタ情報設定</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-step">
+          <h4>品質チェック</h4>
+          <p>公開前の最終確認と調整</p>
+          <ul style="margin-top: 10px;">
+            <li>誤字脱字チェック</li>
+            <li>読みやすさ確認</li>
+            <li>SEO要素の最終確認</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 記事構成の設計 -->
+    <div class="section-card">
+      <h2><i class="fas fa-sitemap"></i> 記事構成の設計方法</h2>
+      <p>読者を引き込み、最後まで読ませる記事構成の基本パターンを紹介します。</p>
+      
+      <div class="structure-template">
+        <h4>推奨される記事構成テンプレート</h4>
+        <div class="structure-tree">
+          <div class="h1">■ タイトル（32文字以内、キーワード前方配置）</div>
+          <div class="h2">├─ 導入文（300-400文字）</div>
+          <div class="h3">│  ├─ 問題提起・共感</div>
+          <div class="h3">│  ├─ 記事で得られる価値</div>
+          <div class="h3">│  └─ 読者の行動促進</div>
+          <div class="h2">├─ H2：基礎知識・背景（Know型）</div>
+          <div class="h3">│  ├─ H3：用語解説</div>
+          <div class="h3">│  └─ H3：重要性の説明</div>
+          <div class="h2">├─ H2：具体的な方法・手順（Do型）</div>
+          <div class="h3">│  ├─ H3：ステップ1</div>
+          <div class="h3">│  ├─ H3：ステップ2</div>
+          <div class="h3">│  └─ H3：ステップ3</div>
+          <div class="h2">├─ H2：事例・成功パターン</div>
+          <div class="h3">│  ├─ H3：事例1</div>
+          <div class="h3">│  └─ H3：事例2</div>
+          <div class="h2">├─ H2：よくある質問</div>
+          <div class="h2">└─ まとめ（200-300文字）</div>
+          <div class="h3">    ├─ 要点の整理</div>
+          <div class="h3">    └─ 次のアクション提示</div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <strong>💡 ポイント：</strong>
+        読者の理解度に合わせて、基礎→応用→実践の流れで構成することで、初心者から上級者まで満足できる記事になります。
+      </div>
+    </div>
+
+    <!-- 執筆ルール -->
+    <div class="section-card">
+      <h2><i class="fas fa-pen"></i> 執筆ルールとガイドライン</h2>
+      <p>読みやすく、SEOにも強い文章を書くための具体的なルールです。</p>
+      
+      <div class="writing-rules">
+        <div class="rule-card">
+          <h4><i class="fas fa-align-left"></i> 文章構成</h4>
+          <ul>
+            <li>1文は60文字以内</li>
+            <li>1段落は3-4文まで</li>
+            <li>漢字・ひらがな・カタカナのバランス</li>
+            <li>専門用語には説明を追加</li>
+          </ul>
+        </div>
+        
+        <div class="rule-card">
+          <h4><i class="fas fa-bullseye"></i> キーワード配置</h4>
+          <ul>
+            <li>タイトルの前半に配置</li>
+            <li>導入文に1-2回</li>
+            <li>各H2見出しに自然に含める</li>
+            <li>全体で2-3%の密度</li>
+          </ul>
+        </div>
+        
+        <div class="rule-card">
+          <h4><i class="fas fa-chart-line"></i> データ・根拠</h4>
+          <ul>
+            <li>具体的な数値を使用</li>
+            <li>信頼できる出典を明記</li>
+            <li>最新のデータを使用</li>
+            <li>図表で視覚化</li>
+          </ul>
+        </div>
+        
+        <div class="rule-card">
+          <h4><i class="fas fa-user-friends"></i> 読者視点</h4>
+          <ul>
+            <li>専門用語を避ける</li>
+            <li>具体例を豊富に</li>
+            <li>行動を促す表現</li>
+            <li>共感を生む言葉遣い</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 最適化テクニック -->
+    <div class="section-card">
+      <h2><i class="fas fa-magic"></i> SEO最適化テクニック</h2>
+      <p>記事の価値を最大化するための実践的な最適化手法を紹介します。</p>
+      
+      <div class="optimization-tips">
+        <div class="tip-box good">
+          <h5><i class="fas fa-thumbs-up"></i> 推奨される施策</h5>
+          <ul>
+            <li>目次の自動生成</li>
+            <li>関連記事への内部リンク（3-5個）</li>
+            <li>画像にalt属性とキャプション</li>
+            <li>構造化データの実装</li>
+            <li>ページ速度の最適化</li>
+          </ul>
+        </div>
+        
+        <div class="tip-box">
+          <h5><i class="fas fa-thumbs-down"></i> 避けるべき施策</h5>
+          <ul>
+            <li>キーワードの過度な詰め込み</li>
+            <li>内容の薄い記事の量産</li>
+            <li>他サイトからのコピー</li>
+            <li>隠しテキストやリンク</li>
+            <li>自動生成コンテンツの無編集公開</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>メタ情報の最適化</h3>
+      <div class="example-box">
+        <strong>タイトルタグの例：</strong><br>
+        中小企業のDXツール導入ガイド2024｜選び方と成功事例<br><br>
+        <strong>メタディスクリプションの例：</strong><br>
+        中小企業向けDXツールの選び方から導入手順まで完全解説。50社以上の成功事例と失敗しないための5つのポイントを紹介。無料診断ツール付き。（156文字）
+      </div>
+    </div>
+
+    <!-- 品質チェックリスト -->
+    <div class="section-card">
+      <h2><i class="fas fa-check-double"></i> 記事公開前の品質チェックリスト</h2>
+      <p>記事を公開する前に必ず確認すべき項目をリスト化しました。</p>
+      
+      <div class="checklist-container">
+        <div class="checklist-grid">
+          <div class="checklist-section">
+            <h4>コンテンツ品質</h4>
+            <label><input type="checkbox"> 検索意図に応えている</label>
+            <label><input type="checkbox"> 独自の価値がある</label>
+            <label><input type="checkbox"> 情報が正確で最新</label>
+            <label><input type="checkbox"> 論理的な構成</label>
+            <label><input type="checkbox"> 誤字脱字がない</label>
+          </div>
+          
+          <div class="checklist-section">
+            <h4>SEO要素</h4>
+            <label><input type="checkbox"> タイトル最適化</label>
+            <label><input type="checkbox"> メタディスクリプション設定</label>
+            <label><input type="checkbox"> 見出しタグ適切</label>
+            <label><input type="checkbox"> キーワード密度2-3%</label>
+            <label><input type="checkbox"> 内部リンク設置</label>
+          </div>
+          
+          <div class="checklist-section">
+            <h4>ユーザビリティ</h4>
+            <label><input type="checkbox"> モバイル対応</label>
+            <label><input type="checkbox"> 表示速度3秒以内</label>
+            <label><input type="checkbox"> 画像最適化</label>
+            <label><input type="checkbox"> 読みやすいフォント</label>
+            <label><input type="checkbox"> 適切な行間・余白</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AIプロンプト -->
+    <div class="section-card">
+      <h2><i class="fas fa-robot"></i> AI活用：記事作成プロンプト</h2>
+      <p>効率的に高品質な記事を作成するためのAIプロンプトです。</p>
+      
+      <div class="prompt-box">
+        <button class="copy-button" onclick="copyPrompt(this)">
+          <i class="fas fa-copy"></i> コピー
+        </button>
+        <pre>あなたはSEOライティングの専門家です。
+以下の条件で記事を作成してください：
+
+【記事情報】
+メインキーワード：[キーワード]
+サブキーワード：[関連キーワード3-5個]
+文字数：[目標文字数]文字
+ターゲット：[読者層の詳細]
+検索意図：[Know/Do/Buy/Go]
+
+【記事構成】
+1. タイトル（32文字以内、キーワード前方配置）
+2. 導入文（300-400文字、問題提起と価値提示）
+3. 本文構成
+   - H2見出し：4-5個
+   - 各H2配下にH3：2-3個
+   - 各セクション：400-600文字
+
+【執筆要件】
+- E-E-A-Tを意識した内容
+- 具体例とデータを含める
+- 1文60文字以内
+- 専門用語には説明を追加
+- 読者の行動を促す表現
+
+【SEO要件】
+- キーワード密度：2-3%
+- 関連キーワードを自然に配置
+- 内部リンクの提案箇所を[リンク]で表示
+
+【出力形式】
+マークダウン形式で、見出しレベルを明確に表示してください。</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="/pages/keyword-strategy" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：キーワード戦略
+    </a>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .section-card h3 {
+      color: #555;
+      margin: 25px 0 15px 0;
+    }
+
+    .workflow-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .workflow-step {
+      flex: 1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      min-width: 200px;
+      position: relative;
+      counter-increment: step;
+    }
+
+    .workflow-step::before {
+      content: counter(step);
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: white;
+      color: #667eea;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .workflow-step h4 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .structure-template {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-left: 4px solid #667eea;
+    }
+
+    .structure-template h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .structure-tree {
+      font-family: 'Courier New', monospace;
+      line-height: 1.8;
+      margin-left: 20px;
+    }
+
+    .structure-tree .h1 {
+      font-weight: bold;
+      color: #e83e8c;
+    }
+
+    .structure-tree .h2 {
+      margin-left: 20px;
+      color: #20c997;
+    }
+
+    .structure-tree .h3 {
+      margin-left: 40px;
+      color: #6c757d;
+    }
+
+    .writing-rules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .rule-card {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .rule-card h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rule-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rule-card li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .rule-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .checklist-container {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .checklist-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .checklist-section h4 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .checklist-section label {
+      display: block;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    .checklist-section input[type="checkbox"] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .optimization-tips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .tip-box {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .tip-box.good {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .tip-box h5 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .prompt-box {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-family: 'Courier New', monospace;
+      position: relative;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .copy-button:hover {
+      background: #764ba2;
+    }
+
+    .breadcrumb {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .nav-button {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.prev {
+      background: #6c757d;
+    }
+
+    .nav-button.prev:hover {
+      background: #5a6268;
+    }
+
+    .example-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+
+    .example-box strong {
+      color: #856404;
+    }
+
+    @media (max-width: 768px) {
+      .workflow-container {
+        flex-direction: column;
+      }
+
+      .optimization-tips {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+    }
+  
+</style>

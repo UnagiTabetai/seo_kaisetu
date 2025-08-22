@@ -65,9 +65,49 @@
 
     /* 詳細ページと統一されたコンテンツセクション */
     .content-section {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+    }
+    
+    /* コンテンツヘッダー */
+    .content-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #e9ecef;
+    }
+    
+    .content-header h2 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .content-header p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* セクションヘッダー */
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    
+    .section-header h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .section-header p {
+      font-size: 1rem;
+      color: #6c757d;
     }
     
     .menu-container {
@@ -178,11 +218,90 @@
       color: #333;
     }
 
-    .quick-links {
+    /* 最新戦略セクション */
+    .strategy-section {
+      margin: 60px 0;
+      padding: 40px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+      border-radius: 15px;
+    }
+    
+    .strategy-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+    
+    .strategy-card {
       background: white;
       border-radius: 10px;
       padding: 30px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .strategy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    
+    .strategy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .strategy-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: white;
+    }
+    
+    .strategy-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .strategy-card p {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .learn-more {
+      color: #667eea;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    
+    .strategy-card:hover .learn-more {
+      transform: translateX(5px);
+    }
+    
+    /* リソースセクション */
+    .quick-links {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
       margin-bottom: 40px;
     }
 
@@ -270,65 +389,9 @@
 </head>
 <body>
   <script src="js/enhanced-animations.js" defer></script>
+  <script src="js/global-nav-component.js"></script>
   <!-- グローバルナビゲーション -->
-  <nav class="global-nav">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <i class="fas fa-book-open"></i>
-        <span>SEOマスターガイド</span>
-      </a>
-      
-      <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      
-      <ul class="nav-menu" id="navMenu">
-        <li class="nav-item">
-          <a href="#" class="nav-link active">ホーム</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">基礎知識 <i class="fas fa-chevron-down"></i></a>
-          <div class="nav-dropdown">
-            <a href="pages/seo-basics.html" class="dropdown-link">
-              <i class="fas fa-graduation-cap"></i> SEO基礎
-            </a>
-            <a href="pages/keyword-strategy.html" class="dropdown-link">
-              <i class="fas fa-key"></i> キーワード戦略
-            </a>
-            <a href="pages/article-creation.html" class="dropdown-link">
-              <i class="fas fa-pen-fancy"></i> 記事作成
-            </a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">応用技術 <i class="fas fa-chevron-down"></i></a>
-          <div class="nav-dropdown">
-            <a href="pages/ai-utilization.html" class="dropdown-link">
-              <i class="fas fa-robot"></i> AI活用術
-            </a>
-            <a href="pages/topical-authority.html" class="dropdown-link">
-              <i class="fas fa-crown"></i> トピカルオーソリティ
-            </a>
-            <a href="pages/serp-optimization.html" class="dropdown-link">
-              <i class="fas fa-search-plus"></i> SERP最適化
-            </a>
-            <a href="pages/zero-click-era.html" class="dropdown-link">
-              <i class="fas fa-robot"></i> ゼロクリック対策
-            </a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="pages/templates.html" class="nav-link">テンプレート</a>
-        </li>
-        <li class="nav-item">
-          <a href="pages/practice.html" class="nav-link">実践演習</a>
-        </li>
-        <li class="nav-item nav-cta">
-          <a href="seo-manual.html" class="cta-button">完全マニュアル</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <global-nav></global-nav>
 
   <div class="hero-section">
     <h1 class="hero-title">
@@ -357,6 +420,12 @@
   </div>
 
   <div class="content-section">
+    <!-- メインコンテンツヘッダー -->
+    <div class="content-header">
+      <h2><i class="fas fa-book-open"></i> SEO学習コンテンツ</h2>
+      <p>基礎から応用まで、体系的にSEOを学べる6つのメインコンテンツ</p>
+    </div>
+    
     <main class="menu-container">
     <!-- 基礎知識 -->
     <a href="pages/seo-basics.html" class="menu-card">
@@ -466,22 +535,51 @@
       </div>
     </a>
     </main>
+    
+    <!-- 最新戦略セクション -->
+    <div class="strategy-section">
+      <div class="section-header">
+        <h2><i class="fas fa-rocket"></i> 最新SEO戦略</h2>
+        <p>2025年の検索エンジン対策に必要な最新戦略とツール</p>
+      </div>
+      
+      <div class="strategy-cards">
+        <a href="pages/topical-authority.html" class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3>トピカルオーソリティ</h3>
+          <p>特定分野の権威性を構築し、検索エンジンから専門サイトとして認識される戦略</p>
+          <span class="learn-more">詳しく学ぶ →</span>
+        </a>
+        
+        <a href="pages/serp-optimization.html" class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-search-plus"></i>
+          </div>
+          <h3>SERP最適化</h3>
+          <p>検索結果ページでの表示を最適化し、CTRを大幅に向上させる実践テクニック</p>
+          <span class="learn-more">詳しく学ぶ →</span>
+        </a>
+        
+        <a href="pages/zero-click-era.html" class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>ゼロクリック対策</h3>
+          <p>AI検索時代に対応した新しいSEO戦略と対策方法を徹底解説</p>
+          <span class="learn-more">詳しく学ぶ →</span>
+        </a>
+      </div>
+    </div>
 
+    <!-- リソースセクション -->
     <section class="quick-links">
-    <h3><i class="fas fa-rocket"></i> 最新戦略ページ</h3>
+    <div class="section-header">
+      <h2><i class="fas fa-tools"></i> 便利なリソース</h2>
+      <p>SEO実践に役立つツールとドキュメント</p>
+    </div>
     <div class="quick-links-grid">
-      <a href="pages/topical-authority.html" class="quick-link">
-        <i class="fas fa-crown"></i>
-        <span>トピカルオーソリティ</span>
-      </a>
-      <a href="pages/serp-optimization.html" class="quick-link">
-        <i class="fas fa-search-plus"></i>
-        <span>SERP最適化</span>
-      </a>
-      <a href="pages/zero-click-era.html" class="quick-link">
-        <i class="fas fa-robot"></i>
-        <span>ゼロクリック対策</span>
-      </a>
       <a href="pages/glossary.html" class="quick-link">
         <i class="fas fa-book"></i>
         <span>用語集</span>
@@ -493,6 +591,18 @@
       <a href="pages/resources.html" class="quick-link">
         <i class="fas fa-download"></i>
         <span>ダウンロード</span>
+      </a>
+      <a href="pages/faq.html" class="quick-link">
+        <i class="fas fa-question-circle"></i>
+        <span>よくある質問</span>
+      </a>
+      <a href="pages/tools.html" class="quick-link">
+        <i class="fas fa-wrench"></i>
+        <span>ツール一覧</span>
+      </a>
+      <a href="pages/updates.html" class="quick-link">
+        <i class="fas fa-bell"></i>
+        <span>最新情報</span>
       </a>
     </div>
     </section>

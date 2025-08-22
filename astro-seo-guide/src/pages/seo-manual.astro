@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: 'SEO記事作成 完全マニュアル' }
+];
+---
+
+<Layout title="SEO記事作成 完全マニュアル" description="基礎から実践まで、SEO記事作成の全てを網羅した完全ガイド。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-book-open"></i> SEO記事作成 完全マニュアル</h1>
+    <p>基礎から実践まで、全てを網羅した完全ガイド</p>
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2>📚 マニュアル目次</h2>
+      
+      <div class="manual-toc">
+        <div class="toc-section">
+          <h3>第1章：基礎編</h3>
+          <ul>
+            <li><a href="/pages/seo-basics">SEO基礎知識</a></li>
+            <li><a href="/pages/keyword-strategy">キーワード戦略</a></li>
+            <li><a href="/pages/article-creation">記事作成実践</a></li>
+          </ul>
+        </div>
+        
+        <div class="toc-section">
+          <h3>第2章：AI活用編</h3>
+          <ul>
+            <li><a href="/pages/ai-utilization">AI活用術</a></li>
+            <li><a href="/pages/templates">実践プロンプト集</a></li>
+          </ul>
+        </div>
+        
+        <div class="toc-section">
+          <h3>第3章：上級戦略編</h3>
+          <ul>
+            <li><a href="/pages/topical-authority">トピカルオーソリティ</a></li>
+            <li><a href="/pages/serp-optimization">SERP最適化</a></li>
+            <li><a href="/pages/zero-click-era">ゼロクリック対策</a></li>
+          </ul>
+        </div>
+        
+        <div class="toc-section">
+          <h3>第4章：実践・リソース編</h3>
+          <ul>
+            <li><a href="/pages/practice">実践演習</a></li>
+            <li><a href="/pages/glossary">用語集</a></li>
+            <li><a href="/pages/checklist">チェックリスト</a></li>
+            <li><a href="/pages/resources">ダウンロード資料</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2>🎯 このマニュアルの使い方</h2>
+      <ol style="line-height: 2;">
+        <li><strong>初心者の方</strong>：第1章から順番に学習してください</li>
+        <li><strong>中級者の方</strong>：第2章のAI活用編から始めることをおすすめします</li>
+        <li><strong>上級者の方</strong>：第3章の最新戦略編で最新のSEO手法を習得してください</li>
+        <li><strong>実践重視の方</strong>：第4章の実践演習から始めて、必要に応じて各章を参照してください</li>
+      </ol>
+    </div>
+
+    <div class="navigation-buttons">
+      <a href="/pages/seo-basics" class="nav-button next">
+        学習を始める <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .manual-toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .toc-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+  }
+  
+  .toc-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .toc-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .toc-section li {
+    padding: 8px 0;
+  }
+  
+  .toc-section a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .toc-section a:hover {
+    background: white;
+    color: #667eea;
+    padding-left: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .nav-button {
+    background: #667eea;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+  }
+  
+  .nav-button:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  }
+</style>

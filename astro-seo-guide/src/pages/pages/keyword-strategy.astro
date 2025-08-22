@@ -1,0 +1,705 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: 'キーワード戦略' }
+];
+---
+
+<Layout title="キーワード戦略 - SEO記事作成マスターガイド" description="効果的なキーワード選定から競合分析まで、戦略的アプローチを学びます。検索意図の4分類、ロングテール戦略、競合分析の実践方法を解説。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-key"></i> キーワード戦略</h1>
+    <p>効果的なキーワード選定と競合分析の実践方法</p>
+  </div>
+
+  <div class="content-section">
+    <!-- 検索意図の理解 -->
+    <div class="section-card">
+      <h2><i class="fas fa-brain"></i> 検索意図の4分類</h2>
+      <p>ユーザーの検索意図を正確に理解することは、効果的なコンテンツ作成の基礎となります。Googleは検索意図を4つのカテゴリーに分類しています。</p>
+      
+      <div class="intent-cards">
+        <div class="intent-card know">
+          <h4>Knowクエリ</h4>
+          <div class="percentage">80%</div>
+          <p>情報収集型</p>
+          <ul style="text-align: left; margin-top: 10px; list-style: none;">
+            <li>「〜とは」</li>
+            <li>「〜方法」</li>
+            <li>「〜理由」</li>
+          </ul>
+        </div>
+        
+        <div class="intent-card do">
+          <h4>Doクエリ</h4>
+          <div class="percentage">10%</div>
+          <p>行動型</p>
+          <ul style="text-align: left; margin-top: 10px; list-style: none;">
+            <li>「〜ダウンロード」</li>
+            <li>「〜申込み」</li>
+            <li>「〜登録」</li>
+          </ul>
+        </div>
+        
+        <div class="intent-card buy">
+          <h4>Buyクエリ</h4>
+          <div class="percentage">7%</div>
+          <p>購買型</p>
+          <ul style="text-align: left; margin-top: 10px; list-style: none;">
+            <li>「〜購入」</li>
+            <li>「〜価格」</li>
+            <li>「〜比較」</li>
+          </ul>
+        </div>
+        
+        <div class="intent-card go">
+          <h4>Goクエリ</h4>
+          <div class="percentage">3%</div>
+          <p>ナビゲーション型</p>
+          <ul style="text-align: left; margin-top: 10px; list-style: none;">
+            <li>「〜公式サイト」</li>
+            <li>「〜ログイン」</li>
+            <li>ブランド名</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- キーワードの種類 -->
+    <div class="section-card">
+      <h2><i class="fas fa-tags"></i> キーワードの種類と特徴</h2>
+      <p>キーワードは検索ボリュームと競合度によって3つのタイプに分類されます。それぞれの特徴を理解し、バランスよく対策することが重要です。</p>
+      
+      <div class="keyword-types">
+        <div class="keyword-type">
+          <h4>ショートテール</h4>
+          <p><strong>特徴：</strong>1-2語の一般的なキーワード</p>
+          <p><strong>検索量：</strong>非常に多い</p>
+          <p><strong>競合度：</strong>非常に高い</p>
+          <p><strong>CVR：</strong>低い</p>
+          <div class="example">例：SEO、マーケティング</div>
+        </div>
+        
+        <div class="keyword-type">
+          <h4>ミドルテール</h4>
+          <p><strong>特徴：</strong>2-3語の具体的なキーワード</p>
+          <p><strong>検索量：</strong>中程度</p>
+          <p><strong>競合度：</strong>中程度</p>
+          <p><strong>CVR：</strong>中程度</p>
+          <div class="example">例：SEO対策 方法</div>
+        </div>
+        
+        <div class="keyword-type">
+          <h4>ロングテール</h4>
+          <p><strong>特徴：</strong>3語以上の詳細なキーワード</p>
+          <p><strong>検索量：</strong>少ない</p>
+          <p><strong>競合度：</strong>低い</p>
+          <p><strong>CVR：</strong>高い</p>
+          <div class="example">例：中小企業 SEO対策 費用 相場</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- キーワード選定プロセス -->
+    <div class="section-card">
+      <h2><i class="fas fa-search"></i> キーワード選定の実践プロセス</h2>
+      <p>効果的なキーワード選定は、以下の5つのステップで進めます。</p>
+      
+      <div class="analysis-process">
+        <div class="process-steps">
+          <div class="process-step">
+            <h5>Step 1</h5>
+            <p><strong>シードキーワード抽出</strong></p>
+            <p>ビジネスの核となる基本キーワードをリストアップ</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>Step 2</h5>
+            <p><strong>キーワード拡張</strong></p>
+            <p>ツールを使って関連キーワードを大量に収集</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>Step 3</h5>
+            <p><strong>検索ボリューム調査</strong></p>
+            <p>各キーワードの月間検索数を確認</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>Step 4</h5>
+            <p><strong>競合難易度分析</strong></p>
+            <p>上位表示の難易度を評価</p>
+          </div>
+          
+          <div class="process-step">
+            <h5>Step 5</h5>
+            <p><strong>優先順位付け</strong></p>
+            <p>ビジネス価値と実現可能性でランク付け</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 検索ボリュームの理解 -->
+    <div class="section-card">
+      <h2><i class="fas fa-chart-bar"></i> 検索ボリュームの理解と活用</h2>
+      <p>検索ボリュームとは、特定のキーワードが一定期間（通常は月間）に検索される回数のことです。適切な検索ボリュームのキーワードを選ぶことが、SEO成功の鍵となります。</p>
+      
+      <h3>検索ボリュームの目安と特徴</h3>
+      <table class="competitor-table">
+        <thead>
+          <tr>
+            <th>ボリューム範囲</th>
+            <th>月間検索数</th>
+            <th>競合度</th>
+            <th>上位表示難易度</th>
+            <th>推奨サイト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>超高ボリューム</strong></td>
+            <td>10,000回以上</td>
+            <td>非常に高い</td>
+            <td>極めて困難</td>
+            <td>大手企業・権威サイト</td>
+          </tr>
+          <tr>
+            <td><strong>高ボリューム</strong></td>
+            <td>1,000〜10,000回</td>
+            <td>高い</td>
+            <td>困難</td>
+            <td>中規模サイト・専門メディア</td>
+          </tr>
+          <tr>
+            <td><strong>中ボリューム</strong></td>
+            <td>100〜1,000回</td>
+            <td>中程度</td>
+            <td>適度</td>
+            <td>小規模ビジネス・ブログ</td>
+          </tr>
+          <tr>
+            <td><strong>低ボリューム</strong></td>
+            <td>10〜100回</td>
+            <td>低い</td>
+            <td>比較的容易</td>
+            <td>新規サイト・ニッチ分野</td>
+          </tr>
+          <tr>
+            <td><strong>超低ボリューム</strong></td>
+            <td>10回未満</td>
+            <td>ほぼなし</td>
+            <td>容易</td>
+            <td>超ニッチ・地域特化</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>検索ボリューム調査の方法</h3>
+      <div class="analysis-grid" style="margin-top: 20px;">
+        <div class="analysis-card">
+          <h4>1. 無料ツール</h4>
+          <ul style="margin-top: 10px;">
+            <li><strong>Googleキーワードプランナー</strong><br>
+              Google広告アカウントで利用可能。大まかな範囲表示。</li>
+            <li><strong>Ubersuggest（無料版）</strong><br>
+              1日3回まで無料。具体的な数値を表示。</li>
+            <li><strong>ラッコキーワード</strong><br>
+              関連キーワードの取得。ボリューム表示は有料。</li>
+          </ul>
+        </div>
+        
+        <div class="analysis-card">
+          <h4>2. 有料ツール</h4>
+          <ul style="margin-top: 10px;">
+            <li><strong>Ahrefs</strong><br>
+              最も正確なデータ。競合分析も可能。</li>
+            <li><strong>SEMrush</strong><br>
+              グローバルデータに強い。トレンド分析も。</li>
+            <li><strong>Moz Keyword Explorer</strong><br>
+              難易度スコアが分かりやすい。</li>
+          </ul>
+        </div>
+        
+        <div class="analysis-card">
+          <h4>3. 推定方法</h4>
+          <ul style="margin-top: 10px;">
+            <li><strong>Googleサジェスト</strong><br>
+              表示順で人気度を推測</li>
+            <li><strong>Google Trends</strong><br>
+              相対的な検索量の推移を確認</li>
+            <li><strong>競合サイトの流入</strong><br>
+              SimilarWebで競合の流入を分析</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>検索ボリューム戦略の立て方</h3>
+      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <h4 style="color: #667eea; margin-bottom: 15px;">ドメインパワー別の推奨戦略</h4>
+        
+        <div style="margin-bottom: 15px;">
+          <strong>🌱 新規サイト（DA 0-20）</strong>
+          <ul style="margin-top: 5px;">
+            <li>月間検索数10-100のロングテールキーワードに集中</li>
+            <li>競合が少ない超ニッチなキーワードから開始</li>
+            <li>地域名を含むローカルキーワードを活用</li>
+          </ul>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <strong>🌿 成長期サイト（DA 20-40）</strong>
+          <ul style="margin-top: 5px;">
+            <li>月間検索数100-1,000の中ボリュームキーワードに挑戦</li>
+            <li>既存記事の関連キーワードで横展開</li>
+            <li>季節性やトレンドキーワードを狙う</li>
+          </ul>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <strong>🌳 成熟サイト（DA 40+）</strong>
+          <ul style="margin-top: 5px;">
+            <li>月間検索数1,000以上の高ボリュームキーワードも視野に</li>
+            <li>ビッグキーワードのサブトピックを網羅</li>
+            <li>ブランド名を含むキーワードの獲得</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-top: 20px; border-radius: 5px;">
+        <strong>⚠️ 注意点：</strong>
+        <ul style="margin-top: 10px;">
+          <li>検索ボリュームだけでキーワードを選ばない（コンバージョン率も重要）</li>
+          <li>季節変動を考慮する（夏物・冬物、イベント関連など）</li>
+          <li>ツールの数値は推定値であり、実際とは異なる場合がある</li>
+          <li>B2Bキーワードは検索数が少なくても価値が高い場合が多い</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 競合分析 -->
+    <div class="section-card">
+      <h2><i class="fas fa-chess"></i> 競合分析の実践方法</h2>
+      <p>検索上位のサイトを分析し、自社コンテンツの差別化ポイントを見つけることが重要です。</p>
+      
+      <h3>競合分析チェックリスト</h3>
+      <table class="competitor-table">
+        <thead>
+          <tr>
+            <th>分析項目</th>
+            <th>確認ポイント</th>
+            <th>対策方法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>タイトル・見出し</td>
+            <td>使用キーワード、文字数、訴求ポイント</td>
+            <td>より魅力的で具体的なタイトルを作成</td>
+          </tr>
+          <tr>
+            <td>コンテンツ量</td>
+            <td>文字数、情報の網羅性</td>
+            <td>競合より詳細で価値ある情報を提供</td>
+          </tr>
+          <tr>
+            <td>独自性</td>
+            <td>オリジナルデータ、体験談、専門知識</td>
+            <td>自社ならではの視点や情報を追加</td>
+          </tr>
+          <tr>
+            <td>ユーザビリティ</td>
+            <td>読みやすさ、ビジュアル、構成</td>
+            <td>図表や動画を活用し理解しやすく</td>
+          </tr>
+          <tr>
+            <td>更新頻度</td>
+            <td>最終更新日、情報の鮮度</td>
+            <td>定期的な更新で最新情報を維持</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ツール紹介 -->
+    <div class="section-card">
+      <h2><i class="fas fa-tools"></i> キーワード分析ツール</h2>
+      <p>効率的なキーワード選定には、適切なツールの活用が欠かせません。</p>
+      
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h4>Googleキーワードプランナー</h4>
+          <p class="price">無料</p>
+          <p>Google公式の基本ツール。検索ボリュームと競合度を確認。</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4>Ubersuggest</h4>
+          <p class="price">無料〜</p>
+          <p>キーワード提案と競合分析。無料版でも基本機能が充実。</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4>ラッコキーワード</h4>
+          <p class="price">無料〜</p>
+          <p>関連キーワードの大量取得。サジェストキーワードも網羅。</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4>Ahrefs</h4>
+          <p class="price">有料</p>
+          <p>プロ向けの総合SEOツール。詳細な競合分析が可能。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 実践プロンプト -->
+    <div class="section-card">
+      <h2><i class="fas fa-robot"></i> AI活用：キーワード選定プロンプト</h2>
+      <p>AIを使って効率的にキーワード候補を生成できます。以下のプロンプトをコピーして使用してください。</p>
+      
+      <div class="prompt-box">
+        <button class="copy-button" onclick="copyPrompt(this)">
+          <i class="fas fa-copy"></i> コピー
+        </button>
+        <pre>あなたは経験豊富なSEOスペシャリストです。
+以下の条件でキーワード戦略を立案してください：
+
+【ビジネス情報】
+業界：[あなたの業界]
+商品・サービス：[提供内容]
+ターゲット：[顧客層]
+競合：[主要競合他社]
+
+【依頼内容】
+1. メインキーワード候補を5個提案
+2. 各メインキーワードに対して、ロングテールキーワードを10個ずつ生成
+3. それぞれの検索意図（Know/Do/Buy/Go）を分類
+4. 想定される月間検索ボリューム（高/中/低）を推定
+5. コンテンツ作成の優先順位を提案
+
+【出力形式】
+表形式で整理し、優先度の高い順に並べてください。</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="/pages/seo-basics" class="nav-button prev">
+      <i class="fas fa-arrow-left"></i> 前へ：SEO基礎知識
+    </a>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-card h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .section-card h3 {
+      color: #555;
+      margin: 25px 0 15px 0;
+    }
+
+    .intent-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .intent-card {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .intent-card.know {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .intent-card.do {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .intent-card.buy {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .intent-card.go {
+      background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .intent-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .intent-card .percentage {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .keyword-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .keyword-type {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-top: 4px solid #667eea;
+    }
+
+    .keyword-type h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .keyword-type .example {
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-family: monospace;
+      color: #e83e8c;
+    }
+
+    .analysis-process {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .process-step {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 10px;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .process-step::after {
+      content: '→';
+      position: absolute;
+      right: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: #667eea;
+    }
+
+    .process-step:last-child::after {
+      display: none;
+    }
+
+    .process-step h5 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .competitor-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .competitor-table th {
+      background: #667eea;
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .competitor-table td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .competitor-table tr:hover {
+      background: #f8f9fa;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .tool-card h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .tool-card .price {
+      font-size: 1.2rem;
+      color: #28a745;
+      margin: 10px 0;
+    }
+
+    .breadcrumb {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .nav-button {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.prev {
+      background: #6c757d;
+    }
+
+    .nav-button.prev:hover {
+      background: #5a6268;
+    }
+
+    .prompt-box {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-family: 'Courier New', monospace;
+      position: relative;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background: #764ba2;
+    }
+
+    @media (max-width: 768px) {
+      .keyword-types {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step::after {
+        display: none;
+      }
+
+      .intent-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+</style>

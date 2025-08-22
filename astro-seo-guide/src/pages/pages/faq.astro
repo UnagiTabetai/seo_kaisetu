@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: 'よくある質問' }
+];
+---
+
+<Layout title="よくある質問 - SEO記事作成マスターガイド" description="SEO記事作成に関するよくある質問と回答。初心者の疑問から実践的な問題まで解説。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-question-circle"></i> よくある質問</h1>
+    <p>SEO記事作成に関する疑問にお答えします</p>
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2 class="category-title">初心者向けの質問</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">SEO記事とは何ですか？</div>
+        <div class="faq-answer">
+          SEO記事とは、検索エンジンで上位表示されやすいように最適化された記事のことです。キーワード選定、構成、内部リンクなどを工夫して、ユーザーと検索エンジンの両方に価値を提供します。
+        
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2 class="category-title">初心者向けの質問</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">SEO記事とは何ですか？</div>
+        <div class="faq-answer">
+          SEO記事とは、検索エンジンで上位表示されやすいように最適化された記事のことです。キーワード選定、構成、内部リンクなどを工夫して、ユーザーと検索エンジンの両方に価値を提供します。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">どのくらいの文字数が適切ですか？</div>
+        <div class="faq-answer">
+          一般的に2000-3000文字が推奨されますが、重要なのは検索意図に十分に答えることです。競合記事を分析し、それ以上の価値を提供できる文字数を目安にしましょう。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">キーワードはどのくらい入れるべきですか？</div>
+        <div class="faq-answer">
+          キーワード密度は2-3%が目安です。無理に詰め込むのではなく、自然な文章の中で適切に配置することが重要です。タイトル、見出し、本文の最初と最後に含めることを意識しましょう。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">検索ボリュームはどのくらいのキーワードを狙うべきですか？</div>
+        <div class="faq-answer">
+          サイトの規模によって異なります。新規サイトは月間10-100回の低ボリュームから始め、成長に応じて100-1,000回の中ボリューム、最終的に1,000回以上の高ボリュームに挑戦しましょう。ドメインパワー（DA）が20未満なら低ボリューム、20-40なら中ボリューム、40以上なら高ボリュームも狙えます。
+        </div>
+      </div>
+
+      <h2 class="category-title">実践的な質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">競合サイトより上位表示させるには？</div>
+        <div class="faq-answer">
+          競合分析を徹底し、不足している情報を補完し、独自の価値（実体験、データ、専門知識）を追加します。また、ページ速度やモバイル対応などの技術面も改善しましょう。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">AIで作成した記事は問題ありませんか？</div>
+        <div class="faq-answer">
+          AI生成コンテンツ自体は問題ありませんが、必ず人間が編集・ファクトチェックを行い、独自の価値を追加することが重要です。そのまま公開すると低品質と判定される可能性があります。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">記事公開後、どのくらいで順位が上がりますか？</div>
+        <div class="faq-answer">
+          新規記事の場合、3-6ヶ月程度かかることが一般的です。ドメインパワーや競合度によって変動します。定期的な更新と改善を続けることが重要です。
+        </div>
+      </div>
+
+      <h2 class="category-title">技術的な質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">構造化データは必須ですか？</div>
+        <div class="faq-answer">
+          必須ではありませんが、実装することで検索結果でのリッチスニペット表示が可能になり、CTR向上が期待できます。特にFAQ、レビュー、製品情報などは効果的です。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">内部リンクはどう設置すべきですか？</div>
+        <div class="faq-answer">
+          関連性の高い記事へ自然な文脈で3-5個程度設置します。アンカーテキストは具体的にし、「こちら」などの曖昧な表現は避けましょう。
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; line-height: 1.6; }
+    .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+    .hero-section h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .content-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .section-card { background: white; border-radius: 10px; padding: 30px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    .breadcrumb { max-width: 1000px; margin: 20px auto; padding: 0 20px; color: #666; }
+    .breadcrumb a { color: #667eea; text-decoration: none; }
+    .nav-button { background: #6c757d; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin: 20px; }
+    .faq-item { margin: 20px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea; }
+    .faq-question { font-weight: bold; color: #333; margin-bottom: 10px; font-size: 1.1rem; cursor: pointer; }
+    .faq-question::before { content: 'Q. '; color: #667eea; font-size: 1.2rem; }
+    .faq-answer { color: #666; padding-left: 20px; }
+    .faq-answer::before { content: 'A. '; color: #28a745; font-weight: bold; }
+    .category-title { background: #667eea; color: white; padding: 10px 20px; border-radius: 5px; margin: 30px 0 20px; }
+  
+</style>

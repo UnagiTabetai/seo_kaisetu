@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: '最新情報' }
+];
+---
+
+<Layout title="最新情報 - SEO記事作成マスターガイド" description="SEOの最新トレンドとアップデート情報。Googleアルゴリズムの変更や新機能について。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-sync-alt"></i> 最新情報</h1>
+    <p>SEOトレンドとアップデート情報</p>
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2>2024年 最新アップデート</h2>
+      
+      <div class="update-item">
+        <div class="update-date">2024年8月</div>
+        <span class="update-tag tag-new">NEW</span>
+        <h3 class="update-title">Google AI Overviews日本展開開始</h3>
+        <p>GoogleのAI生成による検索結果概要が日本でも表示開始。SEO戦略の見直しが必要に。</p>
+        <ul>
+          <li>構造化データの重要性が増加</li>
+          <li>E-E-A-Tがより重要に</li>
+          <li>FAQコンテンツの価値向上</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年7月</div>
+        <span class="update-tag tag-update">UPDATE</span>
+        <h3 class="update-title">Core Web Vitals指標の更新</h3>
+        <p>INP（Interaction to Next Paint）が正式にFIDに代わる指標として採用。</p>
+        <ul>
+          <li>ユーザー操作への応答性を重視</li>
+          <li>JavaScriptの最適化が必須</li>
+          <li>2024年3月から正式適用</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年6月</div>
+        <span class="update-tag tag-tip">TIP</span>
+        <h3 class="update-title">AIコンテンツに関するガイドライン更新</h3>
+        <p>GoogleがAI生成コンテンツに関する方針を明確化。品質重視の姿勢を強調。</p>
+        <ul>
+          <li>AI生成でも高品質なら問題なし</li>
+          <li>人間による編集・検証が重要</li>
+          <li>独自性と付加価値が評価基準</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年5月</div>
+        <span class="update-tag tag-update">UPDATE</span>
+        <h3 class="update-title">モバイルファーストインデックスが完全移行</h3>
+        <p>すべてのサイトがモバイル版を基準に評価されるように。</p>
+        <ul>
+          <li>レスポンシブデザイン必須</li>
+          <li>モバイル表示速度の最適化</li>
+          <li>タップターゲットの適切な配置</li>
+        </ul>
+      </div>
+
+      <h2 style="margin-top: 40px;">今後の注目トレンド</h2>
+      
+      <div class="update-item">
+        <h3 class="update-title">🔮 2024年後半の予測</h3>
+        <ul>
+          <li><strong>SGE（Search Generative Experience）の本格展開：</strong>検索結果のAI化が進む</li>
+          <li><strong>動画コンテンツの重要性増加：</strong>YouTube動画の検索結果表示が増加</li>
+          <li><strong>ローカルSEOの進化：</strong>位置情報を活用した検索体験の向上</li>
+          <li><strong>音声検索の最適化：</strong>会話型クエリへの対応が必要</li>
+          <li><strong>ゼロクリック検索への対応：</strong>検索結果ページでの情報完結</li>
+        </ul>
+      
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2>2024年 最新アップデート</h2>
+      
+      <div class="update-item">
+        <div class="update-date">2024年8月</div>
+        <span class="update-tag tag-new">NEW</span>
+        <h3 class="update-title">Google AI Overviews日本展開開始</h3>
+        <p>GoogleのAI生成による検索結果概要が日本でも表示開始。SEO戦略の見直しが必要に。</p>
+        <ul>
+          <li>構造化データの重要性が増加</li>
+          <li>E-E-A-Tがより重要に</li>
+          <li>FAQコンテンツの価値向上</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年7月</div>
+        <span class="update-tag tag-update">UPDATE</span>
+        <h3 class="update-title">Core Web Vitals指標の更新</h3>
+        <p>INP（Interaction to Next Paint）が正式にFIDに代わる指標として採用。</p>
+        <ul>
+          <li>ユーザー操作への応答性を重視</li>
+          <li>JavaScriptの最適化が必須</li>
+          <li>2024年3月から正式適用</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年6月</div>
+        <span class="update-tag tag-tip">TIP</span>
+        <h3 class="update-title">AIコンテンツに関するガイドライン更新</h3>
+        <p>GoogleがAI生成コンテンツに関する方針を明確化。品質重視の姿勢を強調。</p>
+        <ul>
+          <li>AI生成でも高品質なら問題なし</li>
+          <li>人間による編集・検証が重要</li>
+          <li>独自性と付加価値が評価基準</li>
+        </ul>
+      </div>
+
+      <div class="update-item">
+        <div class="update-date">2024年5月</div>
+        <span class="update-tag tag-update">UPDATE</span>
+        <h3 class="update-title">モバイルファーストインデックスが完全移行</h3>
+        <p>すべてのサイトがモバイル版を基準に評価されるように。</p>
+        <ul>
+          <li>レスポンシブデザイン必須</li>
+          <li>モバイル表示速度の最適化</li>
+          <li>タップターゲットの適切な配置</li>
+        </ul>
+      </div>
+
+      <h2 style="margin-top: 40px;">今後の注目トレンド</h2>
+      
+      <div class="update-item">
+        <h3 class="update-title">🔮 2024年後半の予測</h3>
+        <ul>
+          <li><strong>SGE（Search Generative Experience）の本格展開：</strong>検索結果のAI化が進む</li>
+          <li><strong>動画コンテンツの重要性増加：</strong>YouTube動画の検索結果表示が増加</li>
+          <li><strong>ローカルSEOの進化：</strong>位置情報を活用した検索体験の向上</li>
+          <li><strong>音声検索の最適化：</strong>会話型クエリへの対応が必要</li>
+          <li><strong>ゼロクリック検索への対応：</strong>検索結果ページでの情報完結</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; line-height: 1.6; }
+    .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+    .hero-section h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .content-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .section-card { background: white; border-radius: 10px; padding: 30px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    .breadcrumb { max-width: 1000px; margin: 20px auto; padding: 0 20px; color: #666; }
+    .breadcrumb a { color: #667eea; text-decoration: none; }
+    .nav-button { background: #6c757d; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin: 20px; }
+    .update-item { margin: 20px 0; padding: 20px; background: white; border-left: 4px solid #667eea; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .update-date { color: #667eea; font-weight: bold; margin-bottom: 10px; }
+    .update-title { font-size: 1.2rem; margin-bottom: 10px; }
+    .update-tag { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 0.8rem; margin-right: 5px; }
+    .tag-new { background: #dc3545; color: white; }
+    .tag-update { background: #ffc107; color: #333; }
+    .tag-tip { background: #28a745; color: white; }
+  
+</style>

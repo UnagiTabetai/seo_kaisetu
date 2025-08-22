@@ -114,6 +114,7 @@
   transform: translateY(-10px);
   transition: all 0.3s ease;
   margin-top: 0.5rem;
+  z-index: 10000;
 }
 
 .nav-item:hover .nav-dropdown {

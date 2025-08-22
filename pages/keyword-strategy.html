@@ -6,11 +6,15 @@
   <title>キーワード戦略 - SEO記事作成マスターガイド</title>
   <meta name="description" content="効果的なキーワード選定から競合分析まで、戦略的アプローチを学びます。検索意図の4分類、ロングテール戦略、競合分析の実践方法を解説。">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Typography CSS replaced by design-system -->
   <link rel="stylesheet" href="../styles/design-system.css">
-  <link rel="stylesheet" href="../css/typography-enhanced.css">  <link rel="stylesheet" href="../styles/sidebar-toc.css">
-  <link rel="stylesheet" href="../css/global-nav.css">  <link rel="stylesheet" href="../styles/sidebar-toc-right.css">  <style>
+  <link rel="stylesheet" href="../css/typography-enhanced.css">
+  <link rel="stylesheet" href="../styles/sidebar-toc.css">
+  <link rel="stylesheet" href="../css/global-nav.css">
+  <link rel="stylesheet" href="../styles/sidebar-toc-right.css">
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -313,6 +317,8 @@
   </style>
 </head>
 <body>
+  <!-- グローバルナビゲーション -->
+  <global-nav></global-nav>
 
   <div class="hero-section">
     <h1><i class="fas fa-key"></i> キーワード戦略</h1>
@@ -768,24 +774,8 @@
         <p class="footer-copyright">&copy; 2025 SEO記事作成マスターガイド. All rights reserved. | 最終更新: 2025年8月20日</p>
       </div>
     </div>
-  </footer>  <script src="../js/components.js"></script>
-  <script>
-    // モバイルメニュートグル
-    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
-    const navMenu = document.getElementById("navMenu");
-    
-    mobileMenuToggle?.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
-    
-    // スクロール時のナビゲーション変化
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector(".global-nav");
-      if (window.scrollY > 100) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-  </script></body>
+  </footer>
+  <script src="../js/global-nav-component.js"></script>
+  <script src="../js/components.js"></script>
+</body>
 </html>

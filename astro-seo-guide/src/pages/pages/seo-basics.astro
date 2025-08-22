@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'ホーム', href: '/' },
+  { label: 'SEO基礎知識' }
+];
+---
+
+<Layout title="SEO基礎知識 - SEO記事作成マスターガイド" description="検索エンジン最適化の基礎から実践まで、SEO初心者向けに体系的に解説します。">
+  <Navigation />
+
+  <div class="hero-section">
+    <Breadcrumb items={breadcrumbItems} />
+    <h1><i class="fas fa-lightbulb"></i> SEO基礎知識</h1>
+    <p>検索エンジン最適化の基礎から実践まで体系的に学習</p>
+  </div>
+
+  <div class="content-section">
+    <div class="section-card">
+      <h2>SEOとは何か？</h2>
+      <p>SEO（Search Engine Optimization：検索エンジン最適化）とは、GoogleやYahoo!などの検索エンジンで、特定のキーワードを検索したユーザーに対して、自社のWebサイトが検索結果の上位に表示されるよう最適化することです。</p>
+      
+      <div class="highlight-box">
+        <h3><i class="fas fa-star"></i> SEOの重要性</h3>
+        <ul>
+          <li>検索結果の1位は約32%のクリック率を獲得</li>
+          <li>10位でのクリック率は約1%と大幅に減少</li>
+          <li>上位表示により質の高いユーザーを無料で集客可能</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2>検索エンジンの仕組み</h2>
+      <p>Googleなどの検索エンジンは以下の3つのプロセスでWebページを評価し、検索結果に表示します：</p>
+      
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-icon">
+            <i class="fas fa-spider"></i>
+          </div>
+          <h3>1. クローリング</h3>
+          <p>検索エンジンのロボット（クローラー）がWebページを巡回し、コンテンツを発見・収集します。</p>
+        </div>
+        
+        <div class="process-item">
+          <div class="process-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>2. インデックス</h3>
+          <p>収集したページの情報を解析し、検索エンジンのデータベースに格納します。</p>
+        </div>
+        
+        <div class="process-item">
+          <div class="process-icon">
+            <i class="fas fa-sort-amount-down"></i>
+          </div>
+          <h3>3. ランキング</h3>
+          <p>ユーザーの検索クエリに対して、最も関連性の高いページを順位付けして表示します。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2>SEOの主要な要素</h2>
+      <p>効果的なSEO対策には以下の3つの要素が重要です：</p>
+      
+      <div class="seo-elements">
+        <div class="element-card">
+          <h3><i class="fas fa-file-alt"></i> コンテンツSEO</h3>
+          <ul>
+            <li>ユーザーの検索意図に合致した高品質なコンテンツ作成</li>
+            <li>適切なキーワード選定と配置</li>
+            <li>E-E-A-T（専門性・権威性・信頼性）の向上</li>
+            <li>定期的なコンテンツ更新</li>
+          </ul>
+        </div>
+        
+        <div class="element-card">
+          <h3><i class="fas fa-code"></i> テクニカルSEO</h3>
+          <ul>
+            <li>サイトの表示速度最適化</li>
+            <li>モバイルフレンドリー対応</li>
+            <li>適切なHTML構造とマークアップ</li>
+            <li>XML サイトマップの作成</li>
+          </ul>
+        </div>
+        
+        <div class="element-card">
+          <h3><i class="fas fa-link"></i> オフページSEO</h3>
+          <ul>
+            <li>高品質な外部サイトからの被リンク獲得</li>
+            <li>ソーシャルメディアでの言及・共有</li>
+            <li>オンラインでのブランド構築</li>
+            <li>ローカルSEO対策</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2>SEO対策の基本チェックリスト</h2>
+      <div class="checklist">
+        <div class="checklist-section">
+          <h3>コンテンツ関連</h3>
+          <ul class="checklist-items">
+            <li><i class="fas fa-square-check"></i> ターゲットキーワードが明確である</li>
+            <li><i class="fas fa-square-check"></i> タイトルタグにキーワードが含まれている</li>
+            <li><i class="fas fa-square-check"></i> メタディスクリプションが適切に設定されている</li>
+            <li><i class="fas fa-square-check"></i> 見出しタグ（H1-H6）が適切に使用されている</li>
+            <li><i class="fas fa-square-check"></i> コンテンツが独自性と価値を提供している</li>
+          </ul>
+        </div>
+        
+        <div class="checklist-section">
+          <h3>技術的側面</h3>
+          <ul class="checklist-items">
+            <li><i class="fas fa-square-check"></i> ページ読み込み速度が3秒以内</li>
+            <li><i class="fas fa-square-check"></i> モバイルデバイスで適切に表示される</li>
+            <li><i class="fas fa-square-check"></i> 内部リンクが適切に設置されている</li>
+            <li><i class="fas fa-square-check"></i> 画像にalt属性が設定されている</li>
+            <li><i class="fas fa-square-check"></i> HTTPS接続が有効になっている</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-buttons">
+      <a href="/pages/keyword-strategy" class="nav-button next">
+        次：キーワード戦略 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .process-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    background: #f8f9fa;
+  }
+
+  .process-icon {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 10px;
+  }
+
+  .seo-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .element-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+  }
+
+  .element-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .element-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .element-card li {
+    padding: 5px 0;
+    color: #666;
+  }
+
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .checklist-items {
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist-items li {
+    padding: 8px 0;
+    color: #333;
+  }
+
+  .checklist-items i {
+    color: #28a745;
+    margin-right: 8px;
+  }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+
+  .nav-button {
+    background: #667eea;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+  }
+
+  .nav-button:hover {
+    background: #5a6fd8;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "実践的なSEO対策で検索上位を獲得する完全マニュアル。最新のAI活用術と実戦的なSEOハッカー手法を網羅。" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="/styles/design-system.css">
+    <link rel="stylesheet" href="/styles/typography-enhanced.css">
+    <link rel="stylesheet" href="/styles/global-nav.css">
+    <link rel="stylesheet" href="/styles/nav-fix.css">
+    <link rel="stylesheet" href="/styles/enhanced-design.css">
+    <link rel="stylesheet" href="/styles/glassmorphism-design.css">
+    <link rel="stylesheet" href="/styles/responsive-layout.css">
+    <link rel="stylesheet" href="/styles/list-styles-fix.css">
+    <link rel="stylesheet" href="/styles/dynamic-homepage.css">
+  </head>
+  <body>
+    <slot />
+    
+    <!-- JavaScript -->
+    <script src="/scripts/components.js" is:inline></script>
+    <script src="/scripts/enhanced-animations.js" is:inline></script>
+    <script>
+      // モバイルメニュートグル
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const navMenu = document.getElementById("navMenu");
+      
+      mobileMenuToggle?.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+      
+      // スクロール時のナビゲーション変化
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".global-nav");
+        if (window.scrollY > 100) {
+          nav?.classList.add("scrolled");
+        } else {
+          nav?.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>

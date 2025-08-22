@@ -1,0 +1,354 @@
+/* ===== 箇条書きスタイル修正 ===== */
+
+/* リセット - 既存スタイルの競合を防ぐ */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* ===== 基本的な箇条書きスタイル ===== */
+
+/* 通常のリスト（コンテンツ内） */
+.content-area ul:not(.toc-list):not(.no-style),
+.manual-section ul:not(.toc-list):not(.no-style),
+article ul:not(.toc-list):not(.no-style),
+.manual-content ul:not(.toc-list):not(.no-style) {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  list-style: none;
+}
+
+.content-area ul:not(.toc-list):not(.no-style) li,
+.manual-section ul:not(.toc-list):not(.no-style) li,
+article ul:not(.toc-list):not(.no-style) li,
+.manual-content ul:not(.toc-list):not(.no-style) li {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+  color: var(--glass-gray, #34495e);
+}
+
+/* リストマーカー（丸） */
+.content-area ul:not(.toc-list):not(.no-style) li::before,
+.manual-section ul:not(.toc-list):not(.no-style) li::before,
+article ul:not(.toc-list):not(.no-style) li::before,
+.manual-content ul:not(.toc-list):not(.no-style) li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 6px;
+  height: 6px;
+  background: var(--glass-primary, #4a69bd);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* ホバー効果 */
+.content-area ul:not(.toc-list):not(.no-style) li:hover::before,
+.manual-section ul:not(.toc-list):not(.no-style) li:hover::before,
+article ul:not(.toc-list):not(.no-style) li:hover::before,
+.manual-content ul:not(.toc-list):not(.no-style) li:hover::before {
+  transform: scale(1.5);
+  background: var(--glass-accent, #546de5);
+}
+
+/* 番号付きリスト */
+.content-area ol:not(.toc-list):not(.no-style),
+.manual-section ol:not(.toc-list):not(.no-style),
+article ol:not(.toc-list):not(.no-style),
+.manual-content ol:not(.toc-list):not(.no-style) {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  list-style: none;
+  counter-reset: list-counter;
+}
+
+.content-area ol:not(.toc-list):not(.no-style) li,
+.manual-section ol:not(.toc-list):not(.no-style) li,
+article ol:not(.toc-list):not(.no-style) li,
+.manual-content ol:not(.toc-list):not(.no-style) li {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 2rem;
+  line-height: 1.8;
+  counter-increment: list-counter;
+  color: var(--glass-gray, #34495e);
+}
+
+/* 番号マーカー */
+.content-area ol:not(.toc-list):not(.no-style) li::before,
+.manual-section ol:not(.toc-list):not(.no-style) li::before,
+article ol:not(.toc-list):not(.no-style) li::before,
+.manual-content ol:not(.toc-list):not(.no-style) li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--glass-primary, #4a69bd);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* 番号ホバー効果 */
+.content-area ol:not(.toc-list):not(.no-style) li:hover::before,
+.manual-section ol:not(.toc-list):not(.no-style) li:hover::before,
+article ol:not(.toc-list):not(.no-style) li:hover::before,
+.manual-content ol:not(.toc-list):not(.no-style) li:hover::before {
+  transform: scale(1.1);
+  background: var(--glass-accent, #546de5);
+}
+
+/* ===== ネストされたリスト ===== */
+.content-area ul ul,
+.content-area ol ul,
+.manual-section ul ul,
+.manual-section ol ul,
+article ul ul,
+article ol ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--glass-border, rgba(0,0,0,0.1));
+}
+
+.content-area ul ul li::before,
+.manual-section ul ul li::before,
+article ul ul li::before {
+  width: 4px;
+  height: 4px;
+  top: 0.75rem;
+  background: var(--glass-gray-light, #95a5a6);
+}
+
+/* ===== アイコン付きリスト ===== */
+.icon-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-list li {
+  position: relative;
+  margin: 0.75rem 0;
+  padding-left: 2rem;
+  line-height: 1.8;
+}
+
+.icon-list li i {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  color: var(--glass-primary, #4a69bd);
+  font-size: 1rem;
+}
+
+/* チェックリスト */
+.check-list {
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  margin: 0.75rem 0;
+  padding-left: 2rem;
+  line-height: 1.8;
+}
+
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--glass-primary, #4a69bd);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ===== 目次専用スタイル（上書き防止） ===== */
+.toc-container nav ul,
+.toc-content ul,
+.toc ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.toc-container nav ul li,
+.toc-content ul li,
+.toc ul li {
+  margin: 0.5rem 0 !important;
+  padding: 0 !important;
+  position: static !important;
+}
+
+.toc-container nav ul li::before,
+.toc-content ul li::before,
+.toc ul li::before {
+  display: none !important;
+}
+
+.toc-container nav ul li a,
+.toc-content ul li a,
+.toc ul li a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  color: var(--glass-gray, #34495e);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.toc-container nav ul li a:hover,
+.toc-content ul li a:hover,
+.toc ul li a:hover {
+  color: var(--glass-primary, #4a69bd);
+  border-left-color: var(--glass-primary, #4a69bd);
+  background: rgba(74, 105, 189, 0.05);
+  padding-left: 1rem;
+}
+
+/* ===== ナビゲーションメニュー専用 ===== */
+nav ul:not(.toc-list),
+.nav-content ul,
+.menu-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+nav ul:not(.toc-list) li,
+.nav-content ul li,
+.menu-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+nav ul:not(.toc-list) li::before,
+.nav-content ul li::before,
+.menu-list li::before {
+  display: none !important;
+}
+
+/* ===== カード内のリスト ===== */
+.glass-menu-card ul,
+.outline-card ul,
+.enhanced-card ul,
+.pickup-card ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.glass-menu-card ul li,
+.outline-card ul li,
+.enhanced-card ul li,
+.pickup-card ul li {
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+}
+
+/* ===== 定義リスト ===== */
+dl {
+  margin: 1.5rem 0;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--glass-gray-dark, #2c3e50);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--glass-border, rgba(0,0,0,0.1));
+}
+
+dd {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--glass-gray, #34495e);
+  line-height: 1.8;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 768px) {
+  .content-area ul:not(.toc-list):not(.no-style),
+  .content-area ol:not(.toc-list):not(.no-style),
+  .manual-section ul:not(.toc-list):not(.no-style),
+  .manual-section ol:not(.toc-list):not(.no-style) {
+    padding-left: 1.5rem;
+  }
+  
+  .content-area ul:not(.toc-list):not(.no-style) li,
+  .content-area ol:not(.toc-list):not(.no-style) li,
+  .manual-section ul:not(.toc-list):not(.no-style) li,
+  .manual-section ol:not(.toc-list):not(.no-style) li {
+    padding-left: 1.25rem;
+  }
+}
+
+/* ===== 特殊クラス ===== */
+
+/* スタイルなしリスト */
+.no-style,
+.no-style li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.no-style li::before {
+  display: none !important;
+}
+
+/* インラインリスト */
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inline-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.inline-list li::before {
+  display: none;
+}
+
+/* グリッドリスト */
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid-list li {
+  margin: 0;
+  padding: 1rem;
+  background: var(--glass-bg, rgba(255,255,255,0.1));
+  border-radius: 8px;
+  border: 1px solid var(--glass-border, rgba(0,0,0,0.1));
+}
+
+.grid-list li::before {
+  display: none;
+}
